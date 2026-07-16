@@ -39,6 +39,10 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .about__layout {
+        gap: 3rem;
+    }
+
 }
 
 @media (min-width: 768px) and (max-width: 899px) {
@@ -340,6 +344,126 @@
 
     .services__cta .button {
         width: 100%;
+    }
+
+    /* =========================================
+    ABOUT
+    ========================================= */
+
+    .about__layout {
+        grid-template-columns: 1fr;
+
+        gap: 3rem;
+    }
+
+    .about__text {
+        font-size: 1rem;
+    }
+
+    .about-highlight {
+        padding: 1.25rem;
+    }
+
+    .about__stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        margin-top: 4rem;
+
+        padding-top: 2rem;
+
+        row-gap: 2rem;
+    }
+
+    .about-stat__number {
+        font-size: 1.75rem;
+    }
+
+    /* =========================================
+    FAQ
+    ========================================= */
+
+    .faq-item__question {
+        padding: 1.25rem;
+
+        font-size: 1rem;
+    }
+
+    .faq-item__answer {
+        padding:
+
+            0 1.25rem 1.25rem;
+    }
+
+    .faq__cta {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 1.5rem;
+
+        margin-top: 3rem;
+
+        padding: 1.5rem;
+    }
+
+    .faq__cta .button {
+        width: 100%;
+    }
+
+    /* =========================================
+    FINAL CTA
+    ========================================= */
+
+    .final-cta__title {
+        font-size: clamp(2.5rem, 11vw, 3.5rem);
+    }
+
+    .final-cta__description {
+        font-size: 1rem;
+    }
+
+    .final-cta__actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .final-cta__actions .button {
+        width: 100%;
+    }
+
+
+    /* =========================================
+    FOOTER
+    ========================================= */
+
+    .site-footer {
+        padding-block: 4rem 1.5rem;
+    }
+
+    .site-footer__main {
+        grid-template-columns: 1fr;
+
+        gap: 3rem;
+
+        padding-bottom: 3rem;
+    }
+
+    .site-footer__brand {
+        max-width: none;
+    }
+
+    .site-footer__navigation {
+        gap: 2rem;
+    }
+
+    .site-footer__bottom {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 0.5rem;
     }
 
 }
