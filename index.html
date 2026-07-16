@@ -28,12 +28,90 @@
     <a class="skip-link" href="#hero">
         Skip to content
     </a>
-    <header id="header">
-        <nav class="navbar"></nav>
-    </header>
+    <header id="header" class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+            <a href="#hero" class="navbar__logo">
+                Fatih Roihan
+            </a>
+            <button class="navbar__toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="primary-navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
+            <div id="primary-navigation" class="navbar__menu">
+                <ul class="navbar__links">
+                    <li>
+                        <a href="#case-studies">Work</a>
+                    </li>
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a href="#work-process">Process</a>
+                    </li>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                </ul>
+                <a href="#final-cta" class="button button--primary navbar__cta">Book a Consultation</a>
+            </div>
+        </nav>
+    </header>
     <main>
-        <section id="hero"></section>
+        <!-- hero -->
+        <section id="hero" class="hero section" aria-labelledby="hero-title">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <p class="hero__eyebrow">
+                        Fullstack Development & IT Consulting
+                    </p>
+                    <h1 id="hero-title" class="hero__title">
+                        Turning Business Problems
+                        <span>Into Digital Solutions.</span>
+                    </h1>
+                    <p class="hero__description">
+                        I help businesses turn inefficient workflows,
+                        manual processes, and digital challenges
+                        into practical systems that improve the way they work.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="#final-cta" class="button button--primary">
+                            Book a Free Consultation
+                        </a>
+                        <a href="#case-studies" class="button button--secondary">
+                            View Case Studies
+                        </a>
+                    </div>
+                </div>
+                <div class="hero__visual">
+                    <div class="hero__mockup">
+                        <div class="hero__mockup-header">
+                            Business Workflow
+                        </div>
+                        <div class="hero__mockup-content">
+                            <div class="workflow-step">
+                                <span class="workflow-step__number">01</span>
+                                <span>Analyze</span>
+                            </div>
+                            <div class="workflow-step">
+                                <span class="workflow-step__number">02</span>
+                                <span>Design</span>
+                            </div>
+                            <div class="workflow-step">
+                                <span class="workflow-step__number">03</span>
+                                <span>Build</span>
+                            </div>
+                            <div class="workflow-step">
+                                <span class="workflow-step__number">04</span>
+                                <span>Optimize</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="business-problems"></section>
         <section id="solution"></section>
         <section id="work-process"></section>
@@ -46,8 +124,7 @@
     <footer id="footer"></footer>
     <!-- JavaScript -->
     <script src="assets/js/utils.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
 </body>
 
 </html>

@@ -1,20 +1,63 @@
 :root {
-    /* Color */
-    --primary: #2563EB;
-    --secondary: #111827;
-    --accent: #10B981;
-    --background: #FFFFFF;
-    --surface: #F9FAFB;
-    /* Font */
-    --font-heading: "Poppins", sans-serif;
-    --font-body: "Inter", sans-serif;
-    /* Radius */
-    --radius-sm: 8px;
+    /* =========================================
+       COLORS
+    ========================================= */
+
+    --color-primary: #2563eb;
+    --color-primary-hover: #1d4ed8;
+
+    --color-text-primary: #111827;
+    --color-text-secondary: #6b7280;
+    --color-text-muted: #9ca3af;
+
+    --color-background: #ffffff;
+    --color-surface: #f8fafc;
+    --color-border: #e5e7eb;
+
+
+    /* =========================================
+       LAYOUT
+    ========================================= */
+
+    --container-width: 1200px;
+
+    --page-padding: 24px;
+
+    --section-padding-y: 7.5rem;
+
+    --navbar-height: 80px;
+
+    --hero-min-height: 100svh;
+
+
+    /* =========================================
+       RADIUS
+    ========================================= */
+
+    --radius-sm: 6px;
     --radius-md: 12px;
     --radius-lg: 20px;
-    /* Shadow */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, .08);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, .12);
-    /* Container */
-    --container: 1200px;
+    --radius-pill: 999px;
+
+
+    /* =========================================
+       SHADOW
+    ========================================= */
+
+    --shadow-sm:
+        0 4px 12px rgb(15 23 42 / 6%);
+
+    --shadow-md:
+        0 12px 32px rgb(15 23 42 / 10%);
+
+    --shadow-lg:
+        0 24px 64px rgb(15 23 42 / 12%);
+
+
+    /* =========================================
+       TRANSITION
+    ========================================= */
+
+    --transition-fast: 200ms ease;
+    --transition-normal: 300ms ease;
 }

@@ -1,4 +1,401 @@
-@import url("reset.css");
-@import url("variables.css");
+/* =========================================
+   BASE LAYOUT
+========================================= */
 
-/* Main styles will be added during development */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+
+    margin-inline: auto;
+    padding-inline: var(--page-padding);
+}
+
+.section {
+    padding-block: var(--section-padding-y);
+}
+
+/* =========================================
+   SITE HEADER
+========================================= */
+
+.site-header {
+    position: fixed;
+    inset-block-start: 0;
+    inset-inline: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgb(255 255 255 / 80%);
+    border-bottom: 1px solid rgb(229 231 235 / 60%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    min-height: var(--navbar-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.navbar__logo {
+    color: var(--color-text-primary);
+
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* =========================================
+   NAVIGATION MENU
+========================================= */
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+
+    gap: 2rem;
+}
+
+.navbar__links {
+    display: flex;
+    align-items: center;
+
+    gap: 2rem;
+
+    list-style: none;
+}
+
+.navbar__links a {
+    color: var(--color-text-secondary);
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        color var(--transition-fast);
+}
+
+.navbar__links a:hover {
+    color: var(--color-text-primary);
+}
+
+
+/* =========================================
+   MOBILE NAVIGATION TOGGLE
+========================================= */
+
+.navbar__toggle {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.navbar__toggle span {
+    display: block;
+
+    width: 24px;
+    height: 2px;
+
+    margin: 5px auto;
+
+    background-color: var(--color-text-primary);
+
+    transition:
+        transform var(--transition-fast),
+        opacity var(--transition-fast);
+}
+
+
+/* Hamburger → Close */
+
+.navbar__toggle[aria-expanded="true"] span:nth-child(1) {
+    transform:
+        translateY(7px) rotate(45deg);
+}
+
+.navbar__toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar__toggle[aria-expanded="true"] span:nth-child(3) {
+    transform:
+        translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================================
+   BUTTON SYSTEM
+========================================= */
+
+.button {
+    min-height: 48px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-inline: 2rem;
+
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+
+/* Primary Button */
+
+.button--primary {
+    color: #ffffff;
+
+    background-color: var(--color-primary);
+}
+
+.button--primary:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.button--primary:active {
+    transform: translateY(1px);
+}
+
+
+/* Secondary Button */
+
+.button--secondary {
+    color: var(--color-text-primary);
+
+    background-color: transparent;
+
+    border-color: var(--color-border);
+}
+
+.button--secondary:hover {
+    background-color: var(--color-surface);
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.navbar a:focus-visible,
+.navbar button:focus-visible,
+.button:focus-visible {
+    outline: 3px solid var(--color-primary);
+
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: var(--hero-min-height);
+    display: flex;
+    align-items: center;
+    padding-block-start: var(--navbar-height);
+}
+
+.hero__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: clamp(3rem, 6vw, 6rem);
+}
+
+.hero__content {
+    width: 100%;
+    max-width: 680px;
+}
+
+/* Hero Eyebrow */
+
+.hero__eyebrow {
+    margin-block-end: 1.5rem;
+
+    color: var(--color-primary);
+
+    font-size: 0.875rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+
+/* Hero Title */
+
+.hero__title {
+    max-width: 680px;
+    margin-block-end: 1.5rem;
+    color: var(--color-text-primary);
+    font-size: clamp(2.75rem,
+            5vw,
+            4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+}
+
+
+/* Hero Highlight */
+
+.hero__title span {
+    display: block;
+
+    color: var(--color-primary);
+}
+
+
+/* Hero Description */
+
+.hero__description {
+    max-width: 600px;
+
+    margin-block-end: 2.5rem;
+
+    color: var(--color-text-secondary);
+
+    font-size: 1.125rem;
+
+    line-height: 1.7;
+}
+
+
+/* Hero Actions */
+
+.hero__actions {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+
+/* =========================================
+   HERO VISUAL
+========================================= */
+
+.hero__visual {
+    display: flex;
+
+    justify-content: center;
+}
+
+
+/* =========================================
+   BUSINESS WORKFLOW MOCKUP
+========================================= */
+
+.hero__mockup {
+    width: 100%;
+    max-width: 520px;
+
+    overflow: hidden;
+
+    background-color: var(--color-background);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* Mockup Header */
+
+.hero__mockup-header {
+    padding: 1.25rem 1.5rem;
+    color: var(--color-text-primary);
+    font-weight: 700;
+    border-block-end: 1px solid var(--color-border);
+}
+
+
+/* Mockup Content */
+
+.hero__mockup-content {
+    display: grid;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+
+/* Workflow Step */
+
+.workflow-step {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 1rem;
+
+    background-color: var(--color-surface);
+
+    border-radius: var(--radius-md);
+
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.workflow-step:hover {
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.workflow-step:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgb(15 23 42 / 8%);
+}
+
+
+/* Workflow Number */
+
+.workflow-step__number {
+    color: var(--color-primary);
+
+    font-weight: 700;
+}
