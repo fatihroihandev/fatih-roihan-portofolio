@@ -31,6 +31,10 @@
             repeat(3, minmax(0, 1fr));
     }
 
+    .case-studies__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
 }
 
 @media (min-width: 768px) and (max-width: 899px) {
@@ -253,6 +257,41 @@
 
     .process__cta .button {
         width: 100%;
+    }
+
+    /* =====================================
+    CASE STUDIES
+    ===================================== */
+
+    .case-studies__grid {
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+    }
+
+    .case-study-card,
+    .case-study-card--featured {
+        grid-column: auto;
+
+        min-height: auto;
+
+        padding: 1.5rem;
+    }
+
+    .case-study-card__header {
+        margin-bottom: 2rem;
+    }
+
+    .case-study-card__title {
+        font-size: 1.35rem;
+    }
+
+    .case-study-card__projects {
+        margin-top: 1.5rem;
+    }
+
+    .case-study-card__footer {
+        padding-top: 1.5rem;
     }
 
 }
