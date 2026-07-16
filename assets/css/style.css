@@ -620,3 +620,88 @@
 .solution__cta {
     margin-top: 3rem;
 }
+
+/* ===================== work process ===================== */
+
+/* =========================================
+   WORK PROCESS
+========================================= */
+
+.work-process {
+    background-color: var(--color-surface);
+}
+
+.process__timeline {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 1rem;
+}
+
+.process-step {
+    position: relative;
+
+    min-height: 280px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 2rem;
+
+    background-color: var(--color-background);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-lg);
+
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.process-step:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 16px 40px rgb(15 23 42 / 8%);
+}
+
+.process-step__number {
+    margin-bottom: 3rem;
+
+    color: var(--color-primary);
+
+    font-size: 0.875rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+.process-step__content {
+    margin-top: auto;
+}
+
+.process-step__title {
+    margin-bottom: 1rem;
+
+    color: var(--color-text-primary);
+
+    font-size: 1.25rem;
+
+    line-height: 1.3;
+}
+
+.process-step__description {
+    color: var(--color-text-secondary);
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+}
+
+.process__cta {
+    margin-top: 3rem;
+}

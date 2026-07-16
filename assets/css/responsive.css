@@ -26,6 +26,11 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
+    .process__timeline {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
 }
 
 @media (min-width: 768px) and (max-width: 899px) {
@@ -48,6 +53,11 @@
     }
 
     .solution__steps {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .process__timeline {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
     }
@@ -218,6 +228,30 @@
     }
 
     .solution__cta .button {
+        width: 100%;
+    }
+
+    /* =========================================
+    WORK PROCESS
+    ========================================= */
+
+    .process__timeline {
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+    }
+
+    .process-step {
+        min-height: auto;
+
+        padding: 1.5rem;
+    }
+
+    .process-step__number {
+        margin-bottom: 1.5rem;
+    }
+
+    .process__cta .button {
         width: 100%;
     }
 
