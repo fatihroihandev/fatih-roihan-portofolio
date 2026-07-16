@@ -35,6 +35,10 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .services__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
 }
 
 @media (min-width: 768px) and (max-width: 899px) {
@@ -64,6 +68,10 @@
     .process__timeline {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
+    }
+
+    .services__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
 }
@@ -292,6 +300,46 @@
 
     .case-study-card__footer {
         padding-top: 1.5rem;
+    }
+
+    /* =========================================
+   SERVICES
+========================================= */
+
+    .services__grid {
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+    }
+
+    .service-card {
+        min-height: auto;
+
+        padding: 1.5rem;
+    }
+
+    .service-card__number {
+        margin-bottom: 2rem;
+    }
+
+    .service-card__title {
+        font-size: 1.35rem;
+    }
+
+    .services__cta {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 1.5rem;
+
+        margin-top: 3rem;
+
+        padding: 1.5rem;
+    }
+
+    .services__cta .button {
+        width: 100%;
     }
 
 }
