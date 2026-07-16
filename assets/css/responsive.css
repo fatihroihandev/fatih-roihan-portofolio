@@ -22,6 +22,10 @@
         font-size: 1rem;
     }
 
+    .solution__steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
 }
 
 @media (min-width: 768px) and (max-width: 899px) {
@@ -41,6 +45,11 @@
 
     .hero__visual {
         justify-content: flex-start;
+    }
+
+    .solution__steps {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
 }
@@ -157,6 +166,59 @@
 
     .hero__mockup {
         max-width: none;
+    }
+
+    /* =========================================
+    BUSINESS PROBLEMS
+    ========================================= */
+
+    .section {
+        padding-block: 5rem;
+    }
+
+    .section-header {
+        margin-bottom: 3rem;
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 9vw, 2.75rem);
+    }
+
+    .section-description {
+        font-size: 1rem;
+    }
+
+    .problems__grid {
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+    }
+
+    .problem-card {
+        padding: 1.5rem;
+    }
+
+    .problems__cta .button {
+        width: 100%;
+    }
+
+    /* =========================================
+    BUSINESS SoLUTIONS
+    ========================================= */
+    .solution__steps {
+        grid-template-columns: 1fr;
+    }
+
+    .solution-step {
+        min-height: auto;
+    }
+
+    .solution-step__number {
+        margin-bottom: 1.5rem;
+    }
+
+    .solution__cta .button {
+        width: 100%;
     }
 
 }

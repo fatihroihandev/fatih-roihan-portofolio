@@ -399,3 +399,224 @@
 
     font-weight: 700;
 }
+
+/* ===================== build bussines problems ===================== */
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.section-header {
+    max-width: 720px;
+
+    margin-bottom: 4rem;
+}
+
+.section-eyebrow {
+    margin-bottom: 1rem;
+
+    color: var(--color-primary);
+
+    font-size: 0.875rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.section-title {
+    margin-bottom: 1.5rem;
+
+    color: var(--color-text-primary);
+
+    font-size: clamp(2rem, 4vw, 3.5rem);
+
+    line-height: 1.1;
+
+    letter-spacing: -0.03em;
+}
+
+.section-title span {
+    display: block;
+
+    color: var(--color-primary);
+}
+
+.section-description {
+    max-width: 600px;
+
+    color: var(--color-text-secondary);
+
+    font-size: 1.125rem;
+
+    line-height: 1.7;
+}
+
+/* =========================================
+   BUSINESS PROBLEMS
+========================================= */
+
+.problems {
+    background-color: var(--color-surface);
+}
+
+.problems__grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 2rem;
+}
+
+.problem-card {
+    padding: 2rem;
+
+    background-color: var(--color-background);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-lg);
+
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.problem-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 16px 40px rgb(15 23 42 / 8%);
+}
+
+.problem-card__number {
+    margin-bottom: 2rem;
+
+    color: var(--color-primary);
+
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.problem-card__title {
+    margin-bottom: 1rem;
+
+    color: var(--color-text-primary);
+
+    font-size: 1.25rem;
+
+    line-height: 1.3;
+}
+
+.problem-card__description {
+    color: var(--color-text-secondary);
+
+    line-height: 1.7;
+}
+
+.problems__cta {
+    margin-top: 3rem;
+}
+
+/* ===================== build solution ===================== */
+
+/* =========================================
+   SOLUTION
+========================================= */
+
+.solution {
+    background-color: var(--color-background);
+}
+
+.solution__steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 1rem;
+}
+
+.solution-step {
+    position: relative;
+
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 2rem;
+
+    background-color: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-lg);
+
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal),
+        border-color var(--transition-normal);
+}
+
+.solution-step:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--color-primary);
+
+    box-shadow:
+        0 16px 40px rgb(15 23 42 / 8%);
+}
+
+
+/* =========================================
+   STEP NUMBER
+========================================= */
+
+.solution-step__number {
+    margin-bottom: 3rem;
+
+    color: var(--color-primary);
+
+    font-size: 0.875rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================
+   STEP CONTENT
+========================================= */
+
+.solution-step__content {
+    margin-top: auto;
+}
+
+.solution-step__title {
+    margin-bottom: 1rem;
+
+    color: var(--color-text-primary);
+
+    font-size: 1.25rem;
+
+    line-height: 1.3;
+}
+
+.solution-step__description {
+    color: var(--color-text-secondary);
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.solution__cta {
+    margin-top: 3rem;
+}
