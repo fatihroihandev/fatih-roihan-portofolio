@@ -1,469 +1,54 @@
 /* =========================================
-   TABLET
+   RESPONSIVE
+   Breakpoints follow where the layout actually breaks.
 ========================================= */
 
-@media (min-width: 768px) and (max-width: 1199px) {
-
-    :root {
-        --page-padding: 40px;
-    }
-
-    .hero__container {
-        gap: 3rem;
-    }
-
-    .hero__title {
-        font-size: clamp(2.5rem,
-                5vw,
-                3.75rem);
-    }
-
-    .hero__description {
-        font-size: 1rem;
-    }
-
-    .solution__steps {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .process__timeline {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
-    }
-
-    .case-studies__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .services__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .about__layout {
-        gap: 3rem;
-    }
-
+@media (max-width: 1080px) {
+    .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-@media (min-width: 768px) and (max-width: 899px) {
+@media (max-width: 900px) {
+    :root { --space-6: 4.5rem; --space-5: 3rem; }
 
-    .hero {
-        padding-block:
-            calc(var(--navbar-height) + 4rem) 5rem;
-    }
-
-    .hero__container {
-        grid-template-columns: 1fr;
-    }
-
-    .hero__content {
-        max-width: 720px;
-    }
-
-    .hero__visual {
-        justify-content: flex-start;
-    }
-
-    .solution__steps {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-    .process__timeline {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-    .services__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-}
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 767px) {
-
-    :root {
-        --page-padding: 20px;
-        --section-padding-y: 5rem;
-    }
-
-
-    /* =====================================
-       NAVBAR
-    ===================================== */
-
-    .navbar__toggle {
-        display: block;
-    }
+    .navbar__toggle { display: flex; }
+    .navbar__actions { margin-left: auto; }
 
     .navbar__menu {
-        position: absolute;
-
-        inset-block-start: var(--navbar-height);
-
-        inset-inline-start: var(--page-padding);
-        inset-inline-end: var(--page-padding);
-
         display: none;
-
-        flex-direction: column;
-        align-items: stretch;
-
-        padding: 1.5rem;
-
-        background-color: var(--color-background);
-
-        border: 1px solid var(--color-border);
-
-        border-radius: var(--radius-md);
-
-        box-shadow: var(--shadow-md);
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: var(--space-2) 1.25rem var(--space-3);
+        background: var(--color-background);
+        border-bottom: 1px solid var(--color-border);
     }
-
-    .navbar__menu.is-open {
-        display: flex;
-    }
-
-    .navbar__links {
-        flex-direction: column;
-        align-items: stretch;
-
-        gap: 0.5rem;
-    }
-
-    .navbar__links a {
-        display: block;
-
-        padding: 0.75rem;
-    }
-
-    .navbar__cta {
-        width: 100%;
-
-        margin-block-start: 1rem;
-    }
-
-
-    /* =====================================
-       HERO
-    ===================================== */
-
-    .hero {
-        min-height: auto;
-
-        padding-block-start:
-            calc(var(--navbar-height) + 4rem);
-
-        padding-block-end: 5rem;
-    }
-
-    .hero__container {
-        grid-template-columns: 1fr;
-
-        gap: 3.5rem;
-    }
-
-    .hero__title {
-        font-size: clamp(2.5rem,
-                11vw,
-                3.5rem);
-    }
-
-    .hero__description {
-        font-size: 1rem;
-    }
-
-    .hero__actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .hero__actions .button {
-        width: 100%;
-    }
-
-    .hero__visual {
-        justify-content: stretch;
-    }
-
-    .hero__mockup {
-        max-width: none;
-    }
-
-    /* =========================================
-    BUSINESS PROBLEMS
-    ========================================= */
-
-    .section {
-        padding-block: 5rem;
-    }
-
-    .section-header {
-        margin-bottom: 3rem;
-    }
-
-    .section-title {
-        font-size: clamp(2rem, 9vw, 2.75rem);
-    }
-
-    .section-description {
-        font-size: 1rem;
-    }
-
-    .problems__grid {
-        grid-template-columns: 1fr;
-
-        gap: 1rem;
-    }
-
-    .problem-card {
-        padding: 1.5rem;
-    }
-
-    .problems__cta .button {
-        width: 100%;
-    }
-
-    /* =========================================
-    BUSINESS SoLUTIONS
-    ========================================= */
-    .solution__steps {
-        grid-template-columns: 1fr;
-    }
-
-    .solution-step {
-        min-height: auto;
-    }
-
-    .solution-step__number {
-        margin-bottom: 1.5rem;
-    }
-
-    .solution__cta .button {
-        width: 100%;
-    }
-
-    /* =========================================
-    WORK PROCESS
-    ========================================= */
-
-    .process__timeline {
-        grid-template-columns: 1fr;
-
-        gap: 1rem;
-    }
-
-    .process-step {
-        min-height: auto;
-
-        padding: 1.5rem;
-    }
-
-    .process-step__number {
-        margin-bottom: 1.5rem;
-    }
-
-    .process__cta .button {
-        width: 100%;
-    }
-
-    /* =====================================
-    CASE STUDIES
-    ===================================== */
-
-    .case-studies__grid {
-        grid-template-columns: 1fr;
-
-        gap: 1rem;
-    }
-
-    .case-study-card,
-    .case-study-card--featured {
-        grid-column: auto;
-
-        min-height: auto;
-
-        padding: 1.5rem;
-    }
-
-    .case-study-card__header {
-        margin-bottom: 2rem;
-    }
-
-    .case-study-card__title {
-        font-size: 1.35rem;
-    }
-
-    .case-study-card__projects {
-        margin-top: 1.5rem;
-    }
-
-    .case-study-card__footer {
-        padding-top: 1.5rem;
-    }
-
-    /* =========================================
-   SERVICES
-========================================= */
-
-    .services__grid {
-        grid-template-columns: 1fr;
-
-        gap: 1rem;
-    }
-
-    .service-card {
-        min-height: auto;
-
-        padding: 1.5rem;
-    }
-
-    .service-card__number {
-        margin-bottom: 2rem;
-    }
-
-    .service-card__title {
-        font-size: 1.35rem;
-    }
-
-    .services__cta {
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 1.5rem;
-
-        margin-top: 3rem;
-
-        padding: 1.5rem;
-    }
-
-    .services__cta .button {
-        width: 100%;
-    }
-
-    /* =========================================
-    ABOUT
-    ========================================= */
-
-    .about__layout {
-        grid-template-columns: 1fr;
-
-        gap: 3rem;
-    }
-
-    .about__text {
-        font-size: 1rem;
-    }
-
-    .about-highlight {
-        padding: 1.25rem;
-    }
-
-    .about__stats {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        margin-top: 4rem;
-
-        padding-top: 2rem;
-
-        row-gap: 2rem;
-    }
-
-    .about-stat__number {
-        font-size: 1.75rem;
-    }
-
-    /* =========================================
-    FAQ
-    ========================================= */
-
-    .faq-item__question {
-        padding: 1.25rem;
-
-        font-size: 1rem;
-    }
-
-    .faq-item__answer {
-        padding:
-
-            0 1.25rem 1.25rem;
-    }
-
-    .faq__cta {
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 1.5rem;
-
-        margin-top: 3rem;
-
-        padding: 1.5rem;
-    }
-
-    .faq__cta .button {
-        width: 100%;
-    }
-
-    /* =========================================
-    FINAL CTA
-    ========================================= */
-
-    .final-cta__title {
-        font-size: clamp(2.5rem, 11vw, 3.5rem);
-    }
-
-    .final-cta__description {
-        font-size: 1rem;
-    }
-
-    .final-cta__actions {
-        flex-direction: column;
-
-        align-items: stretch;
-    }
-
-    .final-cta__actions .button {
-        width: 100%;
-    }
-
-
-    /* =========================================
-    FOOTER
-    ========================================= */
-
-    .site-footer {
-        padding-block: 4rem 1.5rem;
-    }
-
-    .site-footer__main {
-        grid-template-columns: 1fr;
-
-        gap: 3rem;
-
-        padding-bottom: 3rem;
-    }
-
-    .site-footer__brand {
-        max-width: none;
-    }
-
-    .site-footer__navigation {
-        gap: 2rem;
-    }
-
-    .site-footer__bottom {
-        align-items: flex-start;
-
-        flex-direction: column;
-
-        gap: 0.5rem;
-    }
-
+    .navbar__menu.is-open { display: block; }
+    .navbar__links { flex-direction: column; gap: 0; }
+    .navbar__links a { display: block; padding: 0.85rem 0; font-size: 1rem; }
+
+    .hero__container, .about, .faq { grid-template-columns: minmax(0, 1fr); }
+    .hero { padding-bottom: var(--space-3); }
+    .hero__visual { max-width: 520px; }
+    .faq .section-header { position: static; margin-bottom: var(--space-3); }
+    .about__figure { max-width: 360px; }
+    .site-footer__inner { grid-template-columns: 1fr 1fr; }
+    .site-footer__brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 720px) {
+    .services, .projects { grid-template-columns: minmax(0, 1fr); }
+    .steps { grid-template-columns: minmax(0, 1fr); }
+    .service { padding: var(--space-3); }
+}
+
+@media (max-width: 560px) {
+    .navbar__cta { display: none; }
+    .container { width: min(100% - 2rem, var(--container)); }
+    .hero { padding-top: var(--space-5); }
+    .hero__actions .button, .contact__actions .button { width: 100%; }
+    .hero__visual { padding-right: 1.5rem; }
+    .site-footer__inner { grid-template-columns: 1fr; }
 }

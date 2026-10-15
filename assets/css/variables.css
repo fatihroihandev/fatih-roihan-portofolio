@@ -1,63 +1,39 @@
+/* =========================================
+   DESIGN TOKENS
+========================================= */
+
 :root {
-    /* =========================================
-       COLORS
-    ========================================= */
+    /* Color */
+    --color-background: #FAF8F4;
+    --color-surface: #FFFFFF;
+    --color-tint: #F1EEE7;
+    --color-border: #E4DFD3;
+    --color-text-primary: #14181F;
+    --color-text-secondary: #4A5160;
+    --color-accent: #1D4ED8;
+    --color-accent-hover: #1E40AF;
+    --color-accent-soft: #E8EEFC;
+    --color-ink: #11151C;
+    --color-on-ink: #F4F1EA;
+    --color-on-ink-muted: #B8BDC7;
+    --color-focus: #F59E0B;
 
-    --color-primary: #2563eb;
-    --color-primary-hover: #1d4ed8;
+    /* Type */
+    --font-sans: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --font-display: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --text-sm: 0.9375rem;
+    --text-base: 1.0625rem;
+    --text-lg: 1.1875rem;
 
-    --color-text-primary: #111827;
-    --color-text-secondary: #6b7280;
-    --color-text-muted: #9ca3af;
-
-    --color-background: #ffffff;
-    --color-surface: #f8fafc;
-    --color-border: #e5e7eb;
-
-
-    /* =========================================
-       LAYOUT
-    ========================================= */
-
-    --container-width: 1200px;
-
-    --page-padding: 24px;
-
-    --section-padding-y: 7.5rem;
-
-    --navbar-height: 80px;
-
-    --hero-min-height: 100svh;
-
-
-    /* =========================================
-       RADIUS
-    ========================================= */
-
-    --radius-sm: 6px;
-    --radius-md: 12px;
-    --radius-lg: 20px;
-    --radius-pill: 999px;
-
-
-    /* =========================================
-       SHADOW
-    ========================================= */
-
-    --shadow-sm:
-        0 4px 12px rgb(15 23 42 / 6%);
-
-    --shadow-md:
-        0 12px 32px rgb(15 23 42 / 10%);
-
-    --shadow-lg:
-        0 24px 64px rgb(15 23 42 / 12%);
-
-
-    /* =========================================
-       TRANSITION
-    ========================================= */
-
-    --transition-fast: 200ms ease;
-    --transition-normal: 300ms ease;
+    /* Space & shape */
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2.5rem;
+    --space-5: 4rem;
+    --space-6: 6rem;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --container: 1120px;
+    --header-height: 68px;
 }
