@@ -10,7 +10,7 @@
         content="Freelance web developer building responsive landing pages, company profile websites, and portfolio sites for businesses and individuals. Chat on WhatsApp.">
     <meta name="author" content="Fatih Roihan">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#FAF8F4">
+    <meta name="theme-color" content="#F8FAFC">
 
     <link rel="canonical" href="https://fatihroihan.site/">
     <link rel="alternate" hreflang="en" href="https://fatihroihan.site/">
@@ -32,6 +32,16 @@
     <meta property="og:locale:alternate" content="id_ID">
     <meta name="twitter:card" content="summary_large_image">
 
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem('fr-theme');
+                var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -43,9 +53,9 @@
                 "url": "https://fatihroihan.site/",
                 "image": "https://fatihroihan.site/assets/images/fatihroihan.jpg",
                 "jobTitle": "Freelance Website Developer",
-                "description": "Freelance web developer building landing pages, company profile websites, and portfolio sites for businesses and individuals.",
+                "description": "Freelance web developer building bespoke web solutions, enterprise internal platforms, and high-performance websites for businesses and founders.",
                 "knowsLanguage": ["id", "en"],
-                "knowsAbout": ["Web development", "Landing pages", "Company profile websites", "Responsive web design"],
+                "knowsAbout": ["Web Development", "Enterprise Web Systems", "Custom Business Applications", "SaaS Architecture", "High-Converting Landing Pages"],
                 "sameAs": [
                     "https://www.linkedin.com/in/fatih-roihan-909173308",
                     "https://github.com/fatihroihandev"
@@ -90,9 +100,16 @@
                     <button type="button" class="lang-switch__option" data-lang-option="id" aria-pressed="false" lang="id">ID</button>
                     <button type="button" class="lang-switch__option" data-lang-option="en" aria-pressed="true" lang="en">EN</button>
                 </div>
+
+                <button type="button" class="theme-toggle" aria-label="Toggle dark and light theme" data-i18n-attr="aria-label:theme.label" title="Toggle theme">
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+
                 <a href="https://wa.me/628818227834?text=Hi%20Fatih%2C%20I'm%20interested%20in%20your%20freelance%20services%20and%20would%20like%20to%20discuss%20my%20website%20project."
                     class="button button--primary navbar__cta" data-contact="whatsapp" data-i18n="nav.cta"
                     data-track="whatsapp_click" data-track-location="navbar" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+
                 <button class="navbar__toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
                     aria-controls="primary-navigation">
                     <span></span><span></span><span></span>
@@ -107,8 +124,12 @@
         <section id="hero" class="hero" aria-labelledby="hero-title">
             <div class="container hero__container">
                 <div class="hero__content">
-                    <p class="eyebrow" data-i18n="hero.eyebrow">Freelance Website Developer</p>
-                    <h1 id="hero-title" class="hero__title" data-i18n-title="hero.title">Professional Websites for <span>Businesses and Personal Brands.</span></h1>
+                    <div class="status-pill">
+                        <span class="status-dot"></span>
+                        <span data-i18n="hero.badge">Available for Select Enterprise &amp; Client Projects</span>
+                    </div>
+                    <p class="eyebrow" data-i18n="hero.eyebrow">Freelance Website Developer &amp; Digital Solutions Engineer</p>
+                    <h1 id="hero-title" class="hero__title" data-i18n-title="hero.title">High-Performance Websites &amp; <span>Custom Business Systems.</span></h1>
                     <p class="hero__description" data-i18n="hero.desc">I build responsive, fast, and clear websites, from landing pages to company profiles and portfolio sites, shaped around what your business or personal brand needs to communicate.</p>
 
                     <div class="hero__actions">
@@ -120,26 +141,56 @@
                     <p class="hero__note" data-i18n="hero.note">No technical brief needed. Just tell me what you need.</p>
 
                     <ul class="hero__proof">
-                        <li data-i18n="hero.p1">Experience building real digital systems</li>
-                        <li data-i18n="hero.p2">Mobile-first, responsive layouts</li>
-                        <li data-i18n="hero.p3">Bahasa Indonesia &amp; English</li>
+                        <li data-i18n="hero.p1">Enterprise-grade digital systems</li>
+                        <li data-i18n="hero.p2">High-performance &amp; responsive layouts</li>
+                        <li data-i18n="hero.p3">Bilingual Indonesian &amp; English</li>
                     </ul>
                 </div>
 
-                <div class="hero__visual" role="img" aria-label="Illustration of a website layout"
+                <div class="hero__visual" role="img" aria-label="Illustration of a modern website layout"
                     data-i18n-attr="aria-label:hero.mock.label">
-                    <div class="browser">
-                        <div class="browser__bar"><i></i><i></i><i></i><span></span></div>
-                        <div class="browser__body">
-                            <div class="browser__nav"><b></b><span></span><span></span><span></span></div>
-                            <div class="browser__hero">
-                                <div class="browser__lines"><b></b><b></b><em></em><u></u></div>
-                                <div class="browser__shape"></div>
+                    <div class="browser-mockup">
+                        <div class="browser-mockup__bar">
+                            <div class="browser-mockup__dots"><i></i><i></i><i></i></div>
+                            <div class="browser-mockup__address">
+                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                <span>fatihroihan.site</span>
                             </div>
-                            <div class="browser__cards"><div></div><div></div><div></div></div>
+                            <div class="browser-mockup__status"><span class="status-indicator"></span></div>
+                        </div>
+                        <div class="browser-mockup__canvas">
+                            <div class="canvas-header">
+                                <span class="canvas-brand"></span>
+                                <div class="canvas-menu"><span></span><span></span><span></span></div>
+                            </div>
+                            <div class="canvas-hero">
+                                <span class="canvas-tag"></span>
+                                <div class="canvas-headline"></div>
+                                <div class="canvas-subline"></div>
+                                <div class="canvas-ctas">
+                                    <span class="canvas-cta canvas-cta--primary"></span>
+                                    <span class="canvas-cta canvas-cta--outline"></span>
+                                </div>
+                            </div>
+                            <div class="canvas-grid">
+                                <div class="canvas-card">
+                                    <div class="canvas-card__icon"></div>
+                                    <div class="canvas-card__bar"></div>
+                                    <div class="canvas-card__sub"></div>
+                                </div>
+                                <div class="canvas-card">
+                                    <div class="canvas-card__icon canvas-card__icon--accent"></div>
+                                    <div class="canvas-card__bar"></div>
+                                    <div class="canvas-card__sub"></div>
+                                </div>
+                                <div class="canvas-card">
+                                    <div class="canvas-card__icon"></div>
+                                    <div class="canvas-card__bar"></div>
+                                    <div class="canvas-card__sub"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="phone"><div class="phone__bar"></div><b></b><b></b><div class="phone__btn"></div></div>
                 </div>
             </div>
         </section>
@@ -222,7 +273,7 @@
                         <ul class="checklist">
                             <li data-i18n="sv4.l1">Fixes for display and layout problems</li>
                             <li data-i18n="sv4.l2">Responsive layout fixes for phone and tablet</li>
-                            <li data-i18n="sv4.l3">Repair of broken links and HTML, CSS, or JavaScript bugs</li>
+                            <li data-i18n="sv4.l3">Resolution of layout glitches, interactive bugs, and frontend bottlenecks</li>
                             <li data-i18n="sv4.l4">Scope and limits confirmed after reviewing your site</li>
                         </ul>
                         <a href="https://wa.me/628818227834?text=Hi%20Fatih%2C%20I'd%20like%20to%20discuss%20improving%20my%20existing%20website." class="text-link"
@@ -231,12 +282,12 @@
                     </article>
                 </div>
 
-                <p class="services__more">
-                    <span data-i18n="services.more">Also available: custom business systems and internal tools, such as workflow, approval, and tracking applications.</span>
-                    <a href="https://wa.me/628818227834?text=Hi%20Fatih%2C%20I'd%20like%20to%20discuss%20a%20custom%20business%20system%20or%20internal%20tool." class="text-link"
+                <div class="services__more">
+                    <span data-i18n="services.more">Also available: custom business systems and internal enterprise tools, such as workflow engines, approval systems, telemetry, and tracking applications.</span>
+                    <a href="https://wa.me/628818227834?text=Hi%20Fatih%2C%20I'd%20like%20to%20discuss%20a%20custom%20business%20system%20or%20internal%20tool." class="button button--secondary"
                         data-contact="whatsapp" data-wa-message="contact.whatsapp.systems" data-i18n="services.more.cta"
                         data-track="whatsapp_click" data-track-location="service-systems" target="_blank" rel="noopener noreferrer">Ask about custom systems</a>
-                </p>
+                </div>
             </div>
         </section>
 
@@ -245,52 +296,234 @@
             <div class="container">
                 <header class="section-header">
                     <p class="eyebrow" data-i18n="work.eyebrow">Portfolio</p>
-                    <h2 id="portfolio-title" class="section-title" data-i18n-title="work.title">Proof of what <span>I have built.</span></h2>
-                    <p class="section-description" data-i18n="work.desc">A selection of my work. Some projects are not publicly accessible, so they are described here instead of linked. No live demo is available for them, but I can explain what I built when we discuss your project.</p>
+                    <h2 id="portfolio-title" class="section-title" data-i18n-title="work.title">Engineered systems, <span>built for real operations.</span></h2>
+                    <p class="section-description" data-i18n="work.desc">A curated showcase of real digital systems I have engineered, ranging from internal enterprise operations and compliance platforms to custom client websites and SaaS ventures.</p>
                 </header>
 
+                <!-- Filter Controls -->
+                <div class="project-filter" role="tablist" aria-label="Filter portfolio projects">
+                    <button type="button" class="project-filter__btn is-active" data-filter="all" aria-pressed="true" data-i18n="work.filter.all">All Projects</button>
+                    <button type="button" class="project-filter__btn" data-filter="enterprise" aria-pressed="false" data-i18n="work.filter.enterprise">Internal Enterprise Systems</button>
+                    <button type="button" class="project-filter__btn" data-filter="client" aria-pressed="false" data-i18n="work.filter.client">Client Projects</button>
+                    <button type="button" class="project-filter__btn" data-filter="saas" aria-pressed="false" data-i18n="work.filter.saas">SaaS &amp; Personal Products</button>
+                </div>
+
                 <div class="projects">
-                    <article class="project">
-                        <p class="project__tags"><span class="project__kind" data-i18n="work.kind.work">Work project</span> <span class="project__kind project__kind--muted" data-i18n="work.private">Not publicly linked</span></p>
+                    <!-- Project 1: Client Website (in development) -->
+                    <article class="project" data-category="client">
+                        <p class="project__tags">
+                            <span class="project__kind project__kind--client" data-i18n="work.kind.client">Client Project</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.dev">In Active Development</span>
+                        </p>
                         <h3 class="project__title" data-i18n="w1.title">Company Profile &amp; Business Website</h3>
                         <dl class="project__facts">
-                            <div><dt data-i18n="work.problem">Context</dt><dd data-i18n="w1.problem">A company needed clear business communication and a stronger online presence.</dd></div>
-                            <div><dt data-i18n="work.built">What I built</dt><dd data-i18n="w1.built">A company profile website, business website pages, and a product release system supporting the company's digital presence.</dd></div>
+                            <div><dt data-i18n="work.problem">Context</dt><dd data-i18n="w1.problem">A company requires a clear, credible corporate online presence and structured product release communication.</dd></div>
+                            <div><dt data-i18n="work.built">What I built</dt><dd data-i18n="w1.built">A bespoke corporate profile website and digital showcase platform tailored to the company's brand positioning and client inquiries.</dd></div>
                             <div><dt data-i18n="work.role">My role</dt><dd data-i18n="w1.role">Design and development.</dd></div>
                         </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w1.tag1">Corporate Identity</span>
+                            <span class="project__pill" data-i18n="w1.tag2">Responsive Architecture</span>
+                            <span class="project__pill" data-i18n="w1.tag3">Client Inquiries</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Hi%20Fatih%2C%20I'd%20like%20to%20discuss%20a%20business%20%2F%20company%20profile%20website." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.sv2" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w1" target="_blank" rel="noopener noreferrer">Discuss Similar Project</a>
+                        </div>
                     </article>
 
-                    <article class="project">
-                        <p class="project__tags"><span class="project__kind project__kind--personal" data-i18n="work.kind.personal">Personal project</span></p>
-                        <h3 class="project__title" data-i18n="w2.title">This Portfolio Website</h3>
-                        <dl class="project__facts">
-                            <div><dt data-i18n="work.problem">Context</dt><dd data-i18n="w2.problem">A freelance portfolio needed to explain services clearly and make contact easy for Indonesian and international clients.</dd></div>
-                            <div><dt data-i18n="work.built">What I built</dt><dd data-i18n="w2.built">A responsive static website with Indonesian and English versions, SEO metadata, structured data, and WhatsApp-first contact.</dd></div>
-                            <div><dt data-i18n="work.role">My role</dt><dd data-i18n="w2.role">Design, content structure, and development.</dd></div>
-                        </dl>
-                    </article>
-
-                    <article class="project">
-                        <p class="project__tags"><span class="project__kind" data-i18n="work.kind.work">Work project</span> <span class="project__kind project__kind--muted" data-i18n="work.private">Not publicly linked</span></p>
+                    <!-- Project 2: Enterprise R&D Platform -->
+                    <article class="project" data-category="enterprise">
+                        <p class="project__tags">
+                            <span class="project__kind" data-i18n="work.kind.enterprise">Enterprise Internal Tool</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.confidential">Confidential / NDA</span>
+                        </p>
                         <h3 class="project__title" data-i18n="w3.title">R&amp;D Standardization Platform</h3>
                         <dl class="project__facts">
                             <div><dt data-i18n="work.problem">Context</dt><dd data-i18n="w3.problem">Research and development workflows needed to be standardized across processes and documentation stages.</dd></div>
-                            <div><dt data-i18n="work.built">What I built</dt><dd data-i18n="w3.built">A centralized web platform with a daily work log, transfer protocol, and comparison matrix.</dd></div>
+                            <div><dt data-i18n="work.built">What I built</dt><dd data-i18n="w3.built">A centralized enterprise web platform with a daily work log, transfer protocol, and comparison matrix.</dd></div>
                             <div><dt data-i18n="work.role">My role</dt><dd data-i18n="w3.role">Analysis, design, and development.</dd></div>
                         </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w3.tag1">Workflow Automation</span>
+                            <span class="project__pill" data-i18n="w3.tag2">Audit-Ready Logs</span>
+                            <span class="project__pill" data-i18n="w3.tag3">Enterprise Governance</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Hi%20Fatih%2C%20I'd%20like%20to%20discuss%20a%20custom%20business%20system%20or%20internal%20tool." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.systems" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w3" target="_blank" rel="noopener noreferrer">Discuss Similar Project</a>
+                        </div>
                     </article>
-                </div>
 
-                <div class="others">
-                    <h3 class="others__title" data-i18n="work.others">More web systems I have built</h3>
-                    <ul class="others__list">
-                        <li data-i18n="work.o1">Instrument Logging System</li>
-                        <li data-i18n="work.o2">Employee Operations Systems (leave, shift exchange, recruitment)</li>
-                        <li data-i18n="work.o3">Product Registration Tracking</li>
-                        <li data-i18n="work.o4">Warehouse Temperature Mapping</li>
-                        <li data-i18n="work.o5">E-CPB System (in development)</li>
-                    </ul>
-                    <p class="others__note" data-i18n="work.note">Want to know more about a specific project? Ask me and I can explain what I built and my role.</p>
+                    <!-- Project 3: Sistem Pencatatan Instrumen -->
+                    <article class="project" data-category="enterprise">
+                        <p class="project__tags">
+                            <span class="project__kind" data-i18n="work.kind.enterprise">Enterprise Internal Tool</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.confidential">Confidential / NDA</span>
+                        </p>
+                        <h3 class="project__title" data-i18n="w5.title">Instrument Logging System</h3>
+                        <dl class="project__facts">
+                            <div><dt data-i18n="work.problem">Context</dt><dd data-i18n="w5.problem">Laboratory and operational instruments required reliable usage logs, calibration tracking, and audit-ready maintenance records.</dd></div>
+                            <div><dt data-i18n="work.built">What I built</dt><dd data-i18n="w5.built">A dedicated digital logging system to track instrument status, log calibration cycles, record usage history, and prevent downtime.</dd></div>
+                            <div><dt data-i18n="work.role">My role</dt><dd data-i18n="w5.role">System design and development.</dd></div>
+                        </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w5.tag1">Instrument Tracking</span>
+                            <span class="project__pill" data-i18n="w5.tag2">Calibration Logs</span>
+                            <span class="project__pill" data-i18n="w5.tag3">Audit Trail</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Hi%20Fatih%2C%20I'd%20like%20to%20discuss%20a%20custom%20business%20system%20or%20internal%20tool." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.systems" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w5" target="_blank" rel="noopener noreferrer">Discuss Similar Project</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: Sistem Operasional Karyawan -->
+                    <article class="project" data-category="enterprise">
+                        <p class="project__tags">
+                            <span class="project__kind" data-i18n="work.kind.enterprise">Enterprise Internal Tool</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.confidential">Confidential / NDA</span>
+                        </p>
+                        <h3 class="project__title" data-i18n="w6.title">Employee Operations Hub</h3>
+                        <dl class="project__facts">
+                            <div><dt data-i18n="work.problem">Context</dt><dd data-i18n="w6.problem">Coordinating employee leave authorizations, 24/7 shift exchanges, and hiring pipelines caused administrative bottlenecks.</dd></div>
+                            <div><dt data-i18n="work.built">What I built</dt><dd data-i18n="w6.built">An integrated operational platform managing rule-based shift swapping, multi-tiered leave approvals, and recruitment tracking.</dd></div>
+                            <div><dt data-i18n="work.role">My role</dt><dd data-i18n="w6.role">Workflow logic and development.</dd></div>
+                        </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w6.tag1">Shift Exchange Logic</span>
+                            <span class="project__pill" data-i18n="w6.tag2">Leave Approvals</span>
+                            <span class="project__pill" data-i18n="w6.tag3">Recruitment Pipeline</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Hi%20Fatih%2C%20I'd%20like%20to%20discuss%20a%20custom%20business%20system%20or%20internal%20tool." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.systems" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w6" target="_blank" rel="noopener noreferrer">Discuss Similar Project</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 5: Pelacakan Registrasi Produk -->
+                    <article class="project" data-category="enterprise">
+                        <p class="project__tags">
+                            <span class="project__kind" data-i18n="work.kind.enterprise">Enterprise Internal Tool</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.confidential">Confidential / NDA</span>
+                        </p>
+                        <h3 class="project__title" data-i18n="w7.title">Product Registration Tracking</h3>
+                        <dl class="project__facts">
+                            <div><dt data-i18n="work.problem">Context</dt><dd data-i18n="w7.problem">Tracking regulatory product submissions and multi-stage approval milestones across external authorities was difficult to monitor.</dd></div>
+                            <div><dt data-i18n="work.built">What I built</dt><dd data-i18n="w7.built">A centralized compliance tracking system monitoring registration progress, document requirements, deadlines, and authority feedback.</dd></div>
+                            <div><dt data-i18n="work.role">My role</dt><dd data-i18n="w7.role">System architecture and development.</dd></div>
+                        </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w7.tag1">Regulatory Milestones</span>
+                            <span class="project__pill" data-i18n="w7.tag2">Status Dashboard</span>
+                            <span class="project__pill" data-i18n="w7.tag3">Compliance Timeline</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Hi%20Fatih%2C%20I'd%20like%20to%20discuss%20a%20custom%20business%20system%20or%20internal%20tool." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.systems" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w7" target="_blank" rel="noopener noreferrer">Discuss Similar Project</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 6: Pemetaan Suhu Gudang -->
+                    <article class="project" data-category="enterprise">
+                        <p class="project__tags">
+                            <span class="project__kind" data-i18n="work.kind.enterprise">Enterprise Internal Tool</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.confidential">Confidential / NDA</span>
+                        </p>
+                        <h3 class="project__title" data-i18n="w8.title">Warehouse Temperature Mapping</h3>
+                        <dl class="project__facts">
+                            <div><dt data-i18n="work.problem">Context</dt><dd data-i18n="w8.problem">Pharmaceutical storage requires continuous temperature monitoring and zone mapping to prevent product degradation.</dd></div>
+                            <div><dt data-i18n="work.built">What I built</dt><dd data-i18n="w8.built">A multi-zone temperature monitoring and mapping application with threshold anomaly logging, sensor zone tracking, and compliance reports.</dd></div>
+                            <div><dt data-i18n="work.role">My role</dt><dd data-i18n="w8.role">Requirements analysis and development.</dd></div>
+                        </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w8.tag1">Multi-Zone Mapping</span>
+                            <span class="project__pill" data-i18n="w8.tag2">Threshold Alerts</span>
+                            <span class="project__pill" data-i18n="w8.tag3">Compliance Reports</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Hi%20Fatih%2C%20I'd%20like%20to%20discuss%20a%20custom%20business%20system%20or%20internal%20tool." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.systems" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w8" target="_blank" rel="noopener noreferrer">Discuss Similar Project</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 7: Sistem E-CPB -->
+                    <article class="project" data-category="enterprise">
+                        <p class="project__tags">
+                            <span class="project__kind" data-i18n="work.kind.enterprise">Enterprise Internal Tool</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.confidential">Confidential / NDA</span>
+                        </p>
+                        <h3 class="project__title" data-i18n="w9.title">E-CPB Digital Compliance System</h3>
+                        <dl class="project__facts">
+                            <div><dt data-i18n="work.problem">Context</dt><dd data-i18n="w9.problem">Good Manufacturing Practice (CPB/GMP) protocols require strict digital batch documentation, verification, and procedural control.</dd></div>
+                            <div><dt data-i18n="work.built">What I built</dt><dd data-i18n="w9.built">A digital manufacturing compliance platform digitizing production batch records, step-by-step verification, and GMP procedural governance.</dd></div>
+                            <div><dt data-i18n="work.role">My role</dt><dd data-i18n="w9.role">Architecture and development.</dd></div>
+                        </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w9.tag1">GMP Compliance</span>
+                            <span class="project__pill" data-i18n="w9.tag2">Batch Records</span>
+                            <span class="project__pill" data-i18n="w9.tag3">Procedural Control</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Hi%20Fatih%2C%20I'd%20like%20to%20discuss%20a%20custom%20business%20system%20or%20internal%20tool." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.systems" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w9" target="_blank" rel="noopener noreferrer">Discuss Similar Project</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 8: SaaS Affiliate Academy -->
+                    <article class="project" data-category="saas">
+                        <p class="project__tags">
+                            <span class="project__kind project__kind--saas" data-i18n="work.kind.saas">SaaS Platform</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.dev">In Active Development</span>
+                        </p>
+                        <h3 class="project__title" data-i18n="w4.title">Affiliate Academy Platform</h3>
+                        <dl class="project__facts">
+                            <div><dt data-i18n="work.problem">Context</dt><dd data-i18n="w4.problem">Affiliate marketers need an integrated digital workspace and structured interactive learning environment instead of scattered tools.</dd></div>
+                            <div><dt data-i18n="work.built">What I built</dt><dd data-i18n="w4.built">An interactive educational SaaS and workspace platform (affiliateacademy.site) featuring 8 practical workspaces, curriculum modules, and tiered access management.</dd></div>
+                            <div><dt data-i18n="work.role">My role</dt><dd data-i18n="w4.role">Founder, system architecture, and development.</dd></div>
+                        </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w4.tag1">Interactive Workspaces</span>
+                            <span class="project__pill" data-i18n="w4.tag2">Multi-Tier Access</span>
+                            <span class="project__pill" data-i18n="w4.tag3">Cloud-Native SaaS</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Hi%20Fatih%2C%20I'd%20like%20to%20discuss%20developing%20a%20SaaS%20or%20digital%20product." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.saas" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w4" target="_blank" rel="noopener noreferrer">Discuss Similar Project</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 9: This Portfolio Website -->
+                    <article class="project" data-category="saas">
+                        <p class="project__tags">
+                            <span class="project__kind project__kind--personal" data-i18n="work.kind.personal">Personal Platform</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.production">Live Production</span>
+                        </p>
+                        <h3 class="project__title" data-i18n="w2.title">This Portfolio Website</h3>
+                        <dl class="project__facts">
+                            <div><dt data-i18n="work.problem">Context</dt><dd data-i18n="w2.problem">A freelance portfolio needed to explain services clearly and make contact easy for Indonesian and international clients.</dd></div>
+                            <div><dt data-i18n="work.built">What I built</dt><dd data-i18n="w2.built">A production-grade, zero-bloat static web platform featuring instant dual-language switching, dynamic dark/light theme engine, and direct WhatsApp acquisition workflows.</dd></div>
+                            <div><dt data-i18n="work.role">My role</dt><dd data-i18n="w2.role">Design, content structure, and development.</dd></div>
+                        </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w2.tag1">Zero-Bloat Performance</span>
+                            <span class="project__pill" data-i18n="w2.tag2">Dynamic Dark/Light Engine</span>
+                            <span class="project__pill" data-i18n="w2.tag3">Bilingual (ID/EN)</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Hi%20Fatih%2C%20I'd%20like%20to%20discuss%20a%20portfolio%20%2F%20personal%20brand%20website." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.sv3" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w2" target="_blank" rel="noopener noreferrer">Discuss Similar Project</a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -326,14 +559,14 @@
                 <div class="about__content">
                     <p class="eyebrow" data-i18n="about.eyebrow">About</p>
                     <h2 id="about-title" class="section-title" data-i18n-title="about.title">Hi, I'm Fatih. <span>I build websites that do their job.</span></h2>
-                    <p data-i18n="about.p1">I'm a fullstack developer who builds websites and web applications with HTML, CSS, and JavaScript, focused on clarity, responsiveness, and usability.</p>
-                    <p data-i18n="about.p2">I have designed and developed digital systems for pharmaceutical, laboratory, HR, regulatory, warehouse, and business operations. That experience taught me to start with the real problem, not the template.</p>
+                    <p data-i18n="about.p1">I'm a fullstack developer and digital solutions engineer creating high-performance websites and bespoke business applications, engineered for clarity, speed, and real operational impact.</p>
+                    <p data-i18n="about.p2">I have designed and developed mission-critical digital systems for pharmaceutical, laboratory, HR, regulatory, warehouse, and business operations. That experience taught me to start with the real problem, not the template.</p>
                     <p data-i18n="about.p3">For website projects, that means asking who your visitors are and what you want them to do, then building a site that makes it easy. I work remotely and communicate in Bahasa Indonesia and English.</p>
 
                     <dl class="stats">
-                        <div><dt>HTML · CSS · JS</dt><dd data-i18n="stat1">Core stack</dd></div>
-                        <div><dt>Remote</dt><dd data-i18n="stat2">Projects handled online</dd></div>
-                        <div><dt>ID · EN</dt><dd data-i18n="stat3">Languages</dd></div>
+                        <div><dt data-i18n="stat1.val">Production Grade</dt><dd data-i18n="stat1">Custom Architecture</dd></div>
+                        <div><dt data-i18n="stat2.val">Global Delivery</dt><dd data-i18n="stat2">Projects handled online</dd></div>
+                        <div><dt data-i18n="stat3.val">ID · EN</dt><dd data-i18n="stat3">Languages</dd></div>
                     </dl>
 
                     <a href="https://wa.me/628818227834?text=Hi%20Fatih%2C%20I'm%20interested%20in%20your%20freelance%20services%20and%20would%20like%20to%20discuss%20my%20website%20project."
@@ -361,7 +594,7 @@
                     <details class="faq__item"><summary data-i18n="q2">What kinds of websites do you build?</summary><p data-i18n="a2">Landing pages, business and company profile websites, and portfolio or personal brand websites. I can also improve an existing website, and I build custom web systems and internal tools.</p></details>
                     <details class="faq__item"><summary data-i18n="q3">How long does a project take?</summary><p data-i18n="a3">It depends on the number of pages, features, and how ready your content is. Once the scope is clear, I give you a realistic timeline before we start.</p></details>
                     <details class="faq__item"><summary data-i18n="q4">How much does a website cost?</summary><p data-i18n="a4">I do not list fixed prices because projects differ in pages, features, and content. Share your needs on WhatsApp and I will send an estimate based on the scope.</p></details>
-                    <details class="faq__item"><summary data-i18n="q5">Can you improve or redesign my existing website?</summary><p data-i18n="a5">Yes, for common issues such as display bugs, responsiveness, broken links, and HTML, CSS, or JavaScript problems. I review the site first, then tell you what I can fix and what would need a different approach.</p></details>
+                    <details class="faq__item"><summary data-i18n="q5">Can you improve or redesign my existing website?</summary><p data-i18n="a5">Yes, for display issues, responsiveness flaws, broken interactions, and performance bottlenecks. I conduct an initial technical assessment first, then clarify the scope of fixes and recommend optimal enhancements.</p></details>
                     <details class="faq__item"><summary data-i18n="q6">Do you work with clients remotely?</summary><p data-i18n="a6">Yes. Projects are discussed and managed online, mainly through WhatsApp, with progress shared along the way.</p></details>
                 </div>
             </div>

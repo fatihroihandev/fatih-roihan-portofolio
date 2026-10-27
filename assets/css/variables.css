@@ -1,39 +1,136 @@
 /* =========================================
-   DESIGN TOKENS
+   DESIGN TOKENS - $1,000+ EXECUTIVE SUITE
 ========================================= */
 
-:root {
-    /* Color */
-    --color-background: #FAF8F4;
-    --color-surface: #FFFFFF;
-    --color-tint: #F1EEE7;
-    --color-border: #E4DFD3;
-    --color-text-primary: #14181F;
-    --color-text-secondary: #4A5160;
-    --color-accent: #1D4ED8;
-    --color-accent-hover: #1E40AF;
-    --color-accent-soft: #E8EEFC;
-    --color-ink: #11151C;
-    --color-on-ink: #F4F1EA;
-    --color-on-ink-muted: #B8BDC7;
-    --color-focus: #F59E0B;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
-    /* Type */
-    --font-sans: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-    --font-display: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+:root {
+    /* Color Palette - Premium Executive Light */
+    --color-background: #F8FAFC;
+    --color-surface: #FFFFFF;
+    --color-surface-hover: #F1F5F9;
+    --color-tint: #F1F5F9;
+    --color-border: #E2E8F0;
+    --color-border-subtle: #EDF2F7;
+    --color-border-glow: rgba(37, 99, 235, 0.18);
+    --color-text-primary: #0F172A;
+    --color-text-secondary: #475569;
+    --color-text-muted: #64748B;
+    
+    --color-accent: #2563EB;
+    --color-accent-hover: #1D4ED8;
+    --color-accent-soft: #EFF6FF;
+    --color-accent-glow: rgba(37, 99, 235, 0.12);
+    --color-accent-gradient: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+    
+    --color-ink: #0F172A;
+    --color-on-ink: #F8FAFC;
+    --color-on-ink-muted: #94A3B8;
+    --color-focus: #2563EB;
+
+    /* Category & Status Badges */
+    --color-badge-enterprise-bg: #EFF6FF;
+    --color-badge-enterprise-text: #1D4ED8;
+    --color-badge-enterprise-border: #BFDBFE;
+
+    --color-badge-client-bg: #F0FDF4;
+    --color-badge-client-text: #15803D;
+    --color-badge-client-border: #BBF7D0;
+
+    --color-badge-saas-bg: #FAF5FF;
+    --color-badge-saas-text: #7E22CE;
+    --color-badge-saas-border: #E9D5FF;
+
+    --color-badge-muted-bg: #F1F5F9;
+    --color-badge-muted-text: #475569;
+    --color-badge-muted-border: #E2E8F0;
+
+    --color-grid-dot: rgba(15, 23, 42, 0.05);
+
+    /* Card Shadows & Elevation */
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    --shadow-premium: 0 20px 35px -10px rgba(15, 23, 42, 0.09), 0 1px 3px rgba(0, 0, 0, 0.04);
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(226, 232, 240, 0.8);
+
+    /* Typography */
+    --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-display: "Space Grotesk", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    --text-xs: 0.8125rem;
     --text-sm: 0.9375rem;
     --text-base: 1.0625rem;
     --text-lg: 1.1875rem;
+    --text-xl: 1.35rem;
 
-    /* Space & shape */
+    /* Space & Shape */
     --space-1: 0.5rem;
     --space-2: 1rem;
     --space-3: 1.5rem;
     --space-4: 2.5rem;
-    --space-5: 4rem;
-    --space-6: 6rem;
-    --radius-sm: 8px;
-    --radius-md: 14px;
-    --container: 1120px;
-    --header-height: 68px;
+    --space-5: 4.5rem;
+    --space-6: 6.5rem;
+    --radius-xs: 6px;
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-full: 9999px;
+    --container: 1140px;
+    --header-height: 72px;
+}
+
+/* =========================================
+   DARK THEME - LUXURY OBSIDIAN / CHARCOAL
+========================================= */
+
+[data-theme="dark"] {
+    --color-background: #090D16;
+    --color-surface: #111827;
+    --color-surface-hover: #162032;
+    --color-tint: #0D1424;
+    --color-border: #1E293B;
+    --color-border-subtle: #192237;
+    --color-border-glow: rgba(59, 130, 246, 0.3);
+    --color-text-primary: #F8FAFC;
+    --color-text-secondary: #94A3B8;
+    --color-text-muted: #64748B;
+
+    --color-accent: #3B82F6;
+    --color-accent-hover: #60A5FA;
+    --color-accent-soft: rgba(59, 130, 246, 0.12);
+    --color-accent-glow: rgba(59, 130, 246, 0.2);
+    --color-accent-gradient: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+
+    --color-ink: #050811;
+    --color-on-ink: #F1F5F9;
+    --color-on-ink-muted: #94A3B8;
+    --color-focus: #3B82F6;
+
+    /* Badges in Dark */
+    --color-badge-enterprise-bg: rgba(59, 130, 246, 0.12);
+    --color-badge-enterprise-text: #93C5FD;
+    --color-badge-enterprise-border: rgba(59, 130, 246, 0.3);
+
+    --color-badge-client-bg: rgba(34, 197, 94, 0.12);
+    --color-badge-client-text: #86EFAC;
+    --color-badge-client-border: rgba(34, 197, 94, 0.3);
+
+    --color-badge-saas-bg: rgba(168, 85, 247, 0.12);
+    --color-badge-saas-text: #D8B4FE;
+    --color-badge-saas-border: rgba(168, 85, 247, 0.3);
+
+    --color-badge-muted-bg: rgba(148, 163, 184, 0.1);
+    --color-badge-muted-text: #CBD5E1;
+    --color-badge-muted-border: rgba(148, 163, 184, 0.2);
+
+    --color-grid-dot: rgba(255, 255, 255, 0.05);
+
+    /* Shadows & Glass in Dark */
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 10px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 12px 30px -5px rgba(0, 0, 0, 0.6);
+    --shadow-premium: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+    --glass-bg: rgba(17, 24, 39, 0.85);
+    --glass-border: rgba(30, 41, 59, 0.8);
 }

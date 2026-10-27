@@ -7,3 +7,16 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Dependencies & Testing
+node_modules/
+package.json
+package-lock.json
+tests/
+test-results/
+playwright-report/
+playwright.config.*
+*.spec.js
+*.spec.mjs
+test-site.mjs
+test-results-*.png

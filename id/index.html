@@ -10,7 +10,7 @@
         content="Freelance web developer untuk landing page, website company profile, dan website portofolio yang responsif. Diskusikan proyek Anda via WhatsApp.">
     <meta name="author" content="Fatih Roihan">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#FAF8F4">
+    <meta name="theme-color" content="#F8FAFC">
 
     <link rel="canonical" href="https://fatihroihan.site/id/">
     <link rel="alternate" hreflang="en" href="https://fatihroihan.site/">
@@ -32,6 +32,16 @@
     <meta property="og:locale:alternate" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
 
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem('fr-theme');
+                var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -45,7 +55,7 @@
                 "jobTitle": "Freelance Web Developer",
                 "description": "Freelance web developer untuk landing page, website company profile, dan website portofolio yang responsif.",
                 "knowsLanguage": ["id", "en"],
-                "knowsAbout": ["Web development", "Landing pages", "Company profile websites", "Responsive web design"],
+                "knowsAbout": ["Web Development", "Enterprise Web Systems", "Custom Business Applications", "SaaS Architecture", "High-Converting Landing Pages"],
                 "sameAs": [
                     "https://www.linkedin.com/in/fatih-roihan-909173308",
                     "https://github.com/fatihroihandev"
@@ -90,9 +100,16 @@
                     <button type="button" class="lang-switch__option" data-lang-option="id" aria-pressed="true" lang="id">ID</button>
                     <button type="button" class="lang-switch__option" data-lang-option="en" aria-pressed="false" lang="en">EN</button>
                 </div>
+
+                <button type="button" class="theme-toggle" aria-label="Ganti tema gelap dan terang" data-i18n-attr="aria-label:theme.label" title="Toggle theme">
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+
                 <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20tertarik%20dengan%20jasa%20freelance%20Anda.%20Saya%20ingin%20mendiskusikan%20kebutuhan%20proyek%20website%20saya."
                     class="button button--primary navbar__cta" data-contact="whatsapp" data-i18n="nav.cta"
                     data-track="whatsapp_click" data-track-location="navbar" target="_blank" rel="noopener noreferrer">Chat WhatsApp</a>
+
                 <button class="navbar__toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
                     aria-controls="primary-navigation">
                     <span></span><span></span><span></span>
@@ -107,8 +124,12 @@
         <section id="hero" class="hero" aria-labelledby="hero-title">
             <div class="container hero__container">
                 <div class="hero__content">
-                    <p class="eyebrow" data-i18n="hero.eyebrow">Freelance Web Developer</p>
-                    <h1 id="hero-title" class="hero__title" data-i18n-title="hero.title">Website Profesional untuk <span>Bisnis dan Personal Brand.</span></h1>
+                    <div class="status-pill">
+                        <span class="status-dot"></span>
+                        <span data-i18n="hero.badge">Terbuka untuk Proyek Terpilih &amp; Sistem Enterprise</span>
+                    </div>
+                    <p class="eyebrow" data-i18n="hero.eyebrow">Freelance Web Developer &amp; Digital Solutions Engineer</p>
+                    <h1 id="hero-title" class="hero__title" data-i18n-title="hero.title">Website Berperforma Tinggi &amp; <span>Sistem Bisnis Kustom.</span></h1>
                     <p class="hero__description" data-i18n="hero.desc">Saya membuat website yang responsif, cepat, dan jelas, mulai dari landing page, company profile, hingga website portofolio, sesuai pesan yang ingin disampaikan bisnis atau personal brand Anda.</p>
 
                     <div class="hero__actions">
@@ -120,26 +141,56 @@
                     <p class="hero__note" data-i18n="hero.note">Tanpa brief teknis. Cukup ceritakan kebutuhan Anda.</p>
 
                     <ul class="hero__proof">
-                        <li data-i18n="hero.p1">Berpengalaman membangun sistem digital nyata</li>
-                        <li data-i18n="hero.p2">Layout responsif, mobile-first</li>
+                        <li data-i18n="hero.p1">Berpengalaman membangun sistem digital enterprise</li>
+                        <li data-i18n="hero.p2">Performa tinggi &amp; layout responsif</li>
                         <li data-i18n="hero.p3">Bahasa Indonesia &amp; Inggris</li>
                     </ul>
                 </div>
 
-                <div class="hero__visual" role="img" aria-label="Ilustrasi tata letak website"
+                <div class="hero__visual" role="img" aria-label="Ilustrasi tata letak website modern"
                     data-i18n-attr="aria-label:hero.mock.label">
-                    <div class="browser">
-                        <div class="browser__bar"><i></i><i></i><i></i><span></span></div>
-                        <div class="browser__body">
-                            <div class="browser__nav"><b></b><span></span><span></span><span></span></div>
-                            <div class="browser__hero">
-                                <div class="browser__lines"><b></b><b></b><em></em><u></u></div>
-                                <div class="browser__shape"></div>
+                    <div class="browser-mockup">
+                        <div class="browser-mockup__bar">
+                            <div class="browser-mockup__dots"><i></i><i></i><i></i></div>
+                            <div class="browser-mockup__address">
+                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                <span>fatihroihan.site</span>
                             </div>
-                            <div class="browser__cards"><div></div><div></div><div></div></div>
+                            <div class="browser-mockup__status"><span class="status-indicator"></span></div>
+                        </div>
+                        <div class="browser-mockup__canvas">
+                            <div class="canvas-header">
+                                <span class="canvas-brand"></span>
+                                <div class="canvas-menu"><span></span><span></span><span></span></div>
+                            </div>
+                            <div class="canvas-hero">
+                                <span class="canvas-tag"></span>
+                                <div class="canvas-headline"></div>
+                                <div class="canvas-subline"></div>
+                                <div class="canvas-ctas">
+                                    <span class="canvas-cta canvas-cta--primary"></span>
+                                    <span class="canvas-cta canvas-cta--outline"></span>
+                                </div>
+                            </div>
+                            <div class="canvas-grid">
+                                <div class="canvas-card">
+                                    <div class="canvas-card__icon"></div>
+                                    <div class="canvas-card__bar"></div>
+                                    <div class="canvas-card__sub"></div>
+                                </div>
+                                <div class="canvas-card">
+                                    <div class="canvas-card__icon canvas-card__icon--accent"></div>
+                                    <div class="canvas-card__bar"></div>
+                                    <div class="canvas-card__sub"></div>
+                                </div>
+                                <div class="canvas-card">
+                                    <div class="canvas-card__icon"></div>
+                                    <div class="canvas-card__bar"></div>
+                                    <div class="canvas-card__sub"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="phone"><div class="phone__bar"></div><b></b><b></b><div class="phone__btn"></div></div>
                 </div>
             </div>
         </section>
@@ -222,7 +273,7 @@
                         <ul class="checklist">
                             <li data-i18n="sv4.l1">Perbaikan masalah tampilan dan layout</li>
                             <li data-i18n="sv4.l2">Perbaikan layout responsif untuk ponsel dan tablet</li>
-                            <li data-i18n="sv4.l3">Perbaikan tautan rusak serta bug HTML, CSS, atau JavaScript</li>
+                            <li data-i18n="sv4.l3">Resolusi kendala tata letak, bug antarmuka, dan performa website</li>
                             <li data-i18n="sv4.l4">Ruang lingkup dan batasannya dipastikan setelah meninjau website Anda</li>
                         </ul>
                         <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20perbaikan%20website%20saya%20yang%20sudah%20ada." class="text-link"
@@ -231,12 +282,12 @@
                     </article>
                 </div>
 
-                <p class="services__more">
-                    <span data-i18n="services.more">Tersedia juga: sistem bisnis kustom dan internal tools, seperti aplikasi alur kerja, persetujuan, dan pelacakan.</span>
-                    <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20sistem%20bisnis%20kustom%20atau%20internal%20tool." class="text-link"
+                <div class="services__more">
+                    <span data-i18n="services.more">Tersedia juga: sistem bisnis kustom dan internal tools enterprise, seperti engine alur kerja, persetujuan, telemetri, dan pelacakan.</span>
+                    <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20sistem%20bisnis%20kustom%20atau%20internal%20tool." class="button button--secondary"
                         data-contact="whatsapp" data-wa-message="contact.whatsapp.systems" data-i18n="services.more.cta"
                         data-track="whatsapp_click" data-track-location="service-systems" target="_blank" rel="noopener noreferrer">Tanyakan sistem kustom</a>
-                </p>
+                </div>
             </div>
         </section>
 
@@ -245,52 +296,234 @@
             <div class="container">
                 <header class="section-header">
                     <p class="eyebrow" data-i18n="work.eyebrow">Portofolio</p>
-                    <h2 id="portfolio-title" class="section-title" data-i18n-title="work.title">Bukti dari apa yang <span>telah saya bangun.</span></h2>
-                    <p class="section-description" data-i18n="work.desc">Pilihan pekerjaan saya. Beberapa proyek tidak dapat diakses publik, sehingga dijelaskan di sini dan tidak ditautkan. Demo langsung tidak tersedia untuk proyek tersebut, tetapi saya dapat menjelaskan apa yang saya bangun saat kita membahas proyek Anda.</p>
+                    <h2 id="portfolio-title" class="section-title" data-i18n-title="work.title">Sistem nyata teruji, <span>dibangun untuk operasional.</span></h2>
+                    <p class="section-description" data-i18n="work.desc">Pilihan hasil rekayasa sistem nyata yang telah saya bangun, mulai dari platform operasional &amp; kepatuhan internal enterprise hingga website klien dan produk SaaS.</p>
                 </header>
 
+                <!-- Filter Controls -->
+                <div class="project-filter" role="tablist" aria-label="Filter portfolio projects">
+                    <button type="button" class="project-filter__btn is-active" data-filter="all" aria-pressed="true" data-i18n="work.filter.all">Semua Proyek</button>
+                    <button type="button" class="project-filter__btn" data-filter="enterprise" aria-pressed="false" data-i18n="work.filter.enterprise">Sistem Internal Perusahaan</button>
+                    <button type="button" class="project-filter__btn" data-filter="client" aria-pressed="false" data-i18n="work.filter.client">Proyek Klien</button>
+                    <button type="button" class="project-filter__btn" data-filter="saas" aria-pressed="false" data-i18n="work.filter.saas">SaaS &amp; Produk Pribadi</button>
+                </div>
+
                 <div class="projects">
-                    <article class="project">
-                        <p class="project__tags"><span class="project__kind" data-i18n="work.kind.work">Proyek kerja</span> <span class="project__kind project__kind--muted" data-i18n="work.private">Tidak ditautkan publik</span></p>
+                    <!-- Project 1: Client Website (in development) -->
+                    <article class="project" data-category="client">
+                        <p class="project__tags">
+                            <span class="project__kind project__kind--client" data-i18n="work.kind.client">Proyek Klien</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.dev">Dalam Tahap Pengembangan</span>
+                        </p>
                         <h3 class="project__title" data-i18n="w1.title">Company Profile &amp; Website Bisnis</h3>
                         <dl class="project__facts">
-                            <div><dt data-i18n="work.problem">Konteks</dt><dd data-i18n="w1.problem">Sebuah perusahaan membutuhkan komunikasi bisnis yang jelas dan kehadiran online yang lebih kuat.</dd></div>
-                            <div><dt data-i18n="work.built">Yang saya bangun</dt><dd data-i18n="w1.built">Website company profile, halaman website bisnis, dan sistem product release yang mendukung kehadiran digital perusahaan.</dd></div>
+                            <div><dt data-i18n="work.problem">Konteks</dt><dd data-i18n="w1.problem">Sebuah perusahaan membutuhkan kehadiran online yang kredibel, komunikasi bisnis yang jelas, dan penyampaian rilis produk yang terstruktur.</dd></div>
+                            <div><dt data-i18n="work.built">Yang saya bangun</dt><dd data-i18n="w1.built">Website profil perusahaan kustom dan platform showcase digital yang disesuaikan dengan positioning brand serta kebutuhan interaksi klien.</dd></div>
                             <div><dt data-i18n="work.role">Peran saya</dt><dd data-i18n="w1.role">Desain dan pengembangan.</dd></div>
                         </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w1.tag1">Identitas Korporat</span>
+                            <span class="project__pill" data-i18n="w1.tag2">Arsitektur Responsif</span>
+                            <span class="project__pill" data-i18n="w1.tag3">Integrasi Kontak Klien</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20website%20bisnis%20%2F%20company%20profile." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.sv2" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w1" target="_blank" rel="noopener noreferrer">Diskusikan Proyek Serupa</a>
+                        </div>
                     </article>
 
-                    <article class="project">
-                        <p class="project__tags"><span class="project__kind project__kind--personal" data-i18n="work.kind.personal">Proyek pribadi</span></p>
-                        <h3 class="project__title" data-i18n="w2.title">Website Portofolio Ini</h3>
-                        <dl class="project__facts">
-                            <div><dt data-i18n="work.problem">Konteks</dt><dd data-i18n="w2.problem">Portofolio freelance perlu menjelaskan layanan dengan jelas dan memudahkan klien Indonesia maupun internasional untuk menghubungi.</dd></div>
-                            <div><dt data-i18n="work.built">Yang saya bangun</dt><dd data-i18n="w2.built">Website statis responsif dengan versi Indonesia dan Inggris, metadata SEO, structured data, dan kontak berbasis WhatsApp.</dd></div>
-                            <div><dt data-i18n="work.role">Peran saya</dt><dd data-i18n="w2.role">Desain, struktur konten, dan pengembangan.</dd></div>
-                        </dl>
-                    </article>
-
-                    <article class="project">
-                        <p class="project__tags"><span class="project__kind" data-i18n="work.kind.work">Proyek kerja</span> <span class="project__kind project__kind--muted" data-i18n="work.private">Tidak ditautkan publik</span></p>
+                    <!-- Project 2: Enterprise R&D Platform -->
+                    <article class="project" data-category="enterprise">
+                        <p class="project__tags">
+                            <span class="project__kind" data-i18n="work.kind.enterprise">Sistem Internal Enterprise</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.confidential">Konfidensial / NDA</span>
+                        </p>
                         <h3 class="project__title" data-i18n="w3.title">Platform Standardisasi R&amp;D</h3>
                         <dl class="project__facts">
                             <div><dt data-i18n="work.problem">Konteks</dt><dd data-i18n="w3.problem">Alur kerja riset dan pengembangan perlu distandarisasi di berbagai proses dan tahap dokumentasi.</dd></div>
-                            <div><dt data-i18n="work.built">Yang saya bangun</dt><dd data-i18n="w3.built">Platform web terpusat dengan daily work log, transfer protocol, dan comparison matrix.</dd></div>
+                            <div><dt data-i18n="work.built">Yang saya bangun</dt><dd data-i18n="w3.built">Platform web enterprise terpusat dengan daily work log, transfer protocol, dan comparison matrix.</dd></div>
                             <div><dt data-i18n="work.role">Peran saya</dt><dd data-i18n="w3.role">Analisis, desain, dan pengembangan.</dd></div>
                         </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w3.tag1">Otomasi Alur Kerja</span>
+                            <span class="project__pill" data-i18n="w3.tag2">Log Siap Audit</span>
+                            <span class="project__pill" data-i18n="w3.tag3">Tata Kelola Enterprise</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20sistem%20bisnis%20kustom%20atau%20internal%20tool." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.systems" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w3" target="_blank" rel="noopener noreferrer">Diskusikan Proyek Serupa</a>
+                        </div>
                     </article>
-                </div>
 
-                <div class="others">
-                    <h3 class="others__title" data-i18n="work.others">Sistem web lain yang pernah saya bangun</h3>
-                    <ul class="others__list">
-                        <li data-i18n="work.o1">Sistem Pencatatan Instrumen</li>
-                        <li data-i18n="work.o2">Sistem Operasional Karyawan (cuti, tukar shift, rekrutmen)</li>
-                        <li data-i18n="work.o3">Pelacakan Registrasi Produk</li>
-                        <li data-i18n="work.o4">Pemetaan Suhu Gudang</li>
-                        <li data-i18n="work.o5">Sistem E-CPB (dalam pengembangan)</li>
-                    </ul>
-                    <p class="others__note" data-i18n="work.note">Ingin tahu lebih lanjut tentang proyek tertentu? Tanyakan kepada saya, dan saya akan menjelaskan apa yang saya bangun dan peran saya.</p>
+                    <!-- Project 3: Sistem Pencatatan Instrumen -->
+                    <article class="project" data-category="enterprise">
+                        <p class="project__tags">
+                            <span class="project__kind" data-i18n="work.kind.enterprise">Sistem Internal Enterprise</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.confidential">Konfidensial / NDA</span>
+                        </p>
+                        <h3 class="project__title" data-i18n="w5.title">Sistem Pencatatan Instrumen</h3>
+                        <dl class="project__facts">
+                            <div><dt data-i18n="work.problem">Konteks</dt><dd data-i18n="w5.problem">Instrumen operasional dan laboratorium membutuhkan pencatatan penggunaan yang andal, pelacakan kalibrasi, dan riwayat pemeliharaan siap audit.</dd></div>
+                            <div><dt data-i18n="work.built">Yang saya bangun</dt><dd data-i18n="w5.built">Sistem pencatatan digital khusus untuk memantau status instrumen, mencatat siklus kalibrasi, riwayat penggunaan, dan mencegah downtime.</dd></div>
+                            <div><dt data-i18n="work.role">Peran saya</dt><dd data-i18n="w5.role">Desain sistem dan pengembangan.</dd></div>
+                        </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w5.tag1">Pelacakan Instrumen</span>
+                            <span class="project__pill" data-i18n="w5.tag2">Log Kalibrasi</span>
+                            <span class="project__pill" data-i18n="w5.tag3">Audit Trail</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20sistem%20bisnis%20kustom%20atau%20internal%20tool." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.systems" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w5" target="_blank" rel="noopener noreferrer">Diskusikan Proyek Serupa</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: Sistem Operasional Karyawan -->
+                    <article class="project" data-category="enterprise">
+                        <p class="project__tags">
+                            <span class="project__kind" data-i18n="work.kind.enterprise">Sistem Internal Enterprise</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.confidential">Konfidensial / NDA</span>
+                        </p>
+                        <h3 class="project__title" data-i18n="w6.title">Sistem Operasional Karyawan</h3>
+                        <dl class="project__facts">
+                            <div><dt data-i18n="work.problem">Konteks</dt><dd data-i18n="w6.problem">Koordinasi izin cuti karyawan, pertukaran shift kerja 24/7, dan alur rekrutmen kerap memicu hambatan administratif.</dd></div>
+                            <div><dt data-i18n="work.built">Yang saya bangun</dt><dd data-i18n="w6.built">Platform operasional terintegrasi untuk mengelola pertukaran shift berbasis aturan, persetujuan cuti berjenjang, dan pelacakan rekrutmen.</dd></div>
+                            <div><dt data-i18n="work.role">Peran saya</dt><dd data-i18n="w6.role">Logika alur kerja dan pengembangan.</dd></div>
+                        </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w6.tag1">Logika Tukar Shift</span>
+                            <span class="project__pill" data-i18n="w6.tag2">Persetujuan Cuti</span>
+                            <span class="project__pill" data-i18n="w6.tag3">Pipeline Rekrutmen</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20sistem%20bisnis%20kustom%20atau%20internal%20tool." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.systems" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w6" target="_blank" rel="noopener noreferrer">Diskusikan Proyek Serupa</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 5: Pelacakan Registrasi Produk -->
+                    <article class="project" data-category="enterprise">
+                        <p class="project__tags">
+                            <span class="project__kind" data-i18n="work.kind.enterprise">Sistem Internal Enterprise</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.confidential">Konfidensial / NDA</span>
+                        </p>
+                        <h3 class="project__title" data-i18n="w7.title">Pelacakan Registrasi Produk</h3>
+                        <dl class="project__facts">
+                            <div><dt data-i18n="work.problem">Konteks</dt><dd data-i18n="w7.problem">Pemantauan berkas registrasi produk dan tahapan persetujuan regulasi di berbagai instansi eksternal sulit dipantau secara transparan.</dd></div>
+                            <div><dt data-i18n="work.built">Yang saya bangun</dt><dd data-i18n="w7.built">Sistem pelacakan kepatuhan terpusat untuk memantau progres registrasi, kelengkapan dokumen, tenggat waktu, dan feedback instansi regulasi.</dd></div>
+                            <div><dt data-i18n="work.role">Peran saya</dt><dd data-i18n="w7.role">Arsitektur sistem dan pengembangan.</dd></div>
+                        </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w7.tag1">Milestone Regulasi</span>
+                            <span class="project__pill" data-i18n="w7.tag2">Dashboard Status</span>
+                            <span class="project__pill" data-i18n="w7.tag3">Timeline Kepatuhan</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20sistem%20bisnis%20kustom%20atau%20internal%20tool." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.systems" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w7" target="_blank" rel="noopener noreferrer">Diskusikan Proyek Serupa</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 6: Pemetaan Suhu Gudang -->
+                    <article class="project" data-category="enterprise">
+                        <p class="project__tags">
+                            <span class="project__kind" data-i18n="work.kind.enterprise">Sistem Internal Enterprise</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.confidential">Konfidensial / NDA</span>
+                        </p>
+                        <h3 class="project__title" data-i18n="w8.title">Pemetaan Suhu Gudang</h3>
+                        <dl class="project__facts">
+                            <div><dt data-i18n="work.problem">Konteks</dt><dd data-i18n="w8.problem">Penyimpanan produk farmasi memerlukan pemantauan suhu berkelanjutan dan pemetaan zona untuk mencegah degradasi kualitas produk.</dd></div>
+                            <div><dt data-i18n="work.built">Yang saya bangun</dt><dd data-i18n="w8.built">Aplikasi pemantauan dan pemetaan suhu multi-zona dengan pencatatan anomali ambang batas, pelacakan sensor, dan laporan kepatuhan.</dd></div>
+                            <div><dt data-i18n="work.role">Peran saya</dt><dd data-i18n="w8.role">Analisis kebutuhan dan pengembangan.</dd></div>
+                        </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w8.tag1">Pemetaan Multi-Zona</span>
+                            <span class="project__pill" data-i18n="w8.tag2">Peringatan Ambang Batas</span>
+                            <span class="project__pill" data-i18n="w8.tag3">Laporan Kepatuhan</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20sistem%20bisnis%20kustom%20atau%20internal%20tool." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.systems" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w8" target="_blank" rel="noopener noreferrer">Diskusikan Proyek Serupa</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 7: Sistem E-CPB -->
+                    <article class="project" data-category="enterprise">
+                        <p class="project__tags">
+                            <span class="project__kind" data-i18n="work.kind.enterprise">Sistem Internal Enterprise</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.confidential">Konfidensial / NDA</span>
+                        </p>
+                        <h3 class="project__title" data-i18n="w9.title">Sistem E-CPB</h3>
+                        <dl class="project__facts">
+                            <div><dt data-i18n="work.problem">Konteks</dt><dd data-i18n="w9.problem">Protokol Cara Pembuatan Obat yang Baik (CPOB/CPB) memerlukan dokumentasi batch digital yang ketat, verifikasi, dan kontrol prosedural.</dd></div>
+                            <div><dt data-i18n="work.built">Yang saya bangun</dt><dd data-i18n="w9.built">Platform kepatuhan manufaktur digital yang mendigitalkan catatan batch produksi, verifikasi bertahap, dan tata kelola prosedur CPB.</dd></div>
+                            <div><dt data-i18n="work.role">Peran saya</dt><dd data-i18n="w9.role">Arsitektur dan pengembangan.</dd></div>
+                        </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w9.tag1">Kepatuhan CPB/GMP</span>
+                            <span class="project__pill" data-i18n="w9.tag2">Catatan Batch Digital</span>
+                            <span class="project__pill" data-i18n="w9.tag3">Kontrol Prosedur</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20sistem%20bisnis%20kustom%20atau%20internal%20tool." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.systems" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w9" target="_blank" rel="noopener noreferrer">Diskusikan Proyek Serupa</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 8: SaaS Affiliate Academy -->
+                    <article class="project" data-category="saas">
+                        <p class="project__tags">
+                            <span class="project__kind project__kind--saas" data-i18n="work.kind.saas">Platform SaaS</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.dev">Dalam Tahap Pengembangan</span>
+                        </p>
+                        <h3 class="project__title" data-i18n="w4.title">Platform Affiliate Academy</h3>
+                        <dl class="project__facts">
+                            <div><dt data-i18n="work.problem">Konteks</dt><dd data-i18n="w4.problem">Praktisi affiliate marketing membutuhkan ruang kerja digital terintegrasi dan lingkungan edukasi interaktif terstruktur, bukan alat yang terfragmentasi.</dd></div>
+                            <div><dt data-i18n="work.built">Yang saya bangun</dt><dd data-i18n="w4.built">Platform SaaS edukasi dan workspace interaktif (affiliateacademy.site) yang dilengkapi 8 ruang kerja praktik, kurikulum terstruktur, dan manajemen akses berjenjang.</dd></div>
+                            <div><dt data-i18n="work.role">Peran saya</dt><dd data-i18n="w4.role">Founder, arsitektur sistem, dan pengembangan.</dd></div>
+                        </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w4.tag1">Workspace Interaktif</span>
+                            <span class="project__pill" data-i18n="w4.tag2">Akses Berjenjang</span>
+                            <span class="project__pill" data-i18n="w4.tag3">SaaS Cloud-Native</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20pengembangan%20produk%20SaaS%20atau%20produk%20digital." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.saas" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w4" target="_blank" rel="noopener noreferrer">Diskusikan Proyek Serupa</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 9: This Portfolio Website -->
+                    <article class="project" data-category="saas">
+                        <p class="project__tags">
+                            <span class="project__kind project__kind--personal" data-i18n="work.kind.personal">Platform Pribadi</span>
+                            <span class="project__kind project__kind--muted" data-i18n="work.status.production">Live Produksi</span>
+                        </p>
+                        <h3 class="project__title" data-i18n="w2.title">Website Portofolio Ini</h3>
+                        <dl class="project__facts">
+                            <div><dt data-i18n="work.problem">Konteks</dt><dd data-i18n="w2.problem">Portofolio freelance perlu menjelaskan layanan dengan jelas dan memudahkan klien Indonesia maupun internasional untuk menghubungi.</dd></div>
+                            <div><dt data-i18n="work.built">Yang saya bangun</dt><dd data-i18n="w2.built">Platform web statis kelas produksi tanpa beban dependensi berlebih, dilengkapi pergantian instan dua bahasa, engine mode gelap/terang dinamis, dan alur akuisisi kontak langsung.</dd></div>
+                            <div><dt data-i18n="work.role">Peran saya</dt><dd data-i18n="w2.role">Desain, struktur konten, dan pengembangan.</dd></div>
+                        </dl>
+                        <div class="project__highlights">
+                            <span class="project__pill" data-i18n="w2.tag1">Performa Ringan &amp; Cepat</span>
+                            <span class="project__pill" data-i18n="w2.tag2">Engine Gelap/Terang Dinamis</span>
+                            <span class="project__pill" data-i18n="w2.tag3">Dua Bahasa (ID/EN)</span>
+                        </div>
+                        <div class="project__action">
+                            <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20website%20portofolio%20%2F%20personal%20brand." class="text-link"
+                                data-contact="whatsapp" data-wa-message="contact.whatsapp.sv3" data-i18n="work.discuss"
+                                data-track="whatsapp_click" data-track-location="project-w2" target="_blank" rel="noopener noreferrer">Diskusikan Proyek Serupa</a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -326,14 +559,14 @@
                 <div class="about__content">
                     <p class="eyebrow" data-i18n="about.eyebrow">Tentang</p>
                     <h2 id="about-title" class="section-title" data-i18n-title="about.title">Halo, saya Fatih. <span>Saya membuat website yang bekerja untuk Anda.</span></h2>
-                    <p data-i18n="about.p1">Saya fullstack developer yang membangun website dan aplikasi web dengan HTML, CSS, dan JavaScript, dengan fokus pada kejelasan, responsivitas, dan kemudahan penggunaan.</p>
-                    <p data-i18n="about.p2">Saya merancang dan mengembangkan sistem digital untuk operasional farmasi, laboratorium, HR, regulasi, gudang, dan bisnis. Pengalaman itu mengajarkan saya untuk mulai dari masalah yang sebenarnya, bukan dari template.</p>
-                    <p data-i18n="about.p3">Untuk proyek website, artinya saya bertanya siapa pengunjung Anda dan apa yang ingin mereka lakukan, lalu membangun website yang memudahkannya. Saya bekerja jarak jauh dan berkomunikasi dalam Bahasa Indonesia dan Inggris.</p>
+                    <p data-i18n="about.p1">Saya fullstack developer dan digital solutions engineer yang merancang website berkinerja tinggi serta aplikasi bisnis kustom, dirancang dengan fokus pada kejelasan, kecepatan, dan dampak operasional nyata.</p>
+                    <p data-i18n="about.p2">Saya telah merancang dan mengembangkan sistem digital krusial untuk operasional farmasi, laboratorium, HR, regulasi, gudang, dan bisnis. Pengalaman tersebut mengajarkan saya untuk memulai dari akar masalah operasional yang nyata, bukan sekadar menggunakan template siap pakai.</p>
+                    <p data-i18n="about.p3">Untuk proyek website publik dan platform klien, hal itu berarti memahami target audiens serta sasaran konversi Anda, kemudian membangun pengalaman digital yang kredibel dan membuahkan hasil nyata. Saya bekerja secara remote dan berkomunikasi lancar dalam Bahasa Indonesia dan Inggris.</p>
 
                     <dl class="stats">
-                        <div><dt>HTML · CSS · JS</dt><dd data-i18n="stat1">Teknologi utama</dd></div>
-                        <div><dt>Remote</dt><dd data-i18n="stat2">Proyek dikelola secara online</dd></div>
-                        <div><dt>ID · EN</dt><dd data-i18n="stat3">Bahasa</dd></div>
+                        <div><dt data-i18n="stat1.val">Production Grade</dt><dd data-i18n="stat1">Arsitektur Kustom</dd></div>
+                        <div><dt data-i18n="stat2.val">Kemitraan Jarak Jauh</dt><dd data-i18n="stat2">Proyek dikelola secara online</dd></div>
+                        <div><dt data-i18n="stat3.val">ID · EN</dt><dd data-i18n="stat3">Bahasa</dd></div>
                     </dl>
 
                     <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20tertarik%20dengan%20jasa%20freelance%20Anda.%20Saya%20ingin%20mendiskusikan%20kebutuhan%20proyek%20website%20saya."
@@ -361,7 +594,7 @@
                     <details class="faq__item"><summary data-i18n="q2">Jenis website apa yang Anda buat?</summary><p data-i18n="a2">Landing page, website bisnis dan company profile, serta website portofolio atau personal brand. Saya juga dapat memperbaiki website yang sudah ada, dan membuat sistem web kustom serta internal tools.</p></details>
                     <details class="faq__item"><summary data-i18n="q3">Berapa lama pengerjaan sebuah proyek?</summary><p data-i18n="a3">Bergantung pada jumlah halaman, fitur, dan kesiapan konten Anda. Setelah ruang lingkup jelas, saya berikan jadwal yang realistis sebelum kita mulai.</p></details>
                     <details class="faq__item"><summary data-i18n="q4">Berapa biaya pembuatan website?</summary><p data-i18n="a4">Saya tidak mencantumkan harga tetap karena setiap proyek berbeda dalam halaman, fitur, dan konten. Kirim kebutuhan Anda via WhatsApp dan saya akan mengirim estimasi sesuai ruang lingkupnya.</p></details>
-                    <details class="faq__item"><summary data-i18n="q5">Bisakah Anda memperbaiki atau mendesain ulang website saya yang sudah ada?</summary><p data-i18n="a5">Bisa, untuk masalah umum seperti bug tampilan, responsivitas, tautan rusak, serta masalah HTML, CSS, atau JavaScript. Saya tinjau website Anda terlebih dahulu, lalu menyampaikan apa yang dapat saya perbaiki dan apa yang memerlukan pendekatan lain.</p></details>
+                    <details class="faq__item"><summary data-i18n="q5">Bisakah Anda memperbaiki atau mendesain ulang website saya yang sudah ada?</summary><p data-i18n="a5">Bisa, untuk kendala tampilan visual, responsivitas perangkat, alur interaksi yang terputus, hingga perbaikan performa. Saya lakukan peninjauan teknis terlebih dahulu, lalu memaparkan solusi perbaikan yang terstruktur dan terukur.</p></details>
                     <details class="faq__item"><summary data-i18n="q6">Apakah Anda bekerja dengan klien secara jarak jauh?</summary><p data-i18n="a6">Ya. Proyek didiskusikan dan dikelola secara online, terutama lewat WhatsApp, dengan progres yang dibagikan selama pengerjaan.</p></details>
                 </div>
             </div>
