@@ -61,14 +61,15 @@
         width: 100%;
     }
 
-    .about, .faq { grid-template-columns: minmax(0, 1fr); }
+    .about, .faq, .article-layout { grid-template-columns: minmax(0, 1fr); }
+    .article-sidebar { position: static; }
     .about__figure { max-width: 340px; margin-inline: auto; }
     .site-footer__inner { grid-template-columns: 1fr 1fr; }
     .site-footer__brand { grid-column: 1 / -1; }
 }
 
 @media (max-width: 768px) {
-    .services, .projects {
+    .services, .projects, .articles-grid {
         grid-template-columns: minmax(0, 1fr);
         gap: 1.25rem;
     }

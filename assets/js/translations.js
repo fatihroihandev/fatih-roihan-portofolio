@@ -16,6 +16,7 @@ export const translations = {
         "nav.work": "Portfolio",
         "nav.process": "Process",
         "nav.about": "About",
+        "nav.articles": "Articles",
         "nav.cta": "Chat on WhatsApp",
         "lang.label": "Language",
         "theme.label": "Toggle dark and light theme",
@@ -192,6 +193,12 @@ export const translations = {
         "stat3.val": "ID · EN",
         "stat3": "Languages",
 
+        "articles.eyebrow": "Articles & Insights",
+        "articles.title": ["Practical notes on", "web & systems engineering."],
+        "articles.desc": "Articles on high-converting websites, custom business systems, and technical SEO.",
+        "articles.viewAll": "View All Articles",
+        "articles.readMore": "Read Article",
+
         "faq.eyebrow": "FAQ",
         "faq.title": ["Questions before", "starting a project?"],
         "faq.ctaText": "Still have a question?",
@@ -248,6 +255,7 @@ export const translations = {
         "nav.work": "Portofolio",
         "nav.process": "Proses",
         "nav.about": "Tentang",
+        "nav.articles": "Artikel",
         "nav.cta": "Chat WhatsApp",
         "lang.label": "Bahasa",
         "theme.label": "Ganti tema gelap dan terang",
@@ -423,6 +431,12 @@ export const translations = {
         "stat2": "Proyek dikelola secara online",
         "stat3.val": "ID · EN",
         "stat3": "Bahasa",
+
+        "articles.eyebrow": "Artikel & Wawasan",
+        "articles.title": ["Catatan praktis seputar", "website & sistem bisnis."],
+        "articles.desc": "Artikel tentang strategi website berkonversi tinggi, aplikasi web internal, dan SEO teknis.",
+        "articles.viewAll": "Lihat Semua Artikel",
+        "articles.readMore": "Baca Artikel",
 
         "faq.eyebrow": "FAQ",
         "faq.title": ["Pertanyaan sebelum", "memulai proyek?"],

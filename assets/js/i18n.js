@@ -86,7 +86,29 @@ export function setLanguage(lang) {
     const dict = translations[language];
 
     document.documentElement.lang = language;
-    document.title = dict["meta.title"];
+    const customTitle = document.documentElement.dataset[`title_${language}`];
+    document.title = customTitle || dict["meta.title"];
+
+    document.querySelectorAll("[data-i18n-inline-en]").forEach((element) => {
+        const val = language === "id" ? element.dataset.i18nInlineId : element.dataset.i18nInlineEn;
+        if (typeof val === "string") {
+            element.textContent = val;
+        }
+    });
+
+    document.querySelectorAll("[data-i18n-href-en]").forEach((element) => {
+        const href = language === "id" ? element.dataset.i18nHrefId : element.dataset.i18nHrefEn;
+        if (typeof href === "string") {
+            element.setAttribute("href", href);
+        }
+    });
+
+    document.querySelectorAll("[data-i18n-alt-en]").forEach((element) => {
+        const alt = language === "id" ? element.dataset.i18nAltId : element.dataset.i18nAltEn;
+        if (typeof alt === "string") {
+            element.setAttribute("alt", alt);
+        }
+    });
 
     document.querySelectorAll("[data-i18n]").forEach((element) => {
         const value = dict[element.dataset.i18n];
@@ -145,6 +167,12 @@ export function initI18n() {
                 localStorage.setItem(STORAGE_KEY, language);
             } catch (error) {
                 // Preference simply won't persist if storage is unavailable.
+            }
+
+            const altUrl = document.documentElement.dataset[`altUrl_${language}`];
+            if (altUrl) {
+                window.location.href = altUrl;
+                return;
             }
 
             // The Indonesian page lives at /id/; English is the site root.

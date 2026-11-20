@@ -10,19 +10,23 @@ Plain HTML, CSS, and JavaScript (ES modules). No build step is needed to serve t
 
 - `index.html`: English page (site root, hand-written).
 - `id/index.html`: pre-rendered Indonesian page. **Generated**, do not edit by hand.
+- `articles/` & `id/articles/`: generated bilingual article hub and article detail pages.
+- `content/articles/*.json`: structured bilingual article + SEO data managed by `roihan-ai-office-v2`.
+- `content/schema.json` & `content/AI_PUBLISHING_SPEC.md`: JSON Schema and publishing rules for `roihan-ai-office-v2`.
 - `assets/js/translations.js`: all copy in EN and ID.
 - `assets/js/config.js`: WhatsApp number, email, tracking switch.
 - `assets/js/i18n.js`: language detection, switcher, WhatsApp/email link generation.
+- `scripts/build-articles.mjs`: builds `articles/`, `id/articles/`, homepage article cards, and `sitemap.xml`.
 - `scripts/build-id.mjs`: builds `id/index.html`.
+- `scripts/publish.mjs`: unified build and SEO check pipeline for `roihan-ai-office-v2`.
 - `scripts/check.mjs`: static checks (links, assets, WhatsApp, metadata, hreflang, sitemap, JSON-LD).
 
 ## Workflow
 
-After changing copy in `index.html` or `translations.js`:
+After changing copy in `index.html`, `translations.js`, or adding/updating an article in `content/articles/*.json`:
 
-    node scripts/build-id.mjs --check   # English page matches translations.js
-    node scripts/build-id.mjs           # regenerate id/index.html
-    node scripts/check.mjs              # static checks; exits non-zero on failure
+    node scripts/publish.mjs              # builds articles, builds id/index.html, updates sitemap.xml, and runs check.mjs
+    node scripts/publish.mjs --git-push   # builds, validates, commits, and pushes to GitHub Pages
 
 Run locally with any static server from the repo root, for example `python -m http.server 8000`, then open `/` and `/id/`.
 

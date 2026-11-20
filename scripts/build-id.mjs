@@ -44,6 +44,22 @@ function render(html, lang) {
     html = html.replace(/<a\b[^>]*\sdata-contact="email"[^>]*>/g, (tag) =>
         tag.replace(/href="[^"]*"/, `href="mailto:${CONFIG.email}?subject=${encodeURIComponent(dict["contact.subject"])}&amp;body=${encodeURIComponent(dict["contact.body"])}"`));
 
+    // Inline bilingual text / href / alt for generated article cards:
+    html = html.replace(/(<([a-z0-9]+)\b[^>]*\sdata-i18n-inline-en="([^"]*)"\sdata-i18n-inline-id="([^"]*)"[^>]*>)([\s\S]*?)(<\/\2>)/g, (m, open, tag, enVal, idVal, inner, close) => {
+        const text = lang === "id" ? idVal : enVal;
+        return `${open}${text}${close}`;
+    });
+
+    html = html.replace(/<[a-z0-9]+\b[^>]*\sdata-i18n-href-en="([^"]*)"\sdata-i18n-href-id="([^"]*)"[^>]*>/g, (tag, enHref, idHref) => {
+        const targetHref = lang === "id" ? idHref : enHref;
+        return tag.replace(/\shref="[^"]*"/, ` href="${targetHref}"`);
+    });
+
+    html = html.replace(/<img\b[^>]*\sdata-i18n-alt-en="([^"]*)"\sdata-i18n-alt-id="([^"]*)"[^>]*>/g, (tag, enAlt, idAlt) => {
+        const targetAlt = lang === "id" ? idAlt : enAlt;
+        return tag.replace(/\salt="[^"]*"/, ` alt="${targetAlt}"`);
+    });
+
     return html;
 }
 
@@ -76,7 +92,8 @@ id = id
     .replace(/"description": "Freelance web developer building[^"]*"/, `"description": "${translations.id["meta.description"].split(". ")[0]}."`)
     .replace(/"jobTitle": "[^"]*"/, '"jobTitle": "Freelance Web Developer"')
     // Asset and in-site paths are one directory deeper.
-    .replace(/(href|src)="assets\//g, '$1="../assets/');
+    .replace(/(href|src)="assets\//g, '$1="../assets/')
+    .replace(/href="id\/articles\//g, 'href="articles/');
 
 mkdirSync(new URL("id/", root), { recursive: true });
 writeFileSync(new URL("id/index.html", root), id);

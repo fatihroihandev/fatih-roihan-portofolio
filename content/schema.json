@@ -1,0 +1,145 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "FatihRoihanPortfolioArticle",
+    "description": "Article contract for roihan-ai-office-v2 automated publishing & SEO management on fatihroihan.site",
+    "type": "object",
+    "required": ["slug", "publishedAt", "category", "en", "id"],
+    "properties": {
+        "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "description": "URL-safe lowercase slug (e.g., 'high-converting-landing-page-guide'). Used for /articles/<slug>/ and /id/articles/<slug>/."
+        },
+        "publishedAt": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "ISO publication date YYYY-MM-DD"
+        },
+        "updatedAt": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "ISO last modified date YYYY-MM-DD (defaults to publishedAt if omitted)"
+        },
+        "category": {
+            "type": "string",
+            "enum": ["web-strategy", "enterprise-systems", "performance-seo", "case-study"],
+            "description": "Primary article category key"
+        },
+        "readingTimeMinutes": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 60,
+            "description": "Optional reading time override in minutes (auto-calculated if omitted)"
+        },
+        "cover": {
+            "type": "object",
+            "required": ["url", "alt"],
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "description": "External image URL (https://...) or local path starting with assets/images/..."
+                },
+                "width": {
+                    "type": "integer",
+                    "default": 1200
+                },
+                "height": {
+                    "type": "integer",
+                    "default": 630
+                },
+                "alt": {
+                    "type": "object",
+                    "required": ["en", "id"],
+                    "properties": {
+                        "en": { "type": "string", "minLength": 10 },
+                        "id": { "type": "string", "minLength": 10 }
+                    }
+                },
+                "caption": {
+                    "type": "object",
+                    "properties": {
+                        "en": { "type": "string" },
+                        "id": { "type": "string" }
+                    }
+                }
+            }
+        },
+        "en": { "$ref": "#/$defs/localizedContent" },
+        "id": { "$ref": "#/$defs/localizedContent" }
+    },
+    "$defs": {
+        "localizedContent": {
+            "type": "object",
+            "required": ["title", "description", "excerpt", "blocks"],
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "minLength": 15,
+                    "maxLength": 58,
+                    "description": "Article headline. Keep <= 58 chars so '<title> | Fatih Roihan' stays under 75 chars."
+                },
+                "description": {
+                    "type": "string",
+                    "minLength": 70,
+                    "maxLength": 175,
+                    "description": "SEO meta description (strictly 70 to 175 characters for check.mjs)."
+                },
+                "excerpt": {
+                    "type": "string",
+                    "minLength": 40,
+                    "maxLength": 240,
+                    "description": "Short summary shown on article cards."
+                },
+                "keywords": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                },
+                "categoryLabel": {
+                    "type": "string",
+                    "description": "Display label for category in this language (e.g., 'Web Strategy' / 'Strategi Web')"
+                },
+                "ctaMessage": {
+                    "type": "string",
+                    "description": "Optional custom pre-filled WhatsApp message for this article's CTA."
+                },
+                "blocks": {
+                    "type": "array",
+                    "minItems": 3,
+                    "items": {
+                        "type": "object",
+                        "required": ["type"],
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "enum": ["p", "h2", "h3", "ul", "ol", "quote", "callout", "image", "code"]
+                            },
+                            "text": { "type": "string" },
+                            "title": { "type": "string" },
+                            "items": { "type": "array", "items": { "type": "string" } },
+                            "author": { "type": "string" },
+                            "url": { "type": "string" },
+                            "alt": { "type": "string" },
+                            "caption": { "type": "string" },
+                            "width": { "type": "integer" },
+                            "height": { "type": "integer" },
+                            "language": { "type": "string" },
+                            "code": { "type": "string" }
+                        }
+                    }
+                },
+                "faq": {
+                    "type": "array",
+                    "description": "Optional FAQ items that automatically render an FAQ section + FAQPage JSON-LD schema.",
+                    "items": {
+                        "type": "object",
+                        "required": ["q", "a"],
+                        "properties": {
+                            "q": { "type": "string" },
+                            "a": { "type": "string" }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

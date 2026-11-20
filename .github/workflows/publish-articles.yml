@@ -1,0 +1,40 @@
+name: Auto Build Articles & SEO (roihan-ai-office-v2)
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'content/articles/**'
+      - 'scripts/**'
+      - 'assets/js/translations.js'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build bilingual articles, homepage cards, id page, and run SEO checks
+        run: node scripts/publish.mjs
+
+      - name: Commit generated static pages if changed
+        run: |
+          git config user.name "roihan-ai-office-v2[bot]"
+          git config user.email "roihan-ai-office-v2@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add index.html id/ articles/ sitemap.xml assets/
+            git commit -m "chore(seo): auto-build articles and sitemap [skip ci]"
+            git push
+          else
+            echo "No changes to commit."
+          fi

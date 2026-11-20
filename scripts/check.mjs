@@ -1,14 +1,38 @@
 // Static checks for the built site. Usage: node scripts/check.mjs
 // Verifies links/assets, WhatsApp numbers, metadata, hreflang/canonical, sitemap, robots, JSON-LD, headings, alt text.
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { execSync } from "node:child_process";
 import { dirname, join } from "node:path";
 import { CONFIG } from "../assets/js/config.js";
 
 const ORIGIN = "https://fatihroihan.site";
+const articleSlugs = existsSync("content/articles")
+    ? readdirSync("content/articles")
+          .filter((f) => f.endsWith(".json"))
+          .map((f) => JSON.parse(readFileSync(join("content/articles", f), "utf8")).slug)
+    : [];
+
 const pages = [
-    { file: "index.html", url: `${ORIGIN}/`, lang: "en" },
-    { file: "id/index.html", url: `${ORIGIN}/id/`, lang: "id" },
+    { file: "index.html", url: `${ORIGIN}/`, lang: "en", enUrl: `${ORIGIN}/`, idUrl: `${ORIGIN}/id/` },
+    { file: "id/index.html", url: `${ORIGIN}/id/`, lang: "id", enUrl: `${ORIGIN}/`, idUrl: `${ORIGIN}/id/` },
+    { file: "articles/index.html", url: `${ORIGIN}/articles/`, lang: "en", enUrl: `${ORIGIN}/articles/`, idUrl: `${ORIGIN}/id/articles/` },
+    { file: "id/articles/index.html", url: `${ORIGIN}/id/articles/`, lang: "id", enUrl: `${ORIGIN}/articles/`, idUrl: `${ORIGIN}/id/articles/` },
+    ...articleSlugs.flatMap((slug) => [
+        {
+            file: `articles/${slug}/index.html`,
+            url: `${ORIGIN}/articles/${slug}/`,
+            lang: "en",
+            enUrl: `${ORIGIN}/articles/${slug}/`,
+            idUrl: `${ORIGIN}/id/articles/${slug}/`,
+        },
+        {
+            file: `id/articles/${slug}/index.html`,
+            url: `${ORIGIN}/id/articles/${slug}/`,
+            lang: "id",
+            enUrl: `${ORIGIN}/articles/${slug}/`,
+            idUrl: `${ORIGIN}/id/articles/${slug}/`,
+        },
+    ]),
 ];
 let failures = 0;
 const fail = (message) => { failures += 1; console.error(`FAIL  ${message}`); };
@@ -22,7 +46,7 @@ for (const page of pages) {
     if (tag(/<html[^>]*\slang="([^"]+)"/) !== page.lang) fail(`${page.file}: <html lang> should be ${page.lang}`);
     if (tag(/rel="canonical" href="([^"]+)"/) !== page.url) fail(`${page.file}: canonical should be ${page.url}`);
     if (tag(/property="og:url" content="([^"]+)"/) !== page.url) fail(`${page.file}: og:url should be ${page.url}`);
-    for (const [lang, url] of [["en", `${ORIGIN}/`], ["id", `${ORIGIN}/id/`], ["x-default", `${ORIGIN}/`]]) {
+    for (const [lang, url] of [["en", page.enUrl], ["id", page.idUrl], ["x-default", page.enUrl]]) {
         if (!html.includes(`hreflang="${lang}" href="${url}"`)) fail(`${page.file}: missing hreflang ${lang}`);
     }
 
