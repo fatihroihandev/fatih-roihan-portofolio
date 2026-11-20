@@ -835,9 +835,17 @@ function injectLatestArticlesIntoHomepage(articles) {
 }
 
 function updateSitemap(articles) {
+    const latestMod = articles.reduce(
+        (max, a) => {
+            const mod = a.updatedAt || a.publishedAt || "";
+            return mod > max ? mod : max;
+        },
+        new Date().toISOString().slice(0, 10)
+    );
+
     const urlPairs = [
-        { en: `${ORIGIN}/`, id: `${ORIGIN}/id/` },
-        { en: `${ORIGIN}/articles/`, id: `${ORIGIN}/id/articles/` },
+        { en: `${ORIGIN}/`, id: `${ORIGIN}/id/`, lastmod: latestMod },
+        { en: `${ORIGIN}/articles/`, id: `${ORIGIN}/id/articles/`, lastmod: latestMod },
         ...articles.map((a) => ({
             en: `${ORIGIN}/articles/${a.slug}/`,
             id: `${ORIGIN}/id/articles/${a.slug}/`,
@@ -852,6 +860,7 @@ function updateSitemap(articles) {
         <loc>${loc}</loc>${pair.lastmod ? `\n        <lastmod>${pair.lastmod}</lastmod>` : ""}
         <xhtml:link rel="alternate" hreflang="en" href="${pair.en}"/>
         <xhtml:link rel="alternate" hreflang="id" href="${pair.id}"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="${pair.en}"/>
     </url>`);
         }
     }

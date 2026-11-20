@@ -29,11 +29,7 @@ function detectLanguage() {
         return stored;
     }
 
-    const preferred = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
-    const code = preferred.toLowerCase().split("-")[0];
-
-    // "in" is the legacy ISO code some browsers still report for Indonesian.
-    return code === "id" || code === "in" ? "id" : "en";
+    return SUPPORTED.includes(document.documentElement.lang) ? document.documentElement.lang : "en";
 }
 
 function applyTitle(element, [plain, accent]) {

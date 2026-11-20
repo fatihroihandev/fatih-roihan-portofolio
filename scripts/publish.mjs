@@ -18,7 +18,7 @@ run("node scripts/build-id.mjs");
 run("node scripts/check.mjs");
 
 if (process.argv.includes("--git-push")) {
-    run("git add index.html id/ articles/ content/ sitemap.xml assets/");
+    run("git add .nojekyll index.html id/ articles/ content/ sitemap.xml assets/");
     run('git commit -m "chore(articles): publish and update SEO via roihan-ai-office-v2"');
     run("git push");
 }
