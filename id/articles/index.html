@@ -9,7 +9,7 @@
     <meta name="description" content="Kumpulan artikel dan panduan praktis seputar strategi landing page, website bisnis, sistem web internal enterprise, dan optimasi SEO teknis.">
     <meta name="author" content="Fatih Roihan">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#F8FAFC">
+    <meta name="theme-color" content="#07070A">
 
     <link rel="canonical" href="https://fatihroihan.site/id/articles/">
     <link rel="alternate" hreflang="en" href="https://fatihroihan.site/articles/">
@@ -34,8 +34,9 @@
         (function () {
             try {
                 var stored = localStorage.getItem('fr-theme');
-                var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                var theme = stored === 'light' ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', theme);
+                document.documentElement.classList.add('js');
             } catch (e) {}
         })();
     </script>
@@ -76,6 +77,9 @@
 }
     </script>
 
+    <link rel="preload" href="../../assets/fonts/inter-tight-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
     <link rel="stylesheet" href="../../assets/css/reset.css">
     <link rel="stylesheet" href="../../assets/css/variables.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
@@ -142,7 +146,7 @@
                 <div class="articles-grid">
                     <article class="article-card" data-category="enterprise-systems">
                         <a href="../../id/articles/spreadsheets-to-custom-enterprise-web-systems/" class="article-card__media">
-                            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" width="1200" height="630" loading="lazy" decoding="async"
+                            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" srcset="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&amp;fit=crop&amp;w=480&amp;q=80 480w, https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&amp;fit=crop&amp;w=800&amp;q=80 800w, https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&amp;fit=crop&amp;w=1200&amp;q=80 1200w" sizes="(max-width: 720px) 100vw, (max-width: 1180px) 50vw, 420px" width="1200" height="630" loading="lazy" decoding="async"
                                 alt="Dashboard data operasional dan antarmuka alur kerja terstruktur di layar monitor" class="article-card__img">
                         </a>
                         <div class="article-card__body">
@@ -163,7 +167,7 @@
                     </article>
                     <article class="article-card" data-category="web-strategy">
                         <a href="../../id/articles/high-converting-landing-page-architecture/" class="article-card__media">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" width="1200" height="630" loading="lazy" decoding="async"
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" srcset="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=480&amp;q=80 480w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=800&amp;q=80 800w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80 1200w" sizes="(max-width: 720px) 100vw, (max-width: 1180px) 50vw, 420px" width="1200" height="630" loading="lazy" decoding="async"
                                 alt="Dashboard analitik dan tata letak wireframe di layar laptop modern" class="article-card__img">
                         </a>
                         <div class="article-card__body">
@@ -202,7 +206,7 @@
         <div class="container site-footer__inner">
             <div class="site-footer__brand">
                 <a href="../" class="navbar__logo">Fatih Roihan</a>
-                <p data-i18n="footer.desc">Freelance web developer yang membantu bisnis dan individu memiliki kehadiran online yang profesional.</p>
+                <p data-i18n="footer.desc">Freelance web developer yang membangun website, sistem bisnis, dan produk digital untuk klien di Indonesia dan mancanegara.</p>
             </div>
 
             <nav class="site-footer__col" aria-label="Navigasi">

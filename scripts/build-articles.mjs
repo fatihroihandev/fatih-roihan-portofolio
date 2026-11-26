@@ -4,6 +4,7 @@
 //   node scripts/build-articles.mjs
 //   node scripts/build-articles.mjs --download-images
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from "node:fs";
+import { execSync } from "node:child_process";
 import { join, extname } from "node:path";
 import { CONFIG } from "../assets/js/config.js";
 import { translations } from "../assets/js/translations.js";
@@ -77,6 +78,32 @@ function toPublicImageHref(url, prefixToRoot) {
     if (/^https?:\/\//i.test(url)) return url;
     return `${prefixToRoot}${url.replace(/^\/+/, "")}`;
 }
+
+// Responsive srcset for remote images served by an on-the-fly resizer (Unsplash `w=` param).
+// Local images are returned without srcset.
+const SRCSET_WIDTHS = [480, 800, 1200];
+function responsiveAttrs(url, sizes) {
+    let parsed;
+    try {
+        parsed = new URL(url);
+    } catch (error) {
+        return "";
+    }
+    if (parsed.hostname !== "images.unsplash.com") return "";
+    const max = Number(parsed.searchParams.get("w")) || 1200;
+    const widths = SRCSET_WIDTHS.filter((w) => w < max).concat(max);
+    const srcset = widths
+        .map((w) => {
+            parsed.searchParams.set("w", String(w));
+            return `${parsed.toString()} ${w}w`;
+        })
+        .join(", ");
+    return ` srcset="${escapeAttr(srcset)}" sizes="${escapeAttr(sizes)}"`;
+}
+
+const CARD_SIZES = "(max-width: 720px) 100vw, (max-width: 1180px) 50vw, 420px";
+const COVER_SIZES = "(max-width: 980px) 100vw, 860px";
+const FIGURE_SIZES = "(max-width: 980px) 100vw, 760px";
 
 function toAbsoluteImageUrl(url) {
     if (/^https?:\/\//i.test(url)) return url;
@@ -189,7 +216,7 @@ function renderSharedHead({
     <meta name="description" content="${escapeAttr(description)}">
     <meta name="author" content="Fatih Roihan">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#F8FAFC">
+    <meta name="theme-color" content="#07070A">
 
     <link rel="canonical" href="${escapeAttr(canonicalUrl)}">
     <link rel="alternate" hreflang="en" href="${escapeAttr(enUrl)}">
@@ -214,8 +241,9 @@ function renderSharedHead({
         (function () {
             try {
                 var stored = localStorage.getItem('fr-theme');
-                var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                var theme = stored === 'light' ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', theme);
+                document.documentElement.classList.add('js');
             } catch (e) {}
         })();
     </script>
@@ -224,6 +252,9 @@ function renderSharedHead({
 ${JSON.stringify(jsonLdObject, null, 4)}
     </script>
 
+    <link rel="preload" href="${prefixToRoot}assets/fonts/inter-tight-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="${prefixToRoot}assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="${prefixToRoot}assets/css/fonts.css">
     <link rel="stylesheet" href="${prefixToRoot}assets/css/reset.css">
     <link rel="stylesheet" href="${prefixToRoot}assets/css/variables.css">
     <link rel="stylesheet" href="${prefixToRoot}assets/css/style.css">
@@ -359,7 +390,7 @@ function renderArticleCard(article, lang, prefixToRoot, isHomepage = false) {
         // Includes data-i18n-inline-* and data-i18n-href-* so both instant JS switcher on / and build-id.mjs work seamlessly
         return `                    <article class="article-card" data-category="${escapeAttr(article.category)}">
                         <a href="${escapeAttr(activeHref)}" class="article-card__media" data-i18n-href-en="${escapeAttr(enHref)}" data-i18n-href-id="${escapeAttr(idHref)}">
-                            <img src="${escapeAttr(imgUrl)}" width="${imgWidth}" height="${imgHeight}" loading="lazy" decoding="async"
+                            <img src="${escapeAttr(imgUrl)}"${responsiveAttrs(imgUrl, CARD_SIZES)} width="${imgWidth}" height="${imgHeight}" loading="lazy" decoding="async"
                                 alt="${escapeAttr(activeAlt)}" data-i18n-alt-en="${escapeAttr(enAlt)}" data-i18n-alt-id="${escapeAttr(idAlt)}" class="article-card__img">
                         </a>
                         <div class="article-card__body">
@@ -382,7 +413,7 @@ function renderArticleCard(article, lang, prefixToRoot, isHomepage = false) {
 
     return `                    <article class="article-card" data-category="${escapeAttr(article.category)}">
                         <a href="${escapeAttr(activeHref)}" class="article-card__media">
-                            <img src="${escapeAttr(imgUrl)}" width="${imgWidth}" height="${imgHeight}" loading="lazy" decoding="async"
+                            <img src="${escapeAttr(imgUrl)}"${responsiveAttrs(imgUrl, CARD_SIZES)} width="${imgWidth}" height="${imgHeight}" loading="lazy" decoding="async"
                                 alt="${escapeAttr(activeAlt)}" class="article-card__img">
                         </a>
                         <div class="article-card__body">
@@ -451,7 +482,7 @@ function renderBlocks(blocks, prefixToRoot) {
                 htmlParts.push(
                     `<figure class="article-figure">\n    <img src="${escapeAttr(
                         src
-                    )}" width="${w}" height="${h}" loading="lazy" decoding="async" alt="${escapeAttr(alt)}">${
+                    )}"${responsiveAttrs(src, FIGURE_SIZES)} width="${w}" height="${h}" loading="lazy" decoding="async" alt="${escapeAttr(alt)}">${
                         block.caption ? `\n    <figcaption>${escapeHtml(block.caption)}</figcaption>` : ""
                     }\n</figure>`
                 );
@@ -489,7 +520,12 @@ function renderArticleDetailPage(article, allArticles, lang) {
             "@id": `${canonicalUrl}#article`,
             "headline": loc.title,
             "description": loc.description,
-            "image": ogImage,
+            "image": {
+                "@type": "ImageObject",
+                "url": ogImage,
+                "width": article.cover.width || 1200,
+                "height": article.cover.height || 630,
+            },
             "datePublished": article.publishedAt,
             "dateModified": article.updatedAt,
             "inLanguage": lang,
@@ -498,6 +534,11 @@ function renderArticleDetailPage(article, allArticles, lang) {
                 "@id": `${ORIGIN}/#person`,
                 "name": "Fatih Roihan",
                 "url": `${ORIGIN}/`,
+                "jobTitle": "Freelance Website Developer",
+                "sameAs": [
+                    "https://www.linkedin.com/in/fatih-roihan-909173308",
+                    "https://github.com/fatihroihandev",
+                ],
             },
             "publisher": {
                 "@type": "Person",
@@ -643,7 +684,7 @@ ${navbar}
         <div class="container article-layout">
             <article class="article-main">
                 <figure class="article-cover">
-                    <img src="${escapeAttr(coverSrc)}" width="${coverW}" height="${coverH}" decoding="async" alt="${escapeAttr(coverAlt)}">
+                    <img src="${escapeAttr(coverSrc)}"${responsiveAttrs(coverSrc, COVER_SIZES)} width="${coverW}" height="${coverH}" fetchpriority="high" decoding="async" alt="${escapeAttr(coverAlt)}">
                     ${coverCaption ? `<figcaption>${escapeHtml(coverCaption)}</figcaption>` : ""}
                 </figure>
 
@@ -829,23 +870,47 @@ function injectLatestArticlesIntoHomepage(articles) {
     const block = `<!-- ARTICLES_LATEST_START -->\n                <div class="articles-grid">\n${cardsHtml}\n                </div>\n                <!-- ARTICLES_LATEST_END -->`;
 
     const indexHtml = readFileSync(new URL("index.html", root), "utf8");
+    // Articles live on their own page (/articles/); the homepage only links to it.
+    if (!indexHtml.includes("<!-- ARTICLES_LATEST_START -->")) {
+        console.log("Homepage has no article cards block; skipping injection");
+        return;
+    }
     const updated = indexHtml.replace(/<!-- ARTICLES_LATEST_START -->[\s\S]*?<!-- ARTICLES_LATEST_END -->/, block);
     writeFileSync(new URL("index.html", root), updated);
     console.log(`Updated index.html with ${latest.length} latest article card(s)`);
 }
 
+// The homepage's real last-change date: today if its sources have uncommitted edits,
+// otherwise the last commit that touched them, otherwise the value already in the sitemap.
+// (Stamping today's date on every build would teach Google to ignore <lastmod>.)
+const HOME_SOURCES = ["index.html", "assets/css", "assets/js", "assets/images"];
+function homepageLastmod(previous) {
+    const today = new Date().toISOString().slice(0, 10);
+    try {
+        const run = (cmd) => execSync(cmd, { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim();
+        if (run(`git status --porcelain -- ${HOME_SOURCES.join(" ")}`)) return today;
+        return run(`git log -1 --format=%cs -- ${HOME_SOURCES.join(" ")}`) || previous || today;
+    } catch (error) {
+        return previous || today;
+    }
+}
+
 function updateSitemap(articles) {
-    const latestMod = articles.reduce(
-        (max, a) => {
-            const mod = a.updatedAt || a.publishedAt || "";
-            return mod > max ? mod : max;
-        },
-        new Date().toISOString().slice(0, 10)
-    );
+    const sitemapUrl = new URL("sitemap.xml", root);
+    const existing = existsSync(sitemapUrl) ? readFileSync(sitemapUrl, "utf8") : "";
+    const homeEntry = existing.split("<url>").find((entry) => entry.includes(`<loc>${ORIGIN}/</loc>`)) || "";
+    const previousHome = (homeEntry.match(/<lastmod>([^<]+)<\/lastmod>/) || [])[1];
+
+    // The articles hub changes only when an article is added or updated.
+    const latestArticle = articles.reduce((max, a) => {
+        const mod = a.updatedAt || a.publishedAt || "";
+        return mod > max ? mod : max;
+    }, "");
+    const homeMod = homepageLastmod(previousHome);
 
     const urlPairs = [
-        { en: `${ORIGIN}/`, id: `${ORIGIN}/id/`, lastmod: latestMod },
-        { en: `${ORIGIN}/articles/`, id: `${ORIGIN}/id/articles/`, lastmod: latestMod },
+        { en: `${ORIGIN}/`, id: `${ORIGIN}/id/`, lastmod: homeMod },
+        { en: `${ORIGIN}/articles/`, id: `${ORIGIN}/id/articles/`, lastmod: latestArticle || homeMod },
         ...articles.map((a) => ({
             en: `${ORIGIN}/articles/${a.slug}/`,
             id: `${ORIGIN}/id/articles/${a.slug}/`,
@@ -868,7 +933,7 @@ function updateSitemap(articles) {
     const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${entries.join(
         "\n"
     )}\n</urlset>\n`;
-    writeFileSync(new URL("sitemap.xml", root), xml);
+    writeFileSync(sitemapUrl, xml);
     console.log(`Updated sitemap.xml with ${entries.length} URLs`);
 }
 

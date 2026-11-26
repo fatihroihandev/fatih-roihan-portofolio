@@ -1,0 +1,45 @@
+/* =========================================
+   FONTS (self-hosted, latin subset, SIL Open Font License; see assets/fonts/OFL-*.txt)
+   Served from this domain so the first render does not wait on a third-party stylesheet.
+   The two faces visible in the hero are preloaded in each page's <head>.
+========================================= */
+
+@font-face {
+    font-family: "Inter Tight";
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url("../fonts/inter-tight-var.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Inter Tight";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/inter-tight-italic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Instrument Serif";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/instrument-serif.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Instrument Serif";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/instrument-serif-italic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    font-style: normal;
+    font-weight: 400 500;
+    font-display: swap;
+    src: url("../fonts/jetbrains-mono-var.woff2") format("woff2");
+}

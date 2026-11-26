@@ -4,6 +4,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { translations } from "../assets/js/translations.js";
 import { CONFIG } from "../assets/js/config.js";
+import { withServicesCatalog } from "./structured-data.mjs";
 
 const root = new URL("../", import.meta.url);
 const source = readFileSync(new URL("index.html", root), "utf8");
@@ -73,11 +74,22 @@ if (process.argv.includes("--check")) {
         console.error(`English index.html differs from translations.js near:\n  html: ${b[i]}\n  dict: ${a[i]}`);
         process.exit(1);
     }
+    if (withServicesCatalog(source, "en") !== source) {
+        console.error("index.html JSON-LD service catalog is out of date: run node scripts/build-id.mjs");
+        process.exit(1);
+    }
     console.log("OK: index.html matches translations.js (en)");
     process.exit(0);
 }
 
-let id = render(source, "id");
+// Keep the English page's service catalog (JSON-LD) in sync with translations.js.
+const english = withServicesCatalog(source, "en");
+if (english !== source) {
+    writeFileSync(new URL("index.html", root), english);
+    console.log("Updated JSON-LD service catalog in index.html");
+}
+
+let id = withServicesCatalog(render(english, "id"), "id");
 
 id = id
     // Pre-JS state of the language switcher must match the page language.
@@ -93,7 +105,11 @@ id = id
     .replace(/"jobTitle": "[^"]*"/, '"jobTitle": "Freelance Web Developer"')
     // Asset and in-site paths are one directory deeper.
     .replace(/(href|src)="assets\//g, '$1="../assets/')
-    .replace(/href="id\/articles\//g, 'href="articles/');
+    .replace(/srcset="([^"]*)"/g, (m, list) => `srcset="${list.replace(/(^|,\s*)assets\//g, "$1../assets/")}"`)
+    .replace(/href="id\/articles\//g, 'href="articles/')
+    // i18n.js rewrites hrefs from these at runtime; they must resolve from /id/ too.
+    .replace(/data-i18n-href-id="id\//g, 'data-i18n-href-id="')
+    .replace(/data-i18n-href-en="(?!https?:|\.\.\/)/g, 'data-i18n-href-en="../');
 
 mkdirSync(new URL("id/", root), { recursive: true });
 writeFileSync(new URL("id/index.html", root), id);

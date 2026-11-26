@@ -3,12 +3,14 @@ import { initI18n } from "./i18n.js";
 import { initNavigation } from "./navigation.js";
 import { initAnalytics } from "./analytics.js";
 import { initPortfolioFilter } from "./portfolio.js";
+import { initMotion } from "./motion.js";
 
 initTheme();
 initI18n();
 initNavigation();
 initAnalytics();
 initPortfolioFilter();
+initMotion();
 
 const yearElement = document.querySelector("#current-year");
 

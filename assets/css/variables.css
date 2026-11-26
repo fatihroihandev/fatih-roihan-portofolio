@@ -1,136 +1,129 @@
 /* =========================================
-   DESIGN TOKENS - $1,000+ EXECUTIVE SUITE
+   DESIGN TOKENS: MONOCHROME EDITORIAL
+   Dark-first, editorial type, ivory on obsidian.
 ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
-    /* Color Palette - Premium Executive Light */
-    --color-background: #F8FAFC;
-    --color-surface: #FFFFFF;
-    --color-surface-hover: #F1F5F9;
-    --color-tint: #F1F5F9;
-    --color-border: #E2E8F0;
-    --color-border-subtle: #EDF2F7;
-    --color-border-glow: rgba(37, 99, 235, 0.18);
-    --color-text-primary: #0F172A;
-    --color-text-secondary: #475569;
-    --color-text-muted: #64748B;
-    
-    --color-accent: #2563EB;
-    --color-accent-hover: #1D4ED8;
-    --color-accent-soft: #EFF6FF;
-    --color-accent-glow: rgba(37, 99, 235, 0.12);
-    --color-accent-gradient: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
-    
-    --color-ink: #0F172A;
-    --color-on-ink: #F8FAFC;
-    --color-on-ink-muted: #94A3B8;
-    --color-focus: #2563EB;
+    /* Light theme: warm paper + ink */
+    --color-background: #F2F1EC;
+    --color-surface: #FBFAF7;
+    --color-surface-hover: #FFFFFF;
+    --color-tint: #E9E7E0;
+    --color-border: rgba(12, 12, 16, 0.12);
+    --color-border-subtle: rgba(12, 12, 16, 0.07);
+    --color-border-strong: rgba(12, 12, 16, 0.28);
+    --color-text-primary: #0C0C10;
+    --color-text-secondary: #46464F;
+    --color-text-muted: #6E6E78;
 
-    /* Category & Status Badges */
-    --color-badge-enterprise-bg: #EFF6FF;
-    --color-badge-enterprise-text: #1D4ED8;
-    --color-badge-enterprise-border: #BFDBFE;
+    --color-accent: #0C0C10;          /* fills: buttons, dots, bars */
+    --color-accent-hover: #26262D;
+    --color-on-accent: #F2F1EC;
+    --color-highlight: #0C0C10;       /* accent used as text color */
+    --color-accent-soft: rgba(12, 12, 16, 0.05);
+    --color-accent-glow: rgba(12, 12, 16, 0.10);
 
-    --color-badge-client-bg: #F0FDF4;
-    --color-badge-client-text: #15803D;
-    --color-badge-client-border: #BBF7D0;
+    --color-glow-1: rgba(255, 255, 255, 0.9);
+    --color-glow-2: rgba(150, 148, 140, 0.30);
+    --color-glow-3: rgba(190, 186, 176, 0.35);
 
-    --color-badge-saas-bg: #FAF5FF;
-    --color-badge-saas-text: #7E22CE;
-    --color-badge-saas-border: #E9D5FF;
+    --color-ink: #0C0C10;
+    --color-on-ink: #F2F1EC;
+    --color-on-ink-muted: #9C9CA6;
+    --color-focus: #0C0C10;
 
-    --color-badge-muted-bg: #F1F5F9;
-    --color-badge-muted-text: #475569;
-    --color-badge-muted-border: #E2E8F0;
+    --color-badge-enterprise-text: #0C0C10;
+    --color-badge-client-text: #46464F;
+    --color-badge-saas-text: #6E6E78;
+    --color-badge-muted-text: #8A8A93;
+    --color-badge-enterprise-bg: rgba(12, 12, 16, 0.04);
+    --color-badge-enterprise-border: rgba(12, 12, 16, 0.2);
 
-    --color-grid-dot: rgba(15, 23, 42, 0.05);
+    --color-grid-line: rgba(12, 12, 16, 0.05);
+    --noise-opacity: 0.05;
 
-    /* Card Shadows & Elevation */
-    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
-    --shadow-lg: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
-    --shadow-premium: 0 20px 35px -10px rgba(15, 23, 42, 0.09), 0 1px 3px rgba(0, 0, 0, 0.04);
-    --glass-bg: rgba(255, 255, 255, 0.85);
-    --glass-border: rgba(226, 232, 240, 0.8);
+    --shadow-sm: 0 1px 2px rgba(12, 12, 16, 0.06);
+    --shadow-lg: 0 30px 60px -20px rgba(12, 12, 16, 0.25);
+    --glass-bg: rgba(242, 241, 236, 0.72);
 
     /* Typography */
-    --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --font-display: "Space Grotesk", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-    --text-xs: 0.8125rem;
+    --font-sans: "Inter Tight", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-display: "Inter Tight", system-ui, -apple-system, sans-serif;
+    --font-serif: "Instrument Serif", "Times New Roman", Georgia, serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+    --text-xs: 0.78rem;
     --text-sm: 0.9375rem;
     --text-base: 1.0625rem;
-    --text-lg: 1.1875rem;
-    --text-xl: 1.35rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-display: clamp(2.6rem, 6.4vw, 6.6rem);
+    --text-section: clamp(2.2rem, 5vw, 4.6rem);
 
-    /* Space & Shape */
+    /* Space & shape */
     --space-1: 0.5rem;
     --space-2: 1rem;
     --space-3: 1.5rem;
     --space-4: 2.5rem;
     --space-5: 4.5rem;
-    --space-6: 6.5rem;
+    --space-6: clamp(5rem, 11vw, 9.5rem);
     --radius-xs: 6px;
-    --radius-sm: 10px;
-    --radius-md: 16px;
-    --radius-lg: 24px;
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 32px;
     --radius-full: 9999px;
-    --container: 1140px;
-    --header-height: 72px;
+    --container: 1320px;
+    --header-height: 76px;
+
+    /* Motion */
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+    --dur-fast: 0.25s;
+    --dur: 0.6s;
+    --dur-slow: 1.1s;
 }
 
-/* =========================================
-   DARK THEME - LUXURY OBSIDIAN / CHARCOAL
-========================================= */
-
+/* Dark theme: obsidian + ivory (default) */
 [data-theme="dark"] {
-    --color-background: #090D16;
-    --color-surface: #111827;
-    --color-surface-hover: #162032;
-    --color-tint: #0D1424;
-    --color-border: #1E293B;
-    --color-border-subtle: #192237;
-    --color-border-glow: rgba(59, 130, 246, 0.3);
-    --color-text-primary: #F8FAFC;
-    --color-text-secondary: #94A3B8;
-    --color-text-muted: #64748B;
+    --color-background: #07070A;
+    --color-surface: #0F0F14;
+    --color-surface-hover: #15151C;
+    --color-tint: #0B0B0F;
+    --color-border: rgba(255, 255, 255, 0.09);
+    --color-border-subtle: rgba(255, 255, 255, 0.05);
+    --color-border-strong: rgba(255, 255, 255, 0.22);
+    --color-text-primary: #F2F1EC;
+    --color-text-secondary: #A3A3AE;
+    --color-text-muted: #74747F;
 
-    --color-accent: #3B82F6;
-    --color-accent-hover: #60A5FA;
-    --color-accent-soft: rgba(59, 130, 246, 0.12);
-    --color-accent-glow: rgba(59, 130, 246, 0.2);
-    --color-accent-gradient: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+    --color-accent: #F2F1EC;
+    --color-accent-hover: #FFFFFF;
+    --color-on-accent: #07070A;
+    --color-highlight: #F2F1EC;
+    --color-accent-soft: rgba(255, 255, 255, 0.05);
+    --color-accent-glow: rgba(242, 241, 236, 0.14);
 
-    --color-ink: #050811;
-    --color-on-ink: #F1F5F9;
-    --color-on-ink-muted: #94A3B8;
-    --color-focus: #3B82F6;
+    --color-glow-1: rgba(255, 255, 255, 0.13);
+    --color-glow-2: rgba(170, 170, 185, 0.20);
+    --color-glow-3: rgba(255, 255, 255, 0.07);
 
-    /* Badges in Dark */
-    --color-badge-enterprise-bg: rgba(59, 130, 246, 0.12);
-    --color-badge-enterprise-text: #93C5FD;
-    --color-badge-enterprise-border: rgba(59, 130, 246, 0.3);
+    --color-ink: #F2F1EC;
+    --color-on-ink: #07070A;
+    --color-on-ink-muted: #4A4A55;
+    --color-focus: #F2F1EC;
 
-    --color-badge-client-bg: rgba(34, 197, 94, 0.12);
-    --color-badge-client-text: #86EFAC;
-    --color-badge-client-border: rgba(34, 197, 94, 0.3);
+    --color-badge-enterprise-text: #F2F1EC;
+    --color-badge-client-text: #C4C4CC;
+    --color-badge-saas-text: #9A9AA5;
+    --color-badge-muted-text: #74747F;
+    --color-badge-enterprise-bg: rgba(255, 255, 255, 0.04);
+    --color-badge-enterprise-border: rgba(255, 255, 255, 0.18);
 
-    --color-badge-saas-bg: rgba(168, 85, 247, 0.12);
-    --color-badge-saas-text: #D8B4FE;
-    --color-badge-saas-border: rgba(168, 85, 247, 0.3);
+    --color-grid-line: rgba(255, 255, 255, 0.04);
+    --noise-opacity: 0.07;
 
-    --color-badge-muted-bg: rgba(148, 163, 184, 0.1);
-    --color-badge-muted-text: #CBD5E1;
-    --color-badge-muted-border: rgba(148, 163, 184, 0.2);
-
-    --color-grid-dot: rgba(255, 255, 255, 0.05);
-
-    /* Shadows & Glass in Dark */
-    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 10px -1px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 12px 30px -5px rgba(0, 0, 0, 0.6);
-    --shadow-premium: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.05);
-    --glass-bg: rgba(17, 24, 39, 0.85);
-    --glass-border: rgba(30, 41, 59, 0.8);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 40px 80px -20px rgba(0, 0, 0, 0.8);
+    --glass-bg: rgba(7, 7, 10, 0.6);
 }

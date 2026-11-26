@@ -7,10 +7,10 @@
 
     <title>Fatih Roihan | Jasa Pembuatan Website Freelance</title>
     <meta name="description" data-i18n-attr="content:meta.description"
-        content="Freelance web developer untuk landing page, website company profile, dan website portofolio yang responsif. Diskusikan proyek Anda via WhatsApp.">
+        content="Freelance web developer untuk website cepat, sistem bisnis kustom, MVP SaaS, dan otomasi bagi UMKM, startup, dan perusahaan. Diskusi via WhatsApp.">
     <meta name="author" content="Fatih Roihan">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#F8FAFC">
+    <meta name="theme-color" content="#07070A">
 
     <link rel="canonical" href="https://fatihroihan.site/id/">
     <link rel="alternate" hreflang="en" href="https://fatihroihan.site/">
@@ -21,7 +21,7 @@
 
     <meta property="og:title" data-i18n-attr="content:og.title" content="Fatih Roihan | Jasa Pembuatan Website Freelance">
     <meta property="og:description" data-i18n-attr="content:og.description"
-        content="Landing page, website company profile, dan website portofolio yang jelas, responsif, dan siap mengubah pengunjung menjadi percakapan.">
+        content="Website, sistem bisnis kustom, produk SaaS, dan otomasi yang cepat, jelas, dan dipercaya oleh UMKM, perusahaan, hingga startup.">
     <meta property="og:image" content="https://fatihroihan.site/assets/images/og-cover.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -36,8 +36,10 @@
         (function () {
             try {
                 var stored = localStorage.getItem('fr-theme');
-                var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                var theme = stored === 'light' ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', theme);
+                document.documentElement.classList.add('js');
+                setTimeout(function () { document.documentElement.classList.add('is-ready'); }, 3500);
             } catch (e) {}
         })();
     </script>
@@ -53,26 +55,218 @@
                 "url": "https://fatihroihan.site/",
                 "image": "https://fatihroihan.site/assets/images/fatihroihan.jpg",
                 "jobTitle": "Freelance Web Developer",
-                "description": "Freelance web developer untuk landing page, website company profile, dan website portofolio yang responsif.",
-                "knowsLanguage": ["id", "en"],
-                "knowsAbout": ["Web Development", "Enterprise Web Systems", "Custom Business Applications", "SaaS Architecture", "High-Converting Landing Pages"],
+                "description": "Freelance web developer untuk website cepat, sistem bisnis kustom, MVP SaaS, dan otomasi bagi UMKM, startup, dan perusahaan.",
+                "knowsLanguage": [
+                    "id",
+                    "en"
+                ],
+                "knowsAbout": [
+                    "Web Development",
+                    "Enterprise Web Systems",
+                    "Custom Business Applications",
+                    "SaaS Architecture",
+                    "High-Converting Landing Pages"
+                ],
                 "sameAs": [
                     "https://www.linkedin.com/in/fatih-roihan-909173308",
                     "https://github.com/fatihroihandev"
-                ]
+                ],
+                "hasOfferCatalog": {
+                    "@id": "https://fatihroihan.site/#services"
+                }
             },
             {
                 "@type": "WebSite",
                 "@id": "https://fatihroihan.site/#website",
                 "url": "https://fatihroihan.site/",
                 "name": "Fatih Roihan",
-                "inLanguage": ["en", "id"],
-                "publisher": { "@id": "https://fatihroihan.site/#person" }
+                "inLanguage": [
+                    "en",
+                    "id"
+                ],
+                "publisher": {
+                    "@id": "https://fatihroihan.site/#person"
+                }
+            },
+            {
+                "@type": "OfferCatalog",
+                "@id": "https://fatihroihan.site/#services",
+                "name": "Layanan",
+                "itemListElement": [
+                    {
+                        "@type": "OfferCatalog",
+                        "name": "Website",
+                        "description": "Mudah ditemukan, tampil kredibel, dan mengubah pengunjung menjadi percakapan.",
+                        "itemListElement": [
+                            {
+                                "@type": "Offer",
+                                "url": "https://fatihroihan.site/id/#services",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Landing Page",
+                                    "description": "Desain satu halaman yang terfokus. Struktur konten dan ajakan bertindak yang jelas. Responsif di ponsel, tablet, dan desktop. Integrasi kontak WhatsApp atau email.",
+                                    "audience": {
+                                        "@type": "Audience",
+                                        "audienceType": "Individu, kampanye, dan bisnis kecil dengan satu penawaran yang jelas."
+                                    },
+                                    "provider": {
+                                        "@id": "https://fatihroihan.site/#person"
+                                    }
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "url": "https://fatihroihan.site/id/#services",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Website Bisnis & Company Profile",
+                                    "description": "Company profile dengan bagian layanan dan portofolio. Desain visual yang profesional dan konsisten. Layout responsif dan SEO on-page dasar. Bagian kontak dengan tautan pertanyaan langsung.",
+                                    "audience": {
+                                        "@type": "Audience",
+                                        "audienceType": "Bisnis yang membutuhkan kehadiran online yang kredibel."
+                                    },
+                                    "provider": {
+                                        "@id": "https://fatihroihan.site/#person"
+                                    }
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "url": "https://fatihroihan.site/id/#services",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Website Portofolio & Personal Brand",
+                                    "description": "Showcase proyek dengan konteks, bukan hanya screenshot. Bagian tentang dan layanan yang menjelaskan nilai Anda. Konten dua bahasa (ID/EN) opsional. Ajakan menghubungi sudah terintegrasi.",
+                                    "audience": {
+                                        "@type": "Audience",
+                                        "audienceType": "Profesional, freelancer, dan kreator yang ingin lebih mudah ditemukan dan dipercaya."
+                                    },
+                                    "provider": {
+                                        "@id": "https://fatihroihan.site/#person"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "OfferCatalog",
+                        "name": "Sistem & Produk",
+                        "description": "Ganti spreadsheet dan pekerjaan manual dengan software yang dibangun sesuai cara kerja Anda.",
+                        "itemListElement": [
+                            {
+                                "@type": "Offer",
+                                "url": "https://fatihroihan.site/id/#services",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Sistem Bisnis & Internal Tools",
+                                    "description": "Sistem alur kerja dan persetujuan berjenjang. Dashboard operasional dan pelacakan status. Hak akses per peran dan log yang siap audit. Dibangun sesuai proses nyata Anda, bukan template.",
+                                    "audience": {
+                                        "@type": "Audience",
+                                        "audienceType": "Perusahaan yang menjalankan persetujuan, pencatatan, jadwal, atau pelacakan lewat spreadsheet, kertas, atau grup chat."
+                                    },
+                                    "provider": {
+                                        "@id": "https://fatihroihan.site/#person"
+                                    }
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "url": "https://fatihroihan.site/id/#services",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "SaaS & Pengembangan MVP",
+                                    "description": "MVP difokuskan pada fitur yang paling penting lebih dulu. Akun pengguna, peran, dan akses bertingkat. Dashboard admin untuk mengelola pengguna dan konten. Arsitektur yang siap berkembang setelah peluncuran.",
+                                    "audience": {
+                                        "@type": "Audience",
+                                        "audienceType": "Founder dan startup yang ingin mengubah ide menjadi produk digital yang berjalan."
+                                    },
+                                    "provider": {
+                                        "@id": "https://fatihroihan.site/#person"
+                                    }
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "url": "https://fatihroihan.site/id/#services",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Otomasi Alur Kerja & Integrasi",
+                                    "description": "Formulir, notifikasi, dan pengingat otomatis. Laporan terjadwal yang dihasilkan dari data Anda. Menghubungkan tools yang sudah Anda gunakan. Langkah manual dan kesalahan manusia berkurang.",
+                                    "audience": {
+                                        "@type": "Audience",
+                                        "audienceType": "Tim yang kehilangan banyak jam untuk input data berulang, copy-paste, dan laporan manual."
+                                    },
+                                    "provider": {
+                                        "@id": "https://fatihroihan.site/#person"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "OfferCatalog",
+                        "name": "Pertumbuhan & Perawatan",
+                        "description": "Jaga aset digital Anda tetap cepat, mudah ditemukan, dan berfungsi.",
+                        "itemListElement": [
+                            {
+                                "@type": "Offer",
+                                "url": "https://fatihroihan.site/id/#services",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "SEO Teknis & Performa",
+                                    "description": "Audit kecepatan dan Core Web Vitals beserta perbaikannya. SEO teknis: metadata, sitemap, structured data. Optimasi gambar, kode, dan proses loading. Laporan sebelum dan sesudah yang jelas.",
+                                    "audience": {
+                                        "@type": "Audience",
+                                        "audienceType": "Website yang lambat dibuka atau hampir tidak muncul di Google."
+                                    },
+                                    "provider": {
+                                        "@id": "https://fatihroihan.site/#person"
+                                    }
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "url": "https://fatihroihan.site/id/#services",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Perbaikan Website",
+                                    "description": "Perbaikan masalah tampilan dan layout. Perbaikan layout responsif untuk ponsel dan tablet. Resolusi kendala tata letak, bug antarmuka, dan performa website. Ruang lingkup dan batasannya dipastikan setelah meninjau website Anda.",
+                                    "audience": {
+                                        "@type": "Audience",
+                                        "audienceType": "Pemilik website yang memiliki bug, tampilannya rusak, atau kurang nyaman di ponsel."
+                                    },
+                                    "provider": {
+                                        "@id": "https://fatihroihan.site/#person"
+                                    }
+                                }
+                            },
+                            {
+                                "@type": "Offer",
+                                "url": "https://fatihroihan.site/id/#services",
+                                "itemOffered": {
+                                    "@type": "Service",
+                                    "name": "Maintenance & Support",
+                                    "description": "Pembaruan rutin, pengecekan, dan perbaikan bug. Perubahan konten dan fitur sesuai permintaan. Pemantauan agar masalah terdeteksi lebih awal. Ketentuan support disepakati di awal per proyek.",
+                                    "audience": {
+                                        "@type": "Audience",
+                                        "audienceType": "Bisnis yang ingin website atau sistemnya dirawat tanpa harus merekrut tim internal."
+                                    },
+                                    "provider": {
+                                        "@id": "https://fatihroihan.site/#person"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     }
     </script>
 
+    <link rel="preload" href="../assets/fonts/inter-tight-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/css/fonts.css">
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/variables.css">
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -92,7 +286,7 @@
                     <li><a href="#portfolio" data-i18n="nav.work">Portofolio</a></li>
                     <li><a href="#process" data-i18n="nav.process">Proses</a></li>
                     <li><a href="#about" data-i18n="nav.about">Tentang</a></li>
-                    <li><a href="articles/" data-i18n="nav.articles" data-i18n-href-en="articles/" data-i18n-href-id="id/articles/">Artikel</a></li>
+                    <li><a href="articles/" data-i18n="nav.articles" data-i18n-href-en="../articles/" data-i18n-href-id="articles/">Artikel</a></li>
                 </ul>
             </div>
 
@@ -123,171 +317,418 @@
 
         <!-- HERO -->
         <section id="hero" class="hero" aria-labelledby="hero-title">
+            <div class="hero__bg" aria-hidden="true">
+                <div class="hero__aurora"><i></i><i></i><i></i></div>
+                <div class="hero__grid"></div>
+                <div class="hero__spot"></div>
+            </div>
+
             <div class="container hero__container">
-                <div class="hero__content">
+                <div class="hero__top" data-intro>
                     <div class="status-pill">
                         <span class="status-dot"></span>
                         <span data-i18n="hero.badge">Terbuka untuk Proyek Terpilih &amp; Sistem Enterprise</span>
                     </div>
                     <p class="eyebrow" data-i18n="hero.eyebrow">Freelance Web Developer &amp; Digital Solutions Engineer</p>
-                    <h1 id="hero-title" class="hero__title" data-i18n-title="hero.title">Website Berperforma Tinggi &amp; <span>Sistem Bisnis Kustom.</span></h1>
-                    <p class="hero__description" data-i18n="hero.desc">Saya membuat website yang responsif, cepat, dan jelas, mulai dari landing page, company profile, hingga website portofolio, sesuai pesan yang ingin disampaikan bisnis atau personal brand Anda.</p>
+                </div>
 
-                    <div class="hero__actions">
-                        <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20tertarik%20dengan%20jasa%20freelance%20Anda.%20Saya%20ingin%20mendiskusikan%20kebutuhan%20proyek%20website%20saya."
-                            class="button button--primary button--lg" data-contact="whatsapp" data-i18n="hero.cta1"
-                            data-track="whatsapp_click" data-track-location="hero" target="_blank" rel="noopener noreferrer">Diskusikan Proyek via WhatsApp</a>
-                        <a href="#portfolio" class="button button--secondary button--lg" data-i18n="hero.cta2">Lihat Portofolio</a>
+                <h1 id="hero-title" class="hero__title" data-intro data-i18n-title="hero.title">Website Berperforma Tinggi &amp; <span>Sistem Bisnis Kustom.</span></h1>
+
+                <div class="hero__bottom">
+                    <div class="hero__content" data-intro>
+                        <p class="hero__description" data-i18n="hero.desc">Saya merancang dan membangun website cepat, sistem bisnis kustom, produk SaaS, dan otomasi untuk UMKM, perusahaan, startup, hingga klien internasional, sesuai kebutuhan nyata bisnis Anda.</p>
+
+                        <div class="hero__actions">
+                            <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20tertarik%20dengan%20jasa%20freelance%20Anda.%20Saya%20ingin%20mendiskusikan%20kebutuhan%20proyek%20website%20saya."
+                                class="button button--primary button--lg" data-contact="whatsapp" data-i18n="hero.cta1"
+                                data-track="whatsapp_click" data-track-location="hero" target="_blank" rel="noopener noreferrer">Diskusikan Proyek via WhatsApp</a>
+                            <a href="#portfolio" class="button button--secondary button--lg" data-i18n="hero.cta2">Lihat Portofolio</a>
+                        </div>
+                        <p class="hero__note" data-i18n="hero.note">Tanpa brief teknis. Cukup ceritakan kebutuhan Anda.</p>
                     </div>
-                    <p class="hero__note" data-i18n="hero.note">Tanpa brief teknis. Cukup ceritakan kebutuhan Anda.</p>
 
+                    <div class="hero__visual" data-intro role="img" aria-label="Ilustrasi tata letak website modern"
+                        data-i18n-attr="aria-label:hero.mock.label">
+                        <div class="browser-mockup">
+                            <div class="browser-mockup__bar">
+                                <div class="browser-mockup__dots"><i></i><i></i><i></i></div>
+                                <div class="browser-mockup__address">
+                                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                    <span>fatihroihan.site</span>
+                                </div>
+                                <div class="browser-mockup__status"><span class="status-indicator"></span></div>
+                            </div>
+                            <div class="browser-mockup__canvas">
+                                <div class="canvas-header">
+                                    <span class="canvas-brand"></span>
+                                    <div class="canvas-menu"><span></span><span></span><span></span></div>
+                                </div>
+                                <div class="canvas-hero">
+                                    <span class="canvas-tag"></span>
+                                    <div class="canvas-headline"></div>
+                                    <div class="canvas-subline"></div>
+                                    <div class="canvas-ctas">
+                                        <span class="canvas-cta canvas-cta--primary"></span>
+                                        <span class="canvas-cta canvas-cta--outline"></span>
+                                    </div>
+                                </div>
+                                <div class="canvas-grid">
+                                    <div class="canvas-card">
+                                        <div class="canvas-card__icon"></div>
+                                        <div class="canvas-card__bar"></div>
+                                        <div class="canvas-card__sub"></div>
+                                    </div>
+                                    <div class="canvas-card">
+                                        <div class="canvas-card__icon canvas-card__icon--accent"></div>
+                                        <div class="canvas-card__bar"></div>
+                                        <div class="canvas-card__sub"></div>
+                                    </div>
+                                    <div class="canvas-card">
+                                        <div class="canvas-card__icon"></div>
+                                        <div class="canvas-card__bar"></div>
+                                        <div class="canvas-card__sub"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero__foot" data-intro>
                     <ul class="hero__proof">
                         <li data-i18n="hero.p1">Berpengalaman membangun sistem digital enterprise</li>
                         <li data-i18n="hero.p2">Performa tinggi &amp; layout responsif</li>
                         <li data-i18n="hero.p3">Bahasa Indonesia &amp; Inggris</li>
                     </ul>
-                </div>
-
-                <div class="hero__visual" role="img" aria-label="Ilustrasi tata letak website modern"
-                    data-i18n-attr="aria-label:hero.mock.label">
-                    <div class="browser-mockup">
-                        <div class="browser-mockup__bar">
-                            <div class="browser-mockup__dots"><i></i><i></i><i></i></div>
-                            <div class="browser-mockup__address">
-                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                                <span>fatihroihan.site</span>
-                            </div>
-                            <div class="browser-mockup__status"><span class="status-indicator"></span></div>
-                        </div>
-                        <div class="browser-mockup__canvas">
-                            <div class="canvas-header">
-                                <span class="canvas-brand"></span>
-                                <div class="canvas-menu"><span></span><span></span><span></span></div>
-                            </div>
-                            <div class="canvas-hero">
-                                <span class="canvas-tag"></span>
-                                <div class="canvas-headline"></div>
-                                <div class="canvas-subline"></div>
-                                <div class="canvas-ctas">
-                                    <span class="canvas-cta canvas-cta--primary"></span>
-                                    <span class="canvas-cta canvas-cta--outline"></span>
-                                </div>
-                            </div>
-                            <div class="canvas-grid">
-                                <div class="canvas-card">
-                                    <div class="canvas-card__icon"></div>
-                                    <div class="canvas-card__bar"></div>
-                                    <div class="canvas-card__sub"></div>
-                                </div>
-                                <div class="canvas-card">
-                                    <div class="canvas-card__icon canvas-card__icon--accent"></div>
-                                    <div class="canvas-card__bar"></div>
-                                    <div class="canvas-card__sub"></div>
-                                </div>
-                                <div class="canvas-card">
-                                    <div class="canvas-card__icon"></div>
-                                    <div class="canvas-card__bar"></div>
-                                    <div class="canvas-card__sub"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="#services" class="hero__scroll" aria-label="Layanan" data-i18n-attr="aria-label:nav.services"><span></span></a>
                 </div>
             </div>
         </section>
 
+        <!-- MARQUEE -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee__track">
+                <div class="marquee__group">
+                    <span data-i18n="sv1.title">Landing Page</span><i></i>
+                    <span data-i18n="sv2.title">Website Bisnis &amp; Company Profile</span><i></i>
+                    <span data-i18n="sv3.title">Website Portofolio &amp; Personal Brand</span><i></i>
+                    <span data-i18n="sv4.title">Perbaikan Website</span><i></i>
+                </div>
+                <div class="marquee__group">
+                    <span data-i18n="sv1.title">Landing Page</span><i></i>
+                    <span data-i18n="sv2.title">Website Bisnis &amp; Company Profile</span><i></i>
+                    <span data-i18n="sv3.title">Website Portofolio &amp; Personal Brand</span><i></i>
+                    <span data-i18n="sv4.title">Perbaikan Website</span><i></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRUST -->
+        <section id="trust" class="section trust" aria-labelledby="trust-title">
+            <div class="container">
+                <header class="section-header">
+                    <p class="eyebrow" data-i18n="trust.eyebrow">Mengapa klien percaya</p>
+                    <h2 id="trust-title" class="section-title" data-i18n-title="trust.title">Bukti, bukan janji. <span>Ini yang bisa Anda pegang.</span></h2>
+                </header>
+
+                <dl class="trust__stats">
+                    <div class="trust__stat">
+                        <dt class="trust__num" data-count="9">9</dt>
+                        <dd data-i18n="trust.n1">Sistem dan website di portofolio ini</dd>
+                    </div>
+                    <div class="trust__stat">
+                        <dt class="trust__num" data-count="6">6</dt>
+                        <dd data-i18n="trust.n2">Platform internal enterprise dibangun</dd>
+                    </div>
+                    <div class="trust__stat">
+                        <dt class="trust__num" data-count="5">5</dt>
+                        <dd data-i18n="trust.n3">Industri: farmasi, lab, HR, regulasi, gudang</dd>
+                    </div>
+                    <div class="trust__stat">
+                        <dt class="trust__num" data-count="1:1">1:1</dt>
+                        <dd data-i18n="trust.n4">Langsung dengan developer. Tanpa perantara.</dd>
+                    </div>
+                </dl>
+
+                <ul class="commitments">
+                    <li class="commitment">
+                        <span class="commitment__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+                        <h3 class="commitment__title" data-i18n="tc1.title">Ruang lingkup tertulis sebelum mulai</h3>
+                        <p data-i18n="tc1.desc">Halaman, fitur, timeline, dan estimasi disepakati secara tertulis lebih dulu, jadi Anda tahu persis apa yang Anda bayar.</p>
+                    </li>
+                    <li class="commitment">
+                        <span class="commitment__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
+                        <h3 class="commitment__title" data-i18n="tc2.title">Progres yang bisa Anda lihat</h3>
+                        <p data-i18n="tc2.desc">Preview dan update rutin selama pengerjaan, bukan diam sampai tenggat.</p>
+                    </li>
+                    <li class="commitment">
+                        <span class="commitment__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="M21 2l-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg></span>
+                        <h3 class="commitment__title" data-i18n="tc3.title">Semua milik Anda</h3>
+                        <p data-i18n="tc3.desc">File, kode, dan akses diserahkan saat peluncuran, lengkap dengan penjelasan cara kerjanya.</p>
+                    </li>
+                    <li class="commitment">
+                        <span class="commitment__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+                        <h3 class="commitment__title" data-i18n="tc4.title">Kerahasiaan terjaga</h3>
+                        <p data-i18n="tc4.desc">Pekerjaan klien dan enterprise tetap rahasia. NDA dipersilakan.</p>
+                    </li>
+                    <li class="commitment">
+                        <span class="commitment__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg></span>
+                        <h3 class="commitment__title" data-i18n="tc5.title">Revisi sesuai kesepakatan</h3>
+                        <p data-i18n="tc5.desc">Jumlah revisi ditentukan di awal, sehingga masukan selalu diterima dan ekspektasi tetap jelas.</p>
+                    </li>
+                    <li class="commitment">
+                        <span class="commitment__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                        <h3 class="commitment__title" data-i18n="tc6.title">Saran yang jujur</h3>
+                        <p data-i18n="tc6.desc">Jika sesuatu tidak membantu tujuan Anda, saya akan mengatakannya, meski itu berarti proyek yang lebih kecil.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
         <!-- SERVICES -->
-        <section id="services" class="section" aria-labelledby="services-title">
+        <section id="services" class="section section--tint" aria-labelledby="services-title">
             <div class="container">
                 <header class="section-header">
                     <p class="eyebrow" data-i18n="services.eyebrow">Layanan</p>
-                    <h2 id="services-title" class="section-title" data-i18n-title="services.title">Layanan website dengan <span>ruang lingkup yang jelas.</span></h2>
-                    <p class="section-description" data-i18n="services.desc">Empat layanan terfokus yang dapat saya kerjakan sebagai freelancer. Belum yakin mana yang cocok? Ceritakan tujuan Anda dan kita tentukan ruang lingkup yang tepat bersama.</p>
+                    <h2 id="services-title" class="section-title" data-i18n-title="services.title">Semua kebutuhan digital bisnis Anda, <span>dalam satu tangan.</span></h2>
+                    <p class="section-description" data-i18n="services.desc">Sembilan layanan dalam tiga area: website yang membangun kepercayaan, sistem yang menjalankan operasional, dan pendampingan agar semuanya tetap cepat dan sehat. Belum yakin mana yang cocok? Ceritakan tujuan Anda dan kita tentukan ruang lingkupnya bersama.</p>
                 </header>
 
-                <div class="services">
-                    <article class="service">
-                        <span class="service__num" aria-hidden="true">01</span>
-                        <h3 class="service__title" data-i18n="sv1.title">Landing Page</h3>
-                        <dl class="service__facts">
-                            <div><dt data-i18n="sv.for">Cocok untuk</dt><dd data-i18n="sv1.for">Individu, kampanye, dan bisnis kecil dengan satu penawaran yang jelas.</dd></div>
-                            <div><dt data-i18n="sv.problem">Masalahnya</dt><dd data-i18n="sv1.problem">Pengunjung tidak cepat memahami apa yang Anda tawarkan atau cara menghubungi Anda.</dd></div>
-                        </dl>
-                        <p class="service__label" data-i18n="sv.get">Yang Anda dapatkan</p>
-                        <ul class="checklist">
-                            <li data-i18n="sv1.l1">Desain satu halaman yang terfokus</li>
-                            <li data-i18n="sv1.l2">Struktur konten dan ajakan bertindak yang jelas</li>
-                            <li data-i18n="sv1.l3">Responsif di ponsel, tablet, dan desktop</li>
-                            <li data-i18n="sv1.l4">Integrasi kontak WhatsApp atau email</li>
-                        </ul>
-                        <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20proyek%20landing%20page." class="text-link"
-                            data-contact="whatsapp" data-wa-message="contact.whatsapp.sv1" data-i18n="sv.ask"
-                            data-track="whatsapp_click" data-track-location="service-landing-page" target="_blank" rel="noopener noreferrer">Tanyakan layanan ini</a>
-                    </article>
-
-                    <article class="service">
-                        <span class="service__num" aria-hidden="true">02</span>
-                        <h3 class="service__title" data-i18n="sv2.title">Website Bisnis &amp; Company Profile</h3>
-                        <dl class="service__facts">
-                            <div><dt data-i18n="sv.for">Cocok untuk</dt><dd data-i18n="sv2.for">Bisnis yang membutuhkan kehadiran online yang kredibel.</dd></div>
-                            <div><dt data-i18n="sv.problem">Masalahnya</dt><dd data-i18n="sv2.problem">Calon pelanggan mencari Anda secara online lalu tidak menemukan apa pun, atau menemukan tampilan yang kurang meyakinkan.</dd></div>
-                        </dl>
-                        <p class="service__label" data-i18n="sv.get">Yang Anda dapatkan</p>
-                        <ul class="checklist">
-                            <li data-i18n="sv2.l1">Company profile dengan bagian layanan dan portofolio</li>
-                            <li data-i18n="sv2.l2">Desain visual yang profesional dan konsisten</li>
-                            <li data-i18n="sv2.l3">Layout responsif dan SEO on-page dasar</li>
-                            <li data-i18n="sv2.l4">Bagian kontak dengan tautan pertanyaan langsung</li>
-                        </ul>
-                        <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20website%20bisnis%20%2F%20company%20profile." class="text-link"
-                            data-contact="whatsapp" data-wa-message="contact.whatsapp.sv2" data-i18n="sv.ask"
-                            data-track="whatsapp_click" data-track-location="service-company-profile" target="_blank" rel="noopener noreferrer">Tanyakan layanan ini</a>
-                    </article>
-
-                    <article class="service">
-                        <span class="service__num" aria-hidden="true">03</span>
-                        <h3 class="service__title" data-i18n="sv3.title">Website Portofolio &amp; Personal Brand</h3>
-                        <dl class="service__facts">
-                            <div><dt data-i18n="sv.for">Cocok untuk</dt><dd data-i18n="sv3.for">Profesional, freelancer, dan kreator yang ingin lebih mudah ditemukan dan dipercaya.</dd></div>
-                            <div><dt data-i18n="sv.problem">Masalahnya</dt><dd data-i18n="sv3.problem">Karya Anda tersebar di banyak tautan dan berkas, sehingga sulit menunjukkan kemampuan Anda.</dd></div>
-                        </dl>
-                        <p class="service__label" data-i18n="sv.get">Yang Anda dapatkan</p>
-                        <ul class="checklist">
-                            <li data-i18n="sv3.l1">Showcase proyek dengan konteks, bukan hanya screenshot</li>
-                            <li data-i18n="sv3.l2">Bagian tentang dan layanan yang menjelaskan nilai Anda</li>
-                            <li data-i18n="sv3.l3">Konten dua bahasa (ID/EN) opsional</li>
-                            <li data-i18n="sv3.l4">Ajakan menghubungi sudah terintegrasi</li>
-                        </ul>
-                        <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20website%20portofolio%20%2F%20personal%20brand." class="text-link"
-                            data-contact="whatsapp" data-wa-message="contact.whatsapp.sv3" data-i18n="sv.ask"
-                            data-track="whatsapp_click" data-track-location="service-portfolio" target="_blank" rel="noopener noreferrer">Tanyakan layanan ini</a>
-                    </article>
-
-                    <article class="service">
-                        <span class="service__num" aria-hidden="true">04</span>
-                        <h3 class="service__title" data-i18n="sv4.title">Perbaikan Website</h3>
-                        <dl class="service__facts">
-                            <div><dt data-i18n="sv.for">Cocok untuk</dt><dd data-i18n="sv4.for">Pemilik website yang memiliki bug, tampilannya rusak, atau kurang nyaman di ponsel.</dd></div>
-                            <div><dt data-i18n="sv.problem">Masalahnya</dt><dd data-i18n="sv4.problem">Website sudah ada, tetapi ada yang bermasalah: tampilannya salah, tidak pas di ponsel, atau ada tautan dan fitur yang tidak berfungsi.</dd></div>
-                        </dl>
-                        <p class="service__label" data-i18n="sv.get">Yang Anda dapatkan</p>
-                        <ul class="checklist">
-                            <li data-i18n="sv4.l1">Perbaikan masalah tampilan dan layout</li>
-                            <li data-i18n="sv4.l2">Perbaikan layout responsif untuk ponsel dan tablet</li>
-                            <li data-i18n="sv4.l3">Resolusi kendala tata letak, bug antarmuka, dan performa website</li>
-                            <li data-i18n="sv4.l4">Ruang lingkup dan batasannya dipastikan setelah meninjau website Anda</li>
-                        </ul>
-                        <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20perbaikan%20website%20saya%20yang%20sudah%20ada." class="text-link"
-                            data-contact="whatsapp" data-wa-message="contact.whatsapp.sv4" data-i18n="sv.ask"
-                            data-track="whatsapp_click" data-track-location="service-improvement" target="_blank" rel="noopener noreferrer">Tanyakan layanan ini</a>
-                    </article>
+                <div class="service-groups">
+                    <div class="service-group">
+                        <div class="service-group__head">
+                            <span class="service-group__index" aria-hidden="true">A</span>
+                            <h3 class="service-group__title" data-i18n="sg1.title">Website</h3>
+                            <p class="service-group__desc" data-i18n="sg1.desc">Mudah ditemukan, tampil kredibel, dan mengubah pengunjung menjadi percakapan.</p>
+                        </div>
+                        <div class="services">
+                            <article class="service">
+                                <span class="service__num" aria-hidden="true">01</span>
+                                <h4 class="service__title" data-i18n="sv1.title">Landing Page</h4>
+                                <dl class="service__facts">
+                                    <div><dt data-i18n="sv.for">Cocok untuk</dt><dd data-i18n="sv1.for">Individu, kampanye, dan bisnis kecil dengan satu penawaran yang jelas.</dd></div>
+                                    <div><dt data-i18n="sv.problem">Masalahnya</dt><dd data-i18n="sv1.problem">Pengunjung tidak cepat memahami apa yang Anda tawarkan atau cara menghubungi Anda.</dd></div>
+                                </dl>
+                                <p class="service__label" data-i18n="sv.get">Yang Anda dapatkan</p>
+                                <ul class="checklist">
+                                    <li data-i18n="sv1.l1">Desain satu halaman yang terfokus</li>
+                                    <li data-i18n="sv1.l2">Struktur konten dan ajakan bertindak yang jelas</li>
+                                    <li data-i18n="sv1.l3">Responsif di ponsel, tablet, dan desktop</li>
+                                    <li data-i18n="sv1.l4">Integrasi kontak WhatsApp atau email</li>
+                                </ul>
+                                <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20proyek%20landing%20page." class="text-link"
+                                    data-contact="whatsapp" data-wa-message="contact.whatsapp.sv1" data-i18n="sv.ask"
+                                    data-track="whatsapp_click" data-track-location="service-landing-page" target="_blank" rel="noopener noreferrer">Tanyakan layanan ini</a>
+                            </article>
+                            <article class="service">
+                                <span class="service__num" aria-hidden="true">02</span>
+                                <h4 class="service__title" data-i18n="sv2.title">Website Bisnis &amp; Company Profile</h4>
+                                <dl class="service__facts">
+                                    <div><dt data-i18n="sv.for">Cocok untuk</dt><dd data-i18n="sv2.for">Bisnis yang membutuhkan kehadiran online yang kredibel.</dd></div>
+                                    <div><dt data-i18n="sv.problem">Masalahnya</dt><dd data-i18n="sv2.problem">Calon pelanggan mencari Anda secara online lalu tidak menemukan apa pun, atau menemukan tampilan yang kurang meyakinkan.</dd></div>
+                                </dl>
+                                <p class="service__label" data-i18n="sv.get">Yang Anda dapatkan</p>
+                                <ul class="checklist">
+                                    <li data-i18n="sv2.l1">Company profile dengan bagian layanan dan portofolio</li>
+                                    <li data-i18n="sv2.l2">Desain visual yang profesional dan konsisten</li>
+                                    <li data-i18n="sv2.l3">Layout responsif dan SEO on-page dasar</li>
+                                    <li data-i18n="sv2.l4">Bagian kontak dengan tautan pertanyaan langsung</li>
+                                </ul>
+                                <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20website%20bisnis%20%2F%20company%20profile." class="text-link"
+                                    data-contact="whatsapp" data-wa-message="contact.whatsapp.sv2" data-i18n="sv.ask"
+                                    data-track="whatsapp_click" data-track-location="service-company-profile" target="_blank" rel="noopener noreferrer">Tanyakan layanan ini</a>
+                            </article>
+                            <article class="service">
+                                <span class="service__num" aria-hidden="true">03</span>
+                                <h4 class="service__title" data-i18n="sv3.title">Website Portofolio &amp; Personal Brand</h4>
+                                <dl class="service__facts">
+                                    <div><dt data-i18n="sv.for">Cocok untuk</dt><dd data-i18n="sv3.for">Profesional, freelancer, dan kreator yang ingin lebih mudah ditemukan dan dipercaya.</dd></div>
+                                    <div><dt data-i18n="sv.problem">Masalahnya</dt><dd data-i18n="sv3.problem">Karya Anda tersebar di banyak tautan dan berkas, sehingga sulit menunjukkan kemampuan Anda.</dd></div>
+                                </dl>
+                                <p class="service__label" data-i18n="sv.get">Yang Anda dapatkan</p>
+                                <ul class="checklist">
+                                    <li data-i18n="sv3.l1">Showcase proyek dengan konteks, bukan hanya screenshot</li>
+                                    <li data-i18n="sv3.l2">Bagian tentang dan layanan yang menjelaskan nilai Anda</li>
+                                    <li data-i18n="sv3.l3">Konten dua bahasa (ID/EN) opsional</li>
+                                    <li data-i18n="sv3.l4">Ajakan menghubungi sudah terintegrasi</li>
+                                </ul>
+                                <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20website%20portofolio%20%2F%20personal%20brand." class="text-link"
+                                    data-contact="whatsapp" data-wa-message="contact.whatsapp.sv3" data-i18n="sv.ask"
+                                    data-track="whatsapp_click" data-track-location="service-portfolio" target="_blank" rel="noopener noreferrer">Tanyakan layanan ini</a>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="service-group">
+                        <div class="service-group__head">
+                            <span class="service-group__index" aria-hidden="true">B</span>
+                            <h3 class="service-group__title" data-i18n="sg2.title">Sistem &amp; Produk</h3>
+                            <p class="service-group__desc" data-i18n="sg2.desc">Ganti spreadsheet dan pekerjaan manual dengan software yang dibangun sesuai cara kerja Anda.</p>
+                        </div>
+                        <div class="services">
+                            <article class="service">
+                                <span class="service__num" aria-hidden="true">04</span>
+                                <h4 class="service__title" data-i18n="sv5.title">Sistem Bisnis &amp; Internal Tools</h4>
+                                <dl class="service__facts">
+                                    <div><dt data-i18n="sv.for">Cocok untuk</dt><dd data-i18n="sv5.for">Perusahaan yang menjalankan persetujuan, pencatatan, jadwal, atau pelacakan lewat spreadsheet, kertas, atau grup chat.</dd></div>
+                                    <div><dt data-i18n="sv.problem">Masalahnya</dt><dd data-i18n="sv5.problem">Data tersebar, persetujuan tersendat, dan tidak ada satu tampilan yang bisa diandalkan tentang apa yang sedang terjadi.</dd></div>
+                                </dl>
+                                <p class="service__label" data-i18n="sv.get">Yang Anda dapatkan</p>
+                                <ul class="checklist">
+                                    <li data-i18n="sv5.l1">Sistem alur kerja dan persetujuan berjenjang</li>
+                                    <li data-i18n="sv5.l2">Dashboard operasional dan pelacakan status</li>
+                                    <li data-i18n="sv5.l3">Hak akses per peran dan log yang siap audit</li>
+                                    <li data-i18n="sv5.l4">Dibangun sesuai proses nyata Anda, bukan template</li>
+                                </ul>
+                                <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20sistem%20bisnis%20kustom%20atau%20internal%20tool." class="text-link"
+                                    data-contact="whatsapp" data-wa-message="contact.whatsapp.systems" data-i18n="sv.ask"
+                                    data-track="whatsapp_click" data-track-location="service-systems" target="_blank" rel="noopener noreferrer">Tanyakan layanan ini</a>
+                            </article>
+                            <article class="service">
+                                <span class="service__num" aria-hidden="true">05</span>
+                                <h4 class="service__title" data-i18n="sv6.title">SaaS &amp; Pengembangan MVP</h4>
+                                <dl class="service__facts">
+                                    <div><dt data-i18n="sv.for">Cocok untuk</dt><dd data-i18n="sv6.for">Founder dan startup yang ingin mengubah ide menjadi produk digital yang berjalan.</dd></div>
+                                    <div><dt data-i18n="sv.problem">Masalahnya</dt><dd data-i18n="sv6.problem">Idenya sudah jelas, tetapi Anda butuh produk nyata yang bisa didaftari dan dipakai pengguna.</dd></div>
+                                </dl>
+                                <p class="service__label" data-i18n="sv.get">Yang Anda dapatkan</p>
+                                <ul class="checklist">
+                                    <li data-i18n="sv6.l1">MVP difokuskan pada fitur yang paling penting lebih dulu</li>
+                                    <li data-i18n="sv6.l2">Akun pengguna, peran, dan akses bertingkat</li>
+                                    <li data-i18n="sv6.l3">Dashboard admin untuk mengelola pengguna dan konten</li>
+                                    <li data-i18n="sv6.l4">Arsitektur yang siap berkembang setelah peluncuran</li>
+                                </ul>
+                                <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20pengembangan%20produk%20SaaS%20atau%20produk%20digital." class="text-link"
+                                    data-contact="whatsapp" data-wa-message="contact.whatsapp.saas" data-i18n="sv.ask"
+                                    data-track="whatsapp_click" data-track-location="service-saas" target="_blank" rel="noopener noreferrer">Tanyakan layanan ini</a>
+                            </article>
+                            <article class="service">
+                                <span class="service__num" aria-hidden="true">06</span>
+                                <h4 class="service__title" data-i18n="sv7.title">Otomasi Alur Kerja &amp; Integrasi</h4>
+                                <dl class="service__facts">
+                                    <div><dt data-i18n="sv.for">Cocok untuk</dt><dd data-i18n="sv7.for">Tim yang kehilangan banyak jam untuk input data berulang, copy-paste, dan laporan manual.</dd></div>
+                                    <div><dt data-i18n="sv.problem">Masalahnya</dt><dd data-i18n="sv7.problem">Data yang sama diketik di banyak tempat, laporan memakan waktu berhari-hari, dan kesalahan lolos begitu saja.</dd></div>
+                                </dl>
+                                <p class="service__label" data-i18n="sv.get">Yang Anda dapatkan</p>
+                                <ul class="checklist">
+                                    <li data-i18n="sv7.l1">Formulir, notifikasi, dan pengingat otomatis</li>
+                                    <li data-i18n="sv7.l2">Laporan terjadwal yang dihasilkan dari data Anda</li>
+                                    <li data-i18n="sv7.l3">Menghubungkan tools yang sudah Anda gunakan</li>
+                                    <li data-i18n="sv7.l4">Langkah manual dan kesalahan manusia berkurang</li>
+                                </ul>
+                                <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20otomasi%20alur%20kerja%20kami." class="text-link"
+                                    data-contact="whatsapp" data-wa-message="contact.whatsapp.automation" data-i18n="sv.ask"
+                                    data-track="whatsapp_click" data-track-location="service-automation" target="_blank" rel="noopener noreferrer">Tanyakan layanan ini</a>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="service-group">
+                        <div class="service-group__head">
+                            <span class="service-group__index" aria-hidden="true">C</span>
+                            <h3 class="service-group__title" data-i18n="sg3.title">Pertumbuhan &amp; Perawatan</h3>
+                            <p class="service-group__desc" data-i18n="sg3.desc">Jaga aset digital Anda tetap cepat, mudah ditemukan, dan berfungsi.</p>
+                        </div>
+                        <div class="services">
+                            <article class="service">
+                                <span class="service__num" aria-hidden="true">07</span>
+                                <h4 class="service__title" data-i18n="sv8.title">SEO Teknis &amp; Performa</h4>
+                                <dl class="service__facts">
+                                    <div><dt data-i18n="sv.for">Cocok untuk</dt><dd data-i18n="sv8.for">Website yang lambat dibuka atau hampir tidak muncul di Google.</dd></div>
+                                    <div><dt data-i18n="sv.problem">Masalahnya</dt><dd data-i18n="sv8.problem">Pengunjung pergi sebelum halaman selesai dimuat, dan mesin pencari tidak bisa membaca website Anda dengan baik.</dd></div>
+                                </dl>
+                                <p class="service__label" data-i18n="sv.get">Yang Anda dapatkan</p>
+                                <ul class="checklist">
+                                    <li data-i18n="sv8.l1">Audit kecepatan dan Core Web Vitals beserta perbaikannya</li>
+                                    <li data-i18n="sv8.l2">SEO teknis: metadata, sitemap, structured data</li>
+                                    <li data-i18n="sv8.l3">Optimasi gambar, kode, dan proses loading</li>
+                                    <li data-i18n="sv8.l4">Laporan sebelum dan sesudah yang jelas</li>
+                                </ul>
+                                <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20website%20saya%20dicek%20dari%20sisi%20SEO%20dan%20performa." class="text-link"
+                                    data-contact="whatsapp" data-wa-message="contact.whatsapp.seo" data-i18n="sv.ask"
+                                    data-track="whatsapp_click" data-track-location="service-seo" target="_blank" rel="noopener noreferrer">Tanyakan layanan ini</a>
+                            </article>
+                            <article class="service">
+                                <span class="service__num" aria-hidden="true">08</span>
+                                <h4 class="service__title" data-i18n="sv4.title">Perbaikan Website</h4>
+                                <dl class="service__facts">
+                                    <div><dt data-i18n="sv.for">Cocok untuk</dt><dd data-i18n="sv4.for">Pemilik website yang memiliki bug, tampilannya rusak, atau kurang nyaman di ponsel.</dd></div>
+                                    <div><dt data-i18n="sv.problem">Masalahnya</dt><dd data-i18n="sv4.problem">Website sudah ada, tetapi ada yang bermasalah: tampilannya salah, tidak pas di ponsel, atau ada tautan dan fitur yang tidak berfungsi.</dd></div>
+                                </dl>
+                                <p class="service__label" data-i18n="sv.get">Yang Anda dapatkan</p>
+                                <ul class="checklist">
+                                    <li data-i18n="sv4.l1">Perbaikan masalah tampilan dan layout</li>
+                                    <li data-i18n="sv4.l2">Perbaikan layout responsif untuk ponsel dan tablet</li>
+                                    <li data-i18n="sv4.l3">Resolusi kendala tata letak, bug antarmuka, dan performa website</li>
+                                    <li data-i18n="sv4.l4">Ruang lingkup dan batasannya dipastikan setelah meninjau website Anda</li>
+                                </ul>
+                                <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20perbaikan%20website%20saya%20yang%20sudah%20ada." class="text-link"
+                                    data-contact="whatsapp" data-wa-message="contact.whatsapp.sv4" data-i18n="sv.ask"
+                                    data-track="whatsapp_click" data-track-location="service-improvement" target="_blank" rel="noopener noreferrer">Tanyakan layanan ini</a>
+                            </article>
+                            <article class="service">
+                                <span class="service__num" aria-hidden="true">09</span>
+                                <h4 class="service__title" data-i18n="sv9.title">Maintenance &amp; Support</h4>
+                                <dl class="service__facts">
+                                    <div><dt data-i18n="sv.for">Cocok untuk</dt><dd data-i18n="sv9.for">Bisnis yang ingin website atau sistemnya dirawat tanpa harus merekrut tim internal.</dd></div>
+                                    <div><dt data-i18n="sv.problem">Masalahnya</dt><dd data-i18n="sv9.problem">Masalah kecil menumpuk, konten jadi usang, dan tidak ada yang bertanggung jawab saat terjadi kerusakan.</dd></div>
+                                </dl>
+                                <p class="service__label" data-i18n="sv.get">Yang Anda dapatkan</p>
+                                <ul class="checklist">
+                                    <li data-i18n="sv9.l1">Pembaruan rutin, pengecekan, dan perbaikan bug</li>
+                                    <li data-i18n="sv9.l2">Perubahan konten dan fitur sesuai permintaan</li>
+                                    <li data-i18n="sv9.l3">Pemantauan agar masalah terdeteksi lebih awal</li>
+                                    <li data-i18n="sv9.l4">Ketentuan support disepakati di awal per proyek</li>
+                                </ul>
+                                <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20maintenance%20dan%20support%20untuk%20website%20atau%20sistem%20saya." class="text-link"
+                                    data-contact="whatsapp" data-wa-message="contact.whatsapp.maintenance" data-i18n="sv.ask"
+                                    data-track="whatsapp_click" data-track-location="service-maintenance" target="_blank" rel="noopener noreferrer">Tanyakan layanan ini</a>
+                            </article>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="services__more">
-                    <span data-i18n="services.more">Tersedia juga: sistem bisnis kustom dan internal tools enterprise, seperti engine alur kerja, persetujuan, telemetri, dan pelacakan.</span>
-                    <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20ingin%20mendiskusikan%20sistem%20bisnis%20kustom%20atau%20internal%20tool." class="button button--secondary"
-                        data-contact="whatsapp" data-wa-message="contact.whatsapp.systems" data-i18n="services.more.cta"
-                        data-track="whatsapp_click" data-track-location="service-systems" target="_blank" rel="noopener noreferrer">Tanyakan sistem kustom</a>
+                    <span data-i18n="services.more">Butuh sesuatu yang tidak ada di daftar? Ceritakan masalahnya, dan saya akan jujur memberi tahu apakah saya orang yang tepat.</span>
+                    <a href="https://wa.me/628818227834?text=Halo%20Fatih%2C%20saya%20tertarik%20dengan%20jasa%20freelance%20Anda.%20Saya%20ingin%20mendiskusikan%20kebutuhan%20proyek%20website%20saya." class="button button--secondary"
+                        data-contact="whatsapp" data-i18n="services.more.cta"
+                        data-track="whatsapp_click" data-track-location="service-other" target="_blank" rel="noopener noreferrer">Ceritakan proyek Anda</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- AUDIENCE -->
+        <section id="clients" class="section" aria-labelledby="clients-title">
+            <div class="container">
+                <header class="section-header">
+                    <p class="eyebrow" data-i18n="aud.eyebrow">Klien yang saya bantu</p>
+                    <h2 id="clients-title" class="section-title" data-i18n-title="aud.title">Dari usaha lokal <span>hingga operasional enterprise.</span></h2>
+                    <p class="section-description" data-i18n="aud.desc">Pendekatannya tetap sama: pahami masalah nyata terlebih dahulu, lalu bangun hanya yang benar-benar menggerakkannya maju.</p>
+                </header>
+
+                <div class="audiences">
+                    <article class="audience">
+                        <span class="audience__index" aria-hidden="true">01/04</span>
+                        <h3 class="audience__title" data-i18n="aud1.title">UMKM &amp; bisnis lokal</h3>
+                        <p class="audience__desc" data-i18n="aud1.desc">Website profesional yang membuat pelanggan percaya dan langsung menghubungi Anda lewat WhatsApp, tanpa anggaran besar atau istilah teknis yang membingungkan.</p>
+                        <ul class="audience__tags"><li data-i18n="sv1.title">Landing Page</li><li data-i18n="sv2.title">Website Bisnis &amp; Company Profile</li><li data-i18n="sv8.title">SEO Teknis &amp; Performa</li></ul>
+                    </article>
+                    <article class="audience">
+                        <span class="audience__index" aria-hidden="true">02/04</span>
+                        <h3 class="audience__title" data-i18n="aud2.title">Perusahaan &amp; enterprise</h3>
+                        <p class="audience__desc" data-i18n="aud2.desc">Sistem internal untuk persetujuan, kepatuhan, dan operasional, dibangun oleh orang yang sudah membuatnya untuk tim farmasi, laboratorium, HR, dan gudang.</p>
+                        <ul class="audience__tags"><li data-i18n="sv5.title">Sistem Bisnis &amp; Internal Tools</li><li data-i18n="sv7.title">Otomasi Alur Kerja &amp; Integrasi</li><li data-i18n="sv9.title">Maintenance &amp; Support</li></ul>
+                    </article>
+                    <article class="audience">
+                        <span class="audience__index" aria-hidden="true">03/04</span>
+                        <h3 class="audience__title" data-i18n="aud3.title">Startup &amp; founder</h3>
+                        <p class="audience__desc" data-i18n="aud3.desc">MVP atau produk SaaS dengan ruang lingkup yang tepat agar Anda bisa meluncur, belajar, dan berkembang, dari developer yang juga seorang founder.</p>
+                        <ul class="audience__tags"><li data-i18n="sv6.title">SaaS &amp; Pengembangan MVP</li><li data-i18n="sv1.title">Landing Page</li><li data-i18n="sv8.title">SEO Teknis &amp; Performa</li></ul>
+                    </article>
+                    <article class="audience">
+                        <span class="audience__index" aria-hidden="true">04/04</span>
+                        <h3 class="audience__title" data-i18n="aud4.title">Klien internasional</h3>
+                        <p class="audience__desc" data-i18n="aud4.desc">Kolaborasi jarak jauh dalam bahasa Inggris, update tertulis yang jelas, dan komunikasi yang nyaman lintas zona waktu.</p>
+                        <ul class="audience__tags"><li data-i18n="sv2.title">Website Bisnis &amp; Company Profile</li><li data-i18n="sv6.title">SaaS &amp; Pengembangan MVP</li><li data-i18n="sv5.title">Sistem Bisnis &amp; Internal Tools</li></ul>
+                    </article>
                 </div>
             </div>
         </section>
@@ -552,8 +993,12 @@
         <section id="about" class="section section--tint" aria-labelledby="about-title">
             <div class="container about">
                 <figure class="about__figure">
-                    <img src="../assets/images/fatihroihan.jpg" width="900" height="900" loading="lazy" decoding="async"
-                        alt="Potret Fatih Roihan, freelance web developer" data-i18n-attr="alt:about.alt" class="about__image">
+                    <picture>
+                        <source type="image/avif" srcset="../assets/images/fatihroihan-480.avif 480w, ../assets/images/fatihroihan-900.avif 900w" sizes="(max-width: 980px) min(440px, 100vw - 2.5rem), 520px">
+                        <source type="image/webp" srcset="../assets/images/fatihroihan-480.webp 480w, ../assets/images/fatihroihan-900.webp 900w" sizes="(max-width: 980px) min(440px, 100vw - 2.5rem), 520px">
+                        <img src="../assets/images/fatihroihan.jpg" width="900" height="900" loading="lazy" decoding="async"
+                            alt="Potret Fatih Roihan, freelance web developer" data-i18n-attr="alt:about.alt" class="about__image">
+                    </picture>
                     <figcaption><strong>Fatih Roihan</strong><span data-i18n="about.caption">Freelance Web Developer</span></figcaption>
                 </figure>
 
@@ -577,70 +1022,6 @@
             </div>
         </section>
 
-        <!-- ARTICLES -->
-        <section id="articles" class="section" aria-labelledby="articles-title">
-            <div class="container">
-                <div class="section-header-row">
-                    <header class="section-header">
-                        <p class="eyebrow" data-i18n="articles.eyebrow">Artikel &amp; Wawasan</p>
-                        <h2 id="articles-title" class="section-title" data-i18n-title="articles.title">Catatan praktis seputar <span>website &amp; sistem bisnis.</span></h2>
-                        <p class="section-description" data-i18n="articles.desc">Artikel tentang strategi website berkonversi tinggi, aplikasi web internal, dan SEO teknis.</p>
-                    </header>
-                    <div class="section-header-row__action">
-                        <a href="articles/" class="button button--secondary" data-i18n="articles.viewAll" data-i18n-href-en="articles/" data-i18n-href-id="id/articles/">Lihat Semua Artikel</a>
-                    </div>
-                </div>
-
-                <!-- ARTICLES_LATEST_START -->
-                <div class="articles-grid">
-                    <article class="article-card" data-category="enterprise-systems">
-                        <a href="articles/spreadsheets-to-custom-enterprise-web-systems/" class="article-card__media" data-i18n-href-en="articles/spreadsheets-to-custom-enterprise-web-systems/" data-i18n-href-id="id/articles/spreadsheets-to-custom-enterprise-web-systems/">
-                            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" width="1200" height="630" loading="lazy" decoding="async"
-                                alt="Dashboard data operasional dan antarmuka alur kerja terstruktur di layar monitor" data-i18n-alt-en="Operational data dashboard and structured workflow interface on desktop monitor" data-i18n-alt-id="Dashboard data operasional dan antarmuka alur kerja terstruktur di layar monitor" class="article-card__img">
-                        </a>
-                        <div class="article-card__body">
-                            <div class="article-card__meta">
-                                <span class="project__kind" data-i18n-inline-en="Enterprise Systems" data-i18n-inline-id="Sistem Enterprise">Sistem Enterprise</span>
-                                <time datetime="2026-11-18" data-i18n-inline-en="Nov 18, 2026" data-i18n-inline-id="18 Nov 2026">18 Nov 2026</time>
-                                <span>·</span>
-                                <span data-i18n-inline-en="6 min read" data-i18n-inline-id="6 menit baca">6 menit baca</span>
-                            </div>
-                            <h3 class="article-card__title">
-                                <a href="articles/spreadsheets-to-custom-enterprise-web-systems/" data-i18n-href-en="articles/spreadsheets-to-custom-enterprise-web-systems/" data-i18n-href-id="id/articles/spreadsheets-to-custom-enterprise-web-systems/" data-i18n-inline-en="When to Replace Spreadsheets with Custom Web Systems" data-i18n-inline-id="Kapan Harus Beralih dari Spreadsheet ke Sistem Web">Kapan Harus Beralih dari Spreadsheet ke Sistem Web</a>
-                            </h3>
-                            <p class="article-card__excerpt" data-i18n-inline-en="Spreadsheets are great for starting out, but as multi-step approvals, audit trails, and shift handovers grow, custom internal web systems become essential." data-i18n-inline-id="Spreadsheet sangat membantu di awal, namun saat persetujuan berjenjang, audit trail, dan operasional 24/7 berkembang, sistem web kustom menjadi keharusan.">Spreadsheet sangat membantu di awal, namun saat persetujuan berjenjang, audit trail, dan operasional 24/7 berkembang, sistem web kustom menjadi keharusan.</p>
-                            <div class="article-card__footer">
-                                <a href="articles/spreadsheets-to-custom-enterprise-web-systems/" class="text-link" data-i18n="articles.readMore" data-i18n-href-en="articles/spreadsheets-to-custom-enterprise-web-systems/" data-i18n-href-id="id/articles/spreadsheets-to-custom-enterprise-web-systems/">Baca Artikel</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-card" data-category="web-strategy">
-                        <a href="articles/high-converting-landing-page-architecture/" class="article-card__media" data-i18n-href-en="articles/high-converting-landing-page-architecture/" data-i18n-href-id="id/articles/high-converting-landing-page-architecture/">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" width="1200" height="630" loading="lazy" decoding="async"
-                                alt="Dashboard analitik dan tata letak wireframe di layar laptop modern" data-i18n-alt-en="Analytics dashboard and wireframe layout on a modern laptop screen" data-i18n-alt-id="Dashboard analitik dan tata letak wireframe di layar laptop modern" class="article-card__img">
-                        </a>
-                        <div class="article-card__body">
-                            <div class="article-card__meta">
-                                <span class="project__kind" data-i18n-inline-en="Web Strategy" data-i18n-inline-id="Strategi Web">Strategi Web</span>
-                                <time datetime="2026-11-15" data-i18n-inline-en="Nov 15, 2026" data-i18n-inline-id="15 Nov 2026">15 Nov 2026</time>
-                                <span>·</span>
-                                <span data-i18n-inline-en="5 min read" data-i18n-inline-id="5 menit baca">5 menit baca</span>
-                            </div>
-                            <h3 class="article-card__title">
-                                <a href="articles/high-converting-landing-page-architecture/" data-i18n-href-en="articles/high-converting-landing-page-architecture/" data-i18n-href-id="id/articles/high-converting-landing-page-architecture/" data-i18n-inline-en="Why Fast, Focused Landing Pages Convert Better" data-i18n-inline-id="Mengapa Landing Page Cepat Meningkatkan Konversi">Mengapa Landing Page Cepat Meningkatkan Konversi</a>
-                            </h3>
-                            <p class="article-card__excerpt" data-i18n-inline-en="Most business websites lose potential clients in the first five seconds because of slow load times and vague messaging. Here is how focused architecture fixes that." data-i18n-inline-id="Banyak website bisnis kehilangan calon pelanggan di 5 detik pertama karena loading lambat dan pesan yang bertele-tele. Ini cara mengatasinya.">Banyak website bisnis kehilangan calon pelanggan di 5 detik pertama karena loading lambat dan pesan yang bertele-tele. Ini cara mengatasinya.</p>
-                            <div class="article-card__footer">
-                                <a href="articles/high-converting-landing-page-architecture/" class="text-link" data-i18n="articles.readMore" data-i18n-href-en="articles/high-converting-landing-page-architecture/" data-i18n-href-id="id/articles/high-converting-landing-page-architecture/">Baca Artikel</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <!-- ARTICLES_LATEST_END -->
-            </div>
-        </section>
-
         <!-- FAQ -->
         <section id="faq" class="section" aria-labelledby="faq-title">
             <div class="container faq">
@@ -656,7 +1037,7 @@
 
                 <div class="faq__list">
                     <details class="faq__item"><summary data-i18n="q1">Saya belum yakin jenis website apa yang saya butuhkan. Bisakah dibantu?</summary><p data-i18n="a1">Bisa. Anda tidak perlu menyiapkan spesifikasi teknis. Ceritakan bisnis atau brand Anda dan apa yang ingin dilakukan pengunjung, lalu kita tentukan bersama apakah landing page, company profile, atau website portofolio yang paling cocok.</p></details>
-                    <details class="faq__item"><summary data-i18n="q2">Jenis website apa yang Anda buat?</summary><p data-i18n="a2">Landing page, website bisnis dan company profile, serta website portofolio atau personal brand. Saya juga dapat memperbaiki website yang sudah ada, dan membuat sistem web kustom serta internal tools.</p></details>
+                    <details class="faq__item"><summary data-i18n="q2">Proyek apa saja yang Anda kerjakan?</summary><p data-i18n="a2">Website (landing page, company profile, portofolio), sistem bisnis kustom dan internal tools, produk SaaS dan MVP, otomasi alur kerja, SEO teknis dan optimasi performa, serta maintenance berkelanjutan. Saya juga memperbaiki dan meningkatkan website yang sudah ada.</p></details>
                     <details class="faq__item"><summary data-i18n="q3">Berapa lama pengerjaan sebuah proyek?</summary><p data-i18n="a3">Bergantung pada jumlah halaman, fitur, dan kesiapan konten Anda. Setelah ruang lingkup jelas, saya berikan jadwal yang realistis sebelum kita mulai.</p></details>
                     <details class="faq__item"><summary data-i18n="q4">Berapa biaya pembuatan website?</summary><p data-i18n="a4">Saya tidak mencantumkan harga tetap karena setiap proyek berbeda dalam halaman, fitur, dan konten. Kirim kebutuhan Anda via WhatsApp dan saya akan mengirim estimasi sesuai ruang lingkupnya.</p></details>
                     <details class="faq__item"><summary data-i18n="q5">Bisakah Anda memperbaiki atau mendesain ulang website saya yang sudah ada?</summary><p data-i18n="a5">Bisa, untuk kendala tampilan visual, responsivitas perangkat, alur interaksi yang terputus, hingga perbaikan performa. Saya lakukan peninjauan teknis terlebih dahulu, lalu memaparkan solusi perbaikan yang terstruktur dan terukur.</p></details>
@@ -667,6 +1048,13 @@
 
         <!-- CONTACT -->
         <section id="contact" class="contact" aria-labelledby="contact-title">
+            <div class="contact__glow" aria-hidden="true"></div>
+            <div class="contact__marquee" aria-hidden="true">
+                <div class="contact__marquee-track">
+                    <span data-i18n="final.eyebrow">Mari berdiskusi</span><i></i><span data-i18n="final.eyebrow">Mari berdiskusi</span><i></i>
+                    <span data-i18n="final.eyebrow">Mari berdiskusi</span><i></i><span data-i18n="final.eyebrow">Mari berdiskusi</span><i></i>
+                </div>
+            </div>
             <div class="container contact__inner">
                 <p class="eyebrow eyebrow--light" data-i18n="final.eyebrow">Mari berdiskusi</p>
                 <h2 id="contact-title" class="contact__title" data-i18n-title="final.title">Siap membangun <span>website Anda?</span></h2>
@@ -687,7 +1075,7 @@
         <div class="container site-footer__inner">
             <div class="site-footer__brand">
                 <a href="#hero" class="navbar__logo">Fatih Roihan</a>
-                <p data-i18n="footer.desc">Freelance web developer yang membantu bisnis dan individu memiliki kehadiran online yang profesional.</p>
+                <p data-i18n="footer.desc">Freelance web developer yang membangun website, sistem bisnis, dan produk digital untuk klien di Indonesia dan mancanegara.</p>
             </div>
 
             <nav class="site-footer__col" aria-label="Navigasi" data-i18n-attr="aria-label:footer.nav">
@@ -697,7 +1085,7 @@
                     <li><a href="#portfolio" data-i18n="nav.work">Portofolio</a></li>
                     <li><a href="#process" data-i18n="nav.process">Proses</a></li>
                     <li><a href="#about" data-i18n="nav.about">Tentang</a></li>
-                    <li><a href="articles/" data-i18n="nav.articles" data-i18n-href-en="articles/" data-i18n-href-id="id/articles/">Artikel</a></li>
+                    <li><a href="articles/" data-i18n="nav.articles" data-i18n-href-en="../articles/" data-i18n-href-id="articles/">Artikel</a></li>
                 </ul>
             </nav>
 
@@ -712,6 +1100,7 @@
                 </ul>
             </div>
         </div>
+        <div class="container site-footer__wordmark" aria-hidden="true">Fatih Roihan</div>
         <div class="container site-footer__bottom">
             <p>&copy; <span id="current-year">2026</span> Fatih Roihan. <span data-i18n="footer.rights">Hak cipta dilindungi.</span></p>
         </div>

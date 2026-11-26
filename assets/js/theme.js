@@ -9,7 +9,8 @@ export function getPreferredTheme() {
     } catch (e) {
         // Storage access might be restricted
     }
-    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    // Dark is the signature look; light is an explicit opt-in.
+    return "dark";
 }
 
 export function applyTheme(theme) {
@@ -18,7 +19,7 @@ export function applyTheme(theme) {
 
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (metaThemeColor) {
-        metaThemeColor.setAttribute("content", activeTheme === "dark" ? "#090D16" : "#F8FAFC");
+        metaThemeColor.setAttribute("content", activeTheme === "dark" ? "#07070A" : "#F2F1EC");
     }
 
     const toggleBtns = document.querySelectorAll(".theme-toggle");
@@ -43,14 +44,4 @@ export function initTheme() {
             applyTheme(next);
         });
     });
-
-    if (window.matchMedia) {
-        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
-            try {
-                if (!localStorage.getItem(THEME_STORAGE_KEY)) {
-                    applyTheme(e.matches ? "dark" : "light");
-                }
-            } catch (err) {}
-        });
-    }
 }

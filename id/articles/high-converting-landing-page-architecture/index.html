@@ -9,7 +9,7 @@
     <meta name="description" content="Pelajari mengapa landing page bisnis yang cepat dan terstruktur mampu menghasilkan lebih banyak pesan klien via WhatsApp dibanding website yang rumit.">
     <meta name="author" content="Fatih Roihan">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#F8FAFC">
+    <meta name="theme-color" content="#07070A">
 
     <link rel="canonical" href="https://fatihroihan.site/id/articles/high-converting-landing-page-architecture/">
     <link rel="alternate" hreflang="en" href="https://fatihroihan.site/articles/high-converting-landing-page-architecture/">
@@ -36,8 +36,9 @@
         (function () {
             try {
                 var stored = localStorage.getItem('fr-theme');
-                var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                var theme = stored === 'light' ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', theme);
+                document.documentElement.classList.add('js');
             } catch (e) {}
         })();
     </script>
@@ -51,7 +52,12 @@
             "@id": "https://fatihroihan.site/id/articles/high-converting-landing-page-architecture/#article",
             "headline": "Mengapa Landing Page Cepat Meningkatkan Konversi",
             "description": "Pelajari mengapa landing page bisnis yang cepat dan terstruktur mampu menghasilkan lebih banyak pesan klien via WhatsApp dibanding website yang rumit.",
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+            "image": {
+                "@type": "ImageObject",
+                "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+                "width": 1200,
+                "height": 630
+            },
             "datePublished": "2026-11-15",
             "dateModified": "2026-11-15",
             "inLanguage": "id",
@@ -59,7 +65,12 @@
                 "@type": "Person",
                 "@id": "https://fatihroihan.site/#person",
                 "name": "Fatih Roihan",
-                "url": "https://fatihroihan.site/"
+                "url": "https://fatihroihan.site/",
+                "jobTitle": "Freelance Website Developer",
+                "sameAs": [
+                    "https://www.linkedin.com/in/fatih-roihan-909173308",
+                    "https://github.com/fatihroihandev"
+                ]
             },
             "publisher": {
                 "@type": "Person",
@@ -120,6 +131,9 @@
 }
     </script>
 
+    <link rel="preload" href="../../../assets/fonts/inter-tight-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../../assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../../assets/css/fonts.css">
     <link rel="stylesheet" href="../../../assets/css/reset.css">
     <link rel="stylesheet" href="../../../assets/css/variables.css">
     <link rel="stylesheet" href="../../../assets/css/style.css">
@@ -191,7 +205,7 @@
         <div class="container article-layout">
             <article class="article-main">
                 <figure class="article-cover">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" width="1200" height="630" decoding="async" alt="Dashboard analitik dan tata letak wireframe di layar laptop modern">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" srcset="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=480&amp;q=80 480w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=800&amp;q=80 800w, https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80 1200w" sizes="(max-width: 980px) 100vw, 860px" width="1200" height="630" fetchpriority="high" decoding="async" alt="Dashboard analitik dan tata letak wireframe di layar laptop modern">
                     <figcaption>Hierarki informasi yang jelas mengubah pengunjung pasif menjadi calon klien aktif.</figcaption>
                 </figure>
 
@@ -204,7 +218,7 @@
                     <h2 id="1-kecepatan-adalah-sinyal-kredibilitas-pertama">1. Kecepatan Adalah Sinyal Kredibilitas Pertama</h2>
                     <p>Template berat yang penuh plugin tidak terpakai sering membutuhkan 4 hingga 6 detik untuk terbuka di jaringan ponsel. Sebaliknya, arsitektur web yang bersih dan ringan terbuka secara instan, memberikan kesan profesional bahkan sebelum pengunjung selesai membaca judul.</p>
                     <figure class="article-figure">
-    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" width="1000" height="600" loading="lazy" decoding="async" alt="Grafik metrik performa website yang menunjukkan korelasi kecepatan dengan konversi">
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" srcset="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=480&amp;q=80 480w, https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=800&amp;q=80 800w, https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=1000&amp;q=80 1000w" sizes="(max-width: 980px) 100vw, 760px" width="1000" height="600" loading="lazy" decoding="async" alt="Grafik metrik performa website yang menunjukkan korelasi kecepatan dengan konversi">
     <figcaption>Kecepatan render di perangkat mobile menjaga perhatian pengunjung hingga tombol CTA.</figcaption>
 </figure>
                     <h2 id="2-satu-halaman-satu-keputusan-jelas">2. Satu Halaman, Satu Keputusan Jelas</h2>
@@ -268,7 +282,7 @@
                 <div class="articles-grid">
                     <article class="article-card" data-category="enterprise-systems">
                         <a href="../../../id/articles/spreadsheets-to-custom-enterprise-web-systems/" class="article-card__media">
-                            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" width="1200" height="630" loading="lazy" decoding="async"
+                            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" srcset="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&amp;fit=crop&amp;w=480&amp;q=80 480w, https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&amp;fit=crop&amp;w=800&amp;q=80 800w, https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&amp;fit=crop&amp;w=1200&amp;q=80 1200w" sizes="(max-width: 720px) 100vw, (max-width: 1180px) 50vw, 420px" width="1200" height="630" loading="lazy" decoding="async"
                                 alt="Dashboard data operasional dan antarmuka alur kerja terstruktur di layar monitor" class="article-card__img">
                         </a>
                         <div class="article-card__body">
@@ -296,7 +310,7 @@
         <div class="container site-footer__inner">
             <div class="site-footer__brand">
                 <a href="../../" class="navbar__logo">Fatih Roihan</a>
-                <p data-i18n="footer.desc">Freelance web developer yang membantu bisnis dan individu memiliki kehadiran online yang profesional.</p>
+                <p data-i18n="footer.desc">Freelance web developer yang membangun website, sistem bisnis, dan produk digital untuk klien di Indonesia dan mancanegara.</p>
             </div>
 
             <nav class="site-footer__col" aria-label="Navigasi">
